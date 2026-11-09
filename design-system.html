@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -35,8 +36,12 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="./">Taws.Design<span class="visually-hidden"> – home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" hidden>
+        <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="nav-toggle__open" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/><path class="nav-toggle__close" d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg>
+        Menu
+      </button>
       <nav class="site-nav" aria-label="Main">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li><a class="site-nav__link" href="index.html#work">Work</a></li>
           <li><a class="site-nav__link" href="about.html">About</a></li>
           <li><a class="site-nav__link site-nav__link--cta" href="contact.html">Contact</a></li>
@@ -543,12 +548,17 @@
 &lt;/ul&gt;</code></pre>
 <h3 id="site-header-and-footer">Site header, footer and skip link</h3>
 <p>Copy these from any page or template. Every page needs, in order: the skip link as the first thing in <code>&lt;body&gt;</code>, the <code>&lt;header class="site-header"&gt;</code> with the main nav, <code>&lt;main id="main" tabindex="-1"&gt;</code>, and the <code>&lt;footer class="site-footer on-dark"&gt;</code>. Mark the current page’s nav link with <code>aria-current="page"</code>.</p>
+<p><strong>Sticky bar.</strong> Every page loads <code>assets/js/site.js</code>. Once the page is scrolled, the header becomes a floating rounded bar (<code>.is-stuck</code>). Below 34em the links move behind a <strong>Menu</strong> button that opens a floating panel. The script keeps focused elements clear of the bar (WCAG 2.4.11). The bar stops sticking on viewports shorter than 40em, such as 400% zoom. Without JavaScript the header is still sticky and the links are always visible.</p>
 <pre class="code-block"><code>&lt;a class=&quot;skip-link&quot; href=&quot;#main&quot;&gt;Skip to main content&lt;/a&gt;
 &lt;header class=&quot;site-header&quot;&gt;
   &lt;div class=&quot;container site-header__inner&quot;&gt;
     &lt;a class=&quot;logo&quot; href=&quot;index.html&quot;&gt;Taws.Design&lt;span class=&quot;visually-hidden&quot;&gt; – home&lt;/span&gt;&lt;/a&gt;
+    &lt;button class=&quot;nav-toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;site-nav-list&quot; hidden&gt;
+      &lt;svg class=&quot;nav-toggle__icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+      Menu
+    &lt;/button&gt;
     &lt;nav class=&quot;site-nav&quot; aria-label=&quot;Main&quot;&gt;
-      &lt;ul class=&quot;site-nav__list&quot;&gt;
+      &lt;ul class=&quot;site-nav__list&quot; id=&quot;site-nav-list&quot;&gt;
         &lt;li&gt;&lt;a class=&quot;site-nav__link&quot; href=&quot;index.html#work&quot;&gt;Work&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a class=&quot;site-nav__link&quot; href=&quot;about.html&quot; aria-current=&quot;page&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a class=&quot;site-nav__link site-nav__link--cta&quot; href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;

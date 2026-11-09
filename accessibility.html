@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -35,8 +36,12 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="./">Taws.Design<span class="visually-hidden"> – home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" hidden>
+        <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="nav-toggle__open" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/><path class="nav-toggle__close" d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg>
+        Menu
+      </button>
       <nav class="site-nav" aria-label="Main">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li><a class="site-nav__link" href="index.html#work">Work</a></li>
           <li><a class="site-nav__link" href="about.html">About</a></li>
           <li><a class="site-nav__link site-nav__link--cta" href="contact.html">Contact</a></li>
