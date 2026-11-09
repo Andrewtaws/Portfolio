@@ -142,4 +142,6 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --duration-reveal: 0.7s;
   --duration-intro: 0.8s;                          /* Intro text blur-in */
+  --duration-page-out: 0.15s;                      /* Page transition: old page out */
+  --duration-page-in: 0.25s;                       /* Page transition: new page in */
 }

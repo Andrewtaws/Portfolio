@@ -298,6 +298,9 @@
 &lt;div data-reveal class=&quot;callout&quot;&gt;
   &lt;p&gt;This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+<h3 id="page-transition">Page transition</h3>
+<p>Every page change has a short fade: the old page fades out in 0.15s and the new one fades in over 0.25s with an 8px rise. It’s set once in <code>components.css</code> with <code>@view-transition</code>, so new pages get it automatically. Timings are the <code>--duration-page-out</code> and <code>--duration-page-in</code> tokens.</p>
+<p class="text-sm"><strong>Accessibility:</strong> off for reduced motion. Browsers without view transitions (currently Firefox) simply load the page. It doesn’t affect focus or what screen readers announce.</p>
 <h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
 <p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
 <div class="specimen">

@@ -76,6 +76,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 34em. |
 | Buttons | `.btn` + `--primary`, `--secondary`, `--inverse`, `--ghost-inverse`, `--block` | `<a>` to navigate, `<button>` for actions |
 | Scroll reveal | `data-reveal`, `data-reveal="words"`, `data-reveal-stagger` | Below-the-fold content fades up on scroll; on-screen content shows at once. Off for reduced motion and without JavaScript |
+| Page transition | `@view-transition` in `components.css` | Short fade between every page (0.15s out, 0.25s in with an 8px rise). Off for reduced motion |
 | Intro text | `data-reveal="intro-chars"`, `data-reveal="intro-words"`, `data-reveal-delay` | Letters or words rise and blur into focus, including on load (greetings, eyebrows, page headings). |
 | Greeting, eyebrow | `.greeting`, `.eyebrow` | Above an `<h1>` |
 | Chips | `.chip`, `.chip--outline`, `.chip-list` | Categories and skills |
