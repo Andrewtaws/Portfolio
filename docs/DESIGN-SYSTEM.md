@@ -17,6 +17,7 @@ The live, visual version of this guide is [`design-system.html`](../design-syste
 | `assets/css/base.css` | Reset, element styles, typography, focus ring, utilities (`.container`, `.flow`, `.stack`, `.cluster`, `.visually-hidden`), reduced motion |
 | `assets/css/components.css` | All components (BEM naming) and forced-colours support |
 | `assets/js/site.js` | Sticky header bar and mobile menu button (load on every page) |
+| `assets/js/text-reveal.js` | Word-by-word text reveal for `[data-reveal]` (load on every page) |
 | `assets/js/contact-form.js` | Form validation and error summary pattern |
 | `templates/page.html` | Starting point for a general page |
 | `templates/case-study.html` | Starting point for a case study |
@@ -74,6 +75,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Skip link | `.skip-link` | First element in `<body>` |
 | Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 34em. |
 | Buttons | `.btn` + `--primary`, `--secondary`, `--inverse`, `--ghost-inverse`, `--block` | `<a>` to navigate, `<button>` for actions |
+| Text reveal | `data-reveal`, `data-reveal-stagger`, `data-reveal="chars"` | Words or letters drop into place on scroll. Plain text only; screen readers hear the full sentence; off for reduced motion |
 | Greeting, eyebrow | `.greeting`, `.eyebrow` | Above an `<h1>` |
 | Chips | `.chip`, `.chip--outline`, `.chip-list` | Categories and skills |
 | Status badge | `.status-badge` | e.g. "Open to work" |

@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -62,8 +63,8 @@
       <section class="hero">
         <div class="hero__content">
           <p class="greeting">Alreet!</p>
-          <h1>Page heading</h1>
-          <p class="lead">A short introduction to the page in one or two sentences.</p>
+          <h1 data-reveal>Page heading</h1>
+          <p class="lead" data-reveal data-reveal-stagger="0.015">A short introduction to the page in one or two sentences.</p>
           <p class="hero__actions">
             <a class="btn btn--primary" href="../contact.html">Primary action</a>
           </p>
@@ -73,7 +74,7 @@
 
     <div class="container container--narrow">
       <section class="split">
-        <h2 class="split__heading">Section heading</h2>
+        <h2 class="split__heading" data-reveal>Section heading</h2>
         <div class="prose">
           <p>Body copy. Keep paragraphs short and front-load the important information.</p>
           <ul>
@@ -84,7 +85,7 @@
       </section>
 
       <section class="split">
-        <h2 class="split__heading">Another section</h2>
+        <h2 class="split__heading" data-reveal>Another section</h2>
         <div class="prose">
           <h3>Sub-heading</h3>
           <p>More body copy.</p>
@@ -95,7 +96,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

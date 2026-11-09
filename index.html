@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -55,8 +56,8 @@
       <section class="hero hero--home">
         <div class="hero__content">
           <p class="greeting">Alreet!</p>
-          <h1>I’m Andrew Taws, a Lead UX Product Designer currently based in Newcastle</h1>
-          <p class="lead">I have 10 years of experience working as a designer, dedicated to creating innovative and accessible products.</p>
+          <h1 data-reveal>I’m Andrew Taws, a Lead UX Product Designer currently based in Newcastle</h1>
+          <p class="lead" data-reveal data-reveal-stagger="0.015">I have 10 years of experience working as a designer, dedicated to creating innovative and accessible products.</p>
           <!-- TODO (Andrew): review these specialism chips. -->
           <ul class="chip-list hero__chips" aria-label="Specialisms">
             <li class="chip chip--outline">Accessibility (WCAG 2.2 AA)</li>
@@ -128,7 +129,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

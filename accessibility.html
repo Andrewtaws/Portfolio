@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -54,12 +55,12 @@
     <div class="container container--narrow">
       <header class="case-hero">
         <p class="eyebrow">Accessibility</p>
-        <h1>Accessibility statement</h1>
-        <p class="lead">Accessibility is my specialism, so this site aims to practise what it preaches. It’s built to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA.</p>
+        <h1 data-reveal>Accessibility statement</h1>
+        <p class="lead" data-reveal data-reveal-stagger="0.015">Accessibility is my specialism, so this site aims to practise what it preaches. It’s built to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA.</p>
       </header>
 
       <section class="split">
-        <h2 class="split__heading">What you can do on this site</h2>
+        <h2 class="split__heading" data-reveal>What you can do on this site</h2>
         <div class="prose">
           <ul>
             <li>Use it with a keyboard alone. Every link, button and form field can be reached and shows a clear focus outline.</li>
@@ -73,7 +74,7 @@
       </section>
 
       <section class="split">
-        <h2 class="split__heading">How it was built</h2>
+        <h2 class="split__heading" data-reveal>How it was built</h2>
         <div class="prose">
           <ul>
             <li>Semantic HTML with landmarks, a logical heading order and one main heading per page</li>
@@ -86,7 +87,7 @@
       </section>
 
       <section class="split">
-        <h2 class="split__heading">How it was tested</h2>
+        <h2 class="split__heading" data-reveal>How it was tested</h2>
         <div class="prose">
           <p>Every page has been checked with the axe-core automated testing engine against WCAG 2.2 A and AA rules, with keyboard-only testing, and at 320 pixels wide to check reflow.</p>
           <!-- TODO (Andrew): once you've tested with a screen reader, add it here, e.g.
@@ -96,7 +97,7 @@
       </section>
 
       <section class="split">
-        <h2 class="split__heading">Known limitations</h2>
+        <h2 class="split__heading" data-reveal>Known limitations</h2>
         <div class="prose">
           <ul>
             <li>Case study screenshots show product interfaces as images. Each has a text description, but small details within them may not be described in full.</li>
@@ -106,7 +107,7 @@
       </section>
 
       <section class="split">
-        <h2 class="split__heading">Feedback</h2>
+        <h2 class="split__heading" data-reveal>Feedback</h2>
         <div class="prose">
           <p>If you find anything on this site hard to use, I’d genuinely like to know. <a href="contact.html">Get in touch</a> and I’ll fix it.</p>
         </div>
@@ -116,7 +117,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

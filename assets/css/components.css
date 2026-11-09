@@ -494,6 +494,44 @@
   background-repeat: no-repeat;
 }
 
+/* Text reveal ------------------------------------------------------------
+   Set up by assets/js/text-reveal.js on elements with [data-reveal]. Each
+   word drops from above with a slight skew and settles into place, one after
+   another (--i is its position, --reveal-stagger the gap). The pieces only
+   exist when JavaScript has run and motion is allowed. */
+.reveal__piece {
+  display: inline-block;
+  transform: translateY(-250%) skewY(-5deg);
+  opacity: 0;
+  transition:
+    transform var(--duration-reveal) var(--ease-reveal),
+    opacity calc(var(--duration-reveal) * 0.4) ease;
+  transition-delay: calc(var(--i, 0) * var(--reveal-stagger, 0.1s));
+}
+
+.reveal--chars .reveal__piece {
+  transform: translateY(-105%);
+  transition-timing-function: var(--ease-in-out), ease;
+}
+
+/* Keep each word's letters together so lines still wrap between words */
+.reveal__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.reveal.is-revealed .reveal__piece {
+  transform: none;
+  opacity: 1;
+}
+
+@media print {
+  .reveal__piece {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 /* 07 Scroll link ("Explore my work") ------------------------------------- */
 .scroll-link {
   display: inline-flex;
