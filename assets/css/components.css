@@ -145,6 +145,22 @@
 @media (max-width: 33.99em) {
   .js .nav-toggle:not([hidden]) {
     display: inline-flex;
+    justify-content: center;
+    min-width: var(--target-min);
+    padding: var(--space-2);
+  }
+
+  /* As on the original site: a bigger logo and a 70px bar on phones */
+  .js .logo {
+    font-size: 2rem;
+  }
+
+  .js .site-header__inner {
+    min-height: 4.375rem;
+  }
+
+  .js .site-header.is-stuck .site-header__inner {
+    padding-inline: var(--space-5) var(--space-3);
   }
 
   .js .site-header__inner {
