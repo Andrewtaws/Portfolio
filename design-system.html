@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/text-reveal.js" defer></script>
+  <script src="assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -55,8 +55,8 @@
 <div class="container container--narrow">
   <header class="case-hero">
     <p class="eyebrow">Taws.Design</p>
-    <h1 data-reveal>Design system</h1>
-    <p class="lead" data-reveal data-reveal-stagger="0.015">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
+    <h1>Design system</h1>
+    <p class="lead">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
   </header>
 
   <nav class="ds-nav" aria-label="Design system sections">
@@ -73,7 +73,7 @@
   </nav>
 
 <section class="split" id="principles">
-  <h2 class="split__heading" data-reveal>Principles</h2>
+  <h2 class="split__heading">Principles</h2>
   <div class="prose">
     <ul>
       <li><strong>Accessible by default.</strong> Every component meets WCAG 2.2 AA out of the box: contrast, focus, target size, semantics. Using the component as documented is enough.</li>
@@ -85,7 +85,7 @@
 </section>
 
 <section class="split" id="files">
-  <h2 class="split__heading" data-reveal>Files</h2>
+  <h2 class="split__heading">Files</h2>
   <div class="prose">
     <p>Load the three stylesheets in this order on every page:</p>
     <ol>
@@ -200,8 +200,8 @@
 <h3 id="split-section">Split section</h3>
 <p>The case study pattern: heading on the left, content on the right. Stacks on small screens. The heading becomes sticky on wide screens.</p>
 <div class="specimen">
-<section class="split">
-  <h2 class="split__heading" data-reveal>Overview</h2>
+<section class="split" data-reveal>
+  <h2 class="split__heading">Overview</h2>
   <div class="prose">
     <p>Body copy, lists and sub-headings go here.</p>
   </div>
@@ -216,7 +216,7 @@
 <h3 id="media-band">Media band</h3>
 <p>A full-width light blue band for screenshots. Place it between containers, never inside one, so it can reach the screen edges. <code>media-band--plain</code> uses the card colour instead.</p>
 <div class="specimen">
-<div class="media-band">
+<div class="media-band" data-reveal>
   <div class="container">
     <figure class="figure figure--contained">
       <img src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436"
@@ -283,17 +283,34 @@
   &lt;a class=&quot;btn btn--inverse&quot; href=&quot;#components&quot;&gt;Inverse&lt;/a&gt;
   &lt;a class=&quot;btn btn--ghost-inverse&quot; href=&quot;#components&quot;&gt;Ghost inverse&lt;/a&gt;
 &lt;/div&gt;</code></pre>
-<h3 id="text-reveal">Text reveal</h3>
-<p>Words drop into place one after another when the text scrolls into view. Add <code>data-reveal</code> to any element that holds plain text. <code>data-reveal-stagger</code> sets the gap between words in seconds (0.1 by default, 0.015 for paragraphs), and <code>data-reveal="chars"</code> reveals letter by letter, as on the footer title. Needs <code>assets/js/text-reveal.js</code>. It’s used on page headings, section headings and intro paragraphs.</p>
-<p class="text-sm"><strong>Accessibility:</strong> Screen readers get one hidden copy of the full text and the animated pieces are hidden from them, so text is never read in fragments. Nothing animates when reduced motion is on, and elements containing links or other markup are left alone. Each reveal plays once and finishes within about 2 seconds.</p>
+<h3 id="scroll-reveal">Scroll reveal</h3>
+<p>Content below the fold fades gently up into view as the page scrolls. Anything already on screen when the page loads shows straight away. Add <code>data-reveal</code> to a section, band, card or list item. <code>data-reveal="words"</code> makes a short plain-text heading rise in word by word instead, as on the footer title, and <code>data-reveal-stagger</code> sets the gap in seconds (0.04 by default). Needs <code>assets/js/scroll-reveal.js</code>.</p>
+<p class="text-sm"><strong>Accessibility:</strong> Nothing is hidden without JavaScript or with reduced motion on. Anything that gets keyboard focus shows immediately. For <code>words</code>, screen readers get one hidden copy of the full text, so it’s never read in fragments.</p>
 <div class="specimen">
-<h2 class="h3" data-reveal>Words drop into place as you scroll</h2>
-<p class="lead" data-reveal data-reveal-stagger="0.015">Paragraphs use a much shorter gap between words.</p>
-<h2 class="h3" data-reveal="chars">Letter by letter</h2>
+<div data-reveal class="callout">
+  <p>This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.</p>
 </div>
-<pre class="code-block"><code>&lt;h2 class=&quot;h3&quot; data-reveal&gt;Words drop into place as you scroll&lt;/h2&gt;
-&lt;p class=&quot;lead&quot; data-reveal data-reveal-stagger=&quot;0.015&quot;&gt;Paragraphs use a much shorter gap between words.&lt;/p&gt;
-&lt;h2 class=&quot;h3&quot; data-reveal=&quot;chars&quot;&gt;Letter by letter&lt;/h2&gt;</code></pre>
+</div>
+<pre class="code-block"><code>&lt;div data-reveal class=&quot;callout&quot;&gt;
+  &lt;p&gt;This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="page-transition">Page transition</h3>
+<p>When a homepage card is clicked, its image grows into the case study’s hero screenshot and its title into the page heading, while the rest of the page crossfades and the header stays put. It’s built with the browser’s cross-document view transitions (<code>@view-transition</code> in <code>components.css</code>), and Back plays it in reverse. To connect two elements across pages, give both the same name inline. Each name must be unique on its page.</p>
+<p class="text-sm"><strong>Accessibility:</strong> Off for reduced motion. Browsers without view transitions (currently Firefox) simply load the next page. The transition takes 0.6 seconds and doesn’t affect focus or what screen readers announce.</p>
+<div class="specimen">
+<p class="text-sm">On the homepage card:</p>
+<pre class="code-block"><code>&lt;h3 class="card__title" style="view-transition-name: checker-title"&gt;…&lt;/h3&gt;
+&lt;img style="view-transition-name: checker-media" src="…" alt=""&gt;</code></pre>
+<p class="text-sm">On the case study page:</p>
+<pre class="code-block"><code>&lt;h1 style="view-transition-name: checker-title"&gt;…&lt;/h1&gt;
+&lt;img style="view-transition-name: checker-media" src="…" alt="…"&gt;</code></pre>
+</div>
+<pre class="code-block"><code>&lt;p class=&quot;text-sm&quot;&gt;On the homepage card:&lt;/p&gt;
+&lt;pre class=&quot;code-block&quot;&gt;&lt;code&gt;&amp;lt;h3 class=&quot;card__title&quot; style=&quot;view-transition-name: checker-title&quot;&amp;gt;…&amp;lt;/h3&amp;gt;
+&amp;lt;img style=&quot;view-transition-name: checker-media&quot; src=&quot;…&quot; alt=&quot;&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p class=&quot;text-sm&quot;&gt;On the case study page:&lt;/p&gt;
+&lt;pre class=&quot;code-block&quot;&gt;&lt;code&gt;&amp;lt;h1 style=&quot;view-transition-name: checker-title&quot;&amp;gt;…&amp;lt;/h1&amp;gt;
+&amp;lt;img style=&quot;view-transition-name: checker-media&quot; src=&quot;…&quot; alt=&quot;…&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
 <h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
 <p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
 <div class="specimen">
@@ -372,7 +389,7 @@
 <h3 id="case-meta">Case meta</h3>
 <p>The project summary at the top of a case study. A description list, so each label is announced with its value. Add <code>case-meta__item--wide</code> to span the full row.</p>
 <div class="specimen">
-<dl class="case-meta" aria-label="Project summary">
+<dl data-reveal class="case-meta" aria-label="Project summary">
   <div class="case-meta__item">
     <dt>My role</dt>
     <dd>Lead UX Product Designer</dd>
@@ -469,7 +486,7 @@
 <h3 id="pager">Pager</h3>
 <p>Previous and next links at the end of a case study. Leave out the item that doesn’t apply. <code>.pager__item--next</code> always sits on the right.</p>
 <div class="specimen">
-<nav class="pager" aria-label="Case studies" style="padding:0">
+<nav data-reveal class="pager" aria-label="Case studies" style="padding:0">
   <ul class="pager__list">
     <li class="pager__item--prev">
       <a class="pager__link" href="work/checker.html" rel="prev">
@@ -623,7 +640,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

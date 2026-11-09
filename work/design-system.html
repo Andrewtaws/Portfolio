@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
-  <script src="../assets/js/text-reveal.js" defer></script>
+  <script src="../assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,11 +56,11 @@
       <div class="container container--narrow">
         <header class="case-hero">
           <p class="eyebrow">Design system · Recite Me</p>
-          <h1 data-reveal>Recite Me Design System</h1>
-          <p class="lead" data-reveal data-reveal-stagger="0.015">One source of truth for a growing product suite, keeping every product consistent, accessible and quicker to build.</p>
+          <h1 style="view-transition-name: design-system-title">Recite Me Design System</h1>
+          <p class="lead">One source of truth for a growing product suite, keeping every product consistent, accessible and quicker to build.</p>
         </header>
 
-        <dl class="case-meta" aria-label="Project summary">
+        <dl data-reveal class="case-meta" aria-label="Project summary">
           <div class="case-meta__item">
             <dt>My role</dt>
             <dd>Lead UX Product Designer</dd>
@@ -82,25 +82,25 @@
         </dl>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="The Typography page of the Recite Me Design System, with a large “Aa Bb Cc” specimen of the typeface." fetchpriority="high">
+            <img src="../assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="The Typography page of the Recite Me Design System, with a large “Aa Bb Cc” specimen of the typeface." fetchpriority="high" style="view-transition-name: design-system-media">
           </figure>
         </div>
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Overview</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Overview</h2>
           <div class="prose prose--lead">
             <p>As Recite Me’s portfolio grew, so did the number of ways a button could look. Each new product brought its own patterns, colours and quirks, and small inconsistencies were starting to add up.</p>
             <p>The Recite Me Design System brought everything back together. It’s the single source of truth for the visual and interactive elements across our products, giving users a consistent experience wherever they meet us, and giving designers and developers a faster, more reliable way to build.</p>
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>The challenge</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">The challenge</h2>
           <div class="prose">
             <ul>
               <li><strong>Inconsistency across products.</strong> Different teams and timelines meant the same component could look and behave differently from one product to the next.</li>
@@ -110,8 +110,8 @@
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>My approach</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">My approach</h2>
           <div class="prose">
             <h3>Audit</h3>
             <!-- TODO (Andrew): confirm this paragraph is accurate. -->
@@ -127,7 +127,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -147,8 +147,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Components</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Components</h3>
           <div class="prose">
             <!-- TODO (Andrew): confirm this paragraph is accurate. -->
             <p>Components were designed with accessibility baked in from the start, including visible focus states, generous target sizes, clear labels and states for every interaction, so teams get accessible patterns by default.</p>
@@ -156,7 +156,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -176,8 +176,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Documentation and handover</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Documentation and handover</h3>
           <div class="prose">
             <!-- TODO (Andrew): confirm this paragraph is accurate. -->
             <p>Each component is documented with usage guidance, dos and don’ts, and accessibility notes. I walked developers and QA through the system in Figma to make sure it worked for both design and build.</p>
@@ -185,7 +185,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -205,8 +205,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Outcome</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Outcome</h2>
           <div class="prose prose--lead">
             <p>The Design System streamlines how we design and build, improving efficiency while keeping every Recite Me product consistent.</p>
             <!-- TODO (Andrew): add specifics, e.g. number of components or products using the
@@ -216,7 +216,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
             <img src="../assets/images/shared/checker-17-and-design-system-07.webp" width="1728" height="1117" alt="The design system in use: the Accessibility Checker’s “Start your accessibility journey” screen, built with the system’s typography, colours and buttons." loading="lazy" decoding="async">
@@ -227,13 +227,13 @@
 
       <div class="container container--narrow">
         <!-- TODO (Andrew): add a Reflection section in your own words.
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Reflection</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Reflection</h2>
           <div class="prose"><p></p></div>
         </section>
         -->
 
-        <nav class="pager" aria-label="Case studies">
+        <nav data-reveal class="pager" aria-label="Case studies">
           <ul class="pager__list">
             <li class="pager__item--prev">
               <a class="pager__link" href="changing-health.html" rel="prev">
@@ -255,7 +255,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

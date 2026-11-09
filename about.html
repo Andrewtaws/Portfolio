@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/text-reveal.js" defer></script>
+  <script src="assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,8 +56,8 @@
       <section class="hero">
         <div class="hero__content">
           <p class="greeting">Alreet!</p>
-          <h1 data-reveal>I’m Andrew Taws</h1>
-          <p class="lead" data-reveal data-reveal-stagger="0.015">A Lead UX Product Designer based in Newcastle, currently creating experiences at <a href="https://www.reciteme.com">Recite Me</a>. With 10 years of experience creating innovative and accessible products.</p>
+          <h1>I’m Andrew Taws</h1>
+          <p class="lead">A Lead UX Product Designer based in Newcastle, currently creating experiences at <a href="https://www.reciteme.com">Recite Me</a>. With 10 years of experience creating innovative and accessible products.</p>
           <p class="hero__actions">
             <a class="btn btn--primary" href="assets/files/andrew-taws-cv.pdf">
               <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
@@ -74,8 +74,8 @@
     </div>
 
     <div class="container container--narrow">
-      <section class="split">
-        <h2 class="split__heading" data-reveal>A very particular set of skills</h2>
+      <section class="split" data-reveal>
+        <h2 class="split__heading">A very particular set of skills</h2>
         <div class="prose prose--lead">
           <p>I have hands-on experience in:</p>
           <ul>
@@ -88,10 +88,10 @@
         </div>
       </section>
 
-      <section class="split">
-        <h2 class="split__heading" data-reveal>Work experience</h2>
+      <section class="split" data-reveal>
+        <h2 class="split__heading">Work experience</h2>
         <ol class="experience" reversed>
-          <li>
+          <li data-reveal>
             <img class="experience__logo" src="assets/images/about/recite-me-logo.svg" width="200" height="64" alt="" loading="lazy">
             <h3 class="experience__role">Lead UX Product Designer</h3>
             <p class="experience__meta">
@@ -104,7 +104,7 @@
               <p>I regularly join client calls to understand the issues they’re facing with the product, then translate those insights into design solutions and work closely with the product team to get them implemented. I also run cross-department sessions with developers and QA, walking through Figma prototypes to make sure what we design meets both user needs and technical requirements.</p>
             </div>
           </li>
-          <li>
+          <li data-reveal>
             <img class="experience__logo" src="assets/images/about/changing-health-logo.webp" width="480" height="174" alt="" loading="lazy">
             <h3 class="experience__role">Digital Product Architect</h3>
             <p class="experience__meta">
@@ -124,7 +124,7 @@
               <p>This stage of my career deepened my focus on user-centred design at scale, and remains some of the most rewarding work I’ve done.</p>
             </div>
           </li>
-          <li>
+          <li data-reveal>
             <img class="experience__logo" src="assets/images/about/changing-health-logo.webp" width="480" height="174" alt="" loading="lazy">
             <h3 class="experience__role">Junior Designer</h3>
             <p class="experience__meta">
@@ -142,7 +142,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

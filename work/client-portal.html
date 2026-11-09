@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
-  <script src="../assets/js/text-reveal.js" defer></script>
+  <script src="../assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,11 +56,11 @@
       <div class="container container--narrow">
         <header class="case-hero">
           <p class="eyebrow">Product design · Recite Me</p>
-          <h1 data-reveal>Recite Me Client Portal</h1>
-          <p class="lead" data-reveal data-reveal-stagger="0.015">Everything customers need, in one place: manage their accessibility products, discover new ones and see the impact through analytics.</p>
+          <h1 style="view-transition-name: client-portal-title">Recite Me Client Portal</h1>
+          <p class="lead">Everything customers need, in one place: manage their accessibility products, discover new ones and see the impact through analytics.</p>
         </header>
 
-        <dl class="case-meta" aria-label="Project summary">
+        <dl data-reveal class="case-meta" aria-label="Project summary">
           <div class="case-meta__item">
             <dt>My role</dt>
             <dd>Lead UX Product Designer</dd>
@@ -77,25 +77,25 @@
         </dl>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/client-portal/client-portal-01-home-desktop.webp" width="1920" height="1383" alt="Client Portal home screen on desktop, welcoming the customer to their accessibility centre with cards for their Recite Me products." fetchpriority="high">
+            <img src="../assets/images/client-portal/client-portal-01-home-desktop.webp" width="1920" height="1383" alt="Client Portal home screen on desktop, welcoming the customer to their accessibility centre with cards for their Recite Me products." fetchpriority="high" style="view-transition-name: client-portal-media">
           </figure>
         </div>
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Overview</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Overview</h2>
           <div class="prose prose--lead">
             <p>As the Recite Me portfolio expanded, our customers needed an easier way to manage everything they had with us.</p>
             <p>The Recite Me Client Portal brings it all together. Customers can see the products they use, discover new ones, and get to important information like analytics, all from a single, accessible dashboard that works just as well on mobile as it does on desktop.</p>
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>The challenge</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">The challenge</h2>
           <div class="prose">
             <ul>
               <li><strong>Scattered information.</strong> Customers had to go to different places, or contact us, to find details about their products and usage.</li>
@@ -105,8 +105,8 @@
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Research and insight</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Research and insight</h2>
           <div class="prose">
             <p>I regularly join client calls to hear first-hand about the issues customers face.</p>
             <!-- TODO (Andrew): confirm this sentence is accurate. -->
@@ -114,8 +114,8 @@
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Key features</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Key features</h2>
           <div class="prose">
             <h3>Home</h3>
             <p>The home screen gives customers an instant overview of their account and products, so the most important information is never more than a glance away.</p>
@@ -123,7 +123,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--device">
             <li>
@@ -143,15 +143,15 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Discovery</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Discovery</h3>
           <div class="prose">
             <p>The Discovery page helps customers find other Recite Me products that could support their accessibility journey. It’s presented as helpful guidance rather than a hard sell.</p>
           </div>
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--device">
             <li>
@@ -171,15 +171,15 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Analytics</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Analytics</h3>
           <div class="prose">
             <p>Analytics show how customers’ visitors are using their Recite Me tools, giving them clear evidence of impact to share with their own stakeholders.</p>
           </div>
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--device">
             <li>
@@ -199,8 +199,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Responsive and accessible</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Responsive and accessible</h3>
           <div class="prose">
             <p>Every screen was designed mobile-first and built on the <a href="design-system.html">Recite Me Design System</a>, meeting WCAG 2.2 AA so the portal is as accessible as the products it manages.</p>
           </div>
@@ -209,20 +209,20 @@
         <!-- TODO (Andrew): add an Outcome section with one to three results, e.g. adoption
         (customers or logins per month), fewer support tickets for account questions, upsell
         influenced by the Discovery page, or customer feedback.
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Outcome</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Outcome</h2>
           <div class="prose"><ul><li></li></ul></div>
         </section>
         -->
 
         <!-- TODO (Andrew): add a Reflection section in your own words.
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Reflection</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Reflection</h2>
           <div class="prose"><p></p></div>
         </section>
         -->
 
-        <nav class="pager" aria-label="Case studies">
+        <nav data-reveal class="pager" aria-label="Case studies">
           <ul class="pager__list">
             <li class="pager__item--prev">
               <a class="pager__link" href="design-system.html" rel="prev">
@@ -238,7 +238,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
