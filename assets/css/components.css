@@ -345,11 +345,13 @@
 }
 
 .greeting {
+  padding-block-end: 0;
   font-family: var(--font-script);
   font-size: var(--text-script);
   line-height: 1.4;
   letter-spacing: 0;
 }
+
 
 .eyebrow {
   font-size: var(--text-label);
@@ -366,6 +368,14 @@
   height: 3px;
   border-radius: 2px;
   background: var(--color-accent);
+}
+
+/* Borel leaves a lot of space below its letters, so place the line from
+   the top of the text instead of the bottom of the box: about 8px under
+   the lettering */
+.greeting::after {
+  top: 1em;
+  bottom: auto;
 }
 
 /* 05 Chips ---------------------------------------------------------------- */
