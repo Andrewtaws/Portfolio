@@ -673,6 +673,38 @@
   .hero__media .portrait {
     max-width: 14rem;
   }
+
+  /* Homepage: no photo on small screens. The "Open to work" badge sits on
+     the same line as the greeting, on the right. It stays after the intro
+     in the source, so reading order is unchanged. */
+  .hero--home {
+    position: relative;
+  }
+
+  .hero--home .hero__media {
+    position: absolute;
+    /* Nudged up so "Open to work" centres on the "Alreet!" lettering
+       (the greeting's box also holds its orange underline) */
+    top: calc(var(--space-6) - 5px);
+    right: 0;
+    order: 0;
+  }
+
+  .hero--home .portrait {
+    max-width: none;
+    overflow: visible;
+  }
+
+  .hero--home .portrait__img {
+    display: none;
+  }
+
+  .hero--home .portrait .status-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    box-shadow: none;
+  }
 }
 
 @media (min-width: 56em) {
