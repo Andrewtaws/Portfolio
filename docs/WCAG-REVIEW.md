@@ -15,7 +15,7 @@
 
 ### Automated (axe-core 4.10, WCAG 2.0/2.1/2.2 A and AA, plus best practices)
 
-Every page was tested at 1440px and 390px wide, with all disclosures open.
+Every page was tested at 1440px and 390px wide, with all disclosures open and after all animations had finished.
 
 | Page | Violations |
 |---|---|
@@ -38,7 +38,11 @@ The only "needs review" items were textareas and a scrolling table, where axe co
 | One `<h1>` per page, no skipped heading levels | 1.3.1, 2.4.6 | ✅ |
 | Contact form errors: an error summary takes focus, links move to each field, fields get `aria-invalid` and a linked message, and the page title gets an "Error:" prefix | 3.3.1, 3.3.3, 4.1.3 | ✅ |
 | Forced colours (Windows High Contrast): card, chip, button and badge edges stay visible, and the focus ring uses `Highlight` | 1.4.11 | ✅ |
-| Reduced motion turns off the card hover movement and smooth scrolling | 2.3.3 | ✅ |
+| Reduced motion turns off the card hover movement, smooth scrolling, scroll reveals, intro text animation, status pulse and page fade | 2.3.3 | ✅ |
+| Intro text (letter/word blur-in): screen readers hear the full text once; pieces are `aria-hidden`; plays once in under 2 seconds | 1.3.1, 2.2.2 | ✅ |
+| Scroll reveals: nothing on screen at load is hidden, nothing stays hidden after scrolling, and focused content shows at full opacity immediately | 2.4.7, 2.4.11 | ✅ |
+| "Open to work" pulse stops after about 4.5 seconds | 2.2.2 | ✅ |
+| Page fade between pages (0.4s); browsers without view transitions just load the page | 2.3.3 | ✅ |
 | No horizontal scrolling at 390px or 1440px on any page | 1.4.10 | ✅ |
 | Sticky header: tabbing forwards and backwards through 6 pages (2,000+ focus stops), nothing is ever entirely hidden by the bar, and focusing a header link never makes the page jump | 2.4.11 | ✅ |
 | Sticky header switches off on viewports shorter than 640px (400% zoom, landscape phones) | 1.4.10 | ✅ |
