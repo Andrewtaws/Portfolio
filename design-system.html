@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -54,8 +55,8 @@
 <div class="container container--narrow">
   <header class="case-hero">
     <p class="eyebrow">Taws.Design</p>
-    <h1>Design system</h1>
-    <p class="lead">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
+    <h1 data-reveal>Design system</h1>
+    <p class="lead" data-reveal data-reveal-stagger="0.015">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
   </header>
 
   <nav class="ds-nav" aria-label="Design system sections">
@@ -72,7 +73,7 @@
   </nav>
 
 <section class="split" id="principles">
-  <h2 class="split__heading">Principles</h2>
+  <h2 class="split__heading" data-reveal>Principles</h2>
   <div class="prose">
     <ul>
       <li><strong>Accessible by default.</strong> Every component meets WCAG 2.2 AA out of the box: contrast, focus, target size, semantics. Using the component as documented is enough.</li>
@@ -84,7 +85,7 @@
 </section>
 
 <section class="split" id="files">
-  <h2 class="split__heading">Files</h2>
+  <h2 class="split__heading" data-reveal>Files</h2>
   <div class="prose">
     <p>Load the three stylesheets in this order on every page:</p>
     <ol>
@@ -200,7 +201,7 @@
 <p>The case study pattern: heading on the left, content on the right. Stacks on small screens. The heading becomes sticky on wide screens.</p>
 <div class="specimen">
 <section class="split">
-  <h2 class="split__heading">Overview</h2>
+  <h2 class="split__heading" data-reveal>Overview</h2>
   <div class="prose">
     <p>Body copy, lists and sub-headings go here.</p>
   </div>
@@ -282,6 +283,17 @@
   &lt;a class=&quot;btn btn--inverse&quot; href=&quot;#components&quot;&gt;Inverse&lt;/a&gt;
   &lt;a class=&quot;btn btn--ghost-inverse&quot; href=&quot;#components&quot;&gt;Ghost inverse&lt;/a&gt;
 &lt;/div&gt;</code></pre>
+<h3 id="text-reveal">Text reveal</h3>
+<p>Words drop into place one after another when the text scrolls into view. Add <code>data-reveal</code> to any element that holds plain text. <code>data-reveal-stagger</code> sets the gap between words in seconds (0.1 by default, 0.015 for paragraphs), and <code>data-reveal="chars"</code> reveals letter by letter, as on the footer title. Needs <code>assets/js/text-reveal.js</code>. It’s used on page headings, section headings and intro paragraphs.</p>
+<p class="text-sm"><strong>Accessibility:</strong> Screen readers get one hidden copy of the full text and the animated pieces are hidden from them, so text is never read in fragments. Nothing animates when reduced motion is on, and elements containing links or other markup are left alone. Each reveal plays once and finishes within about 2 seconds.</p>
+<div class="specimen">
+<h2 class="h3" data-reveal>Words drop into place as you scroll</h2>
+<p class="lead" data-reveal data-reveal-stagger="0.015">Paragraphs use a much shorter gap between words.</p>
+<h2 class="h3" data-reveal="chars">Letter by letter</h2>
+</div>
+<pre class="code-block"><code>&lt;h2 class=&quot;h3&quot; data-reveal&gt;Words drop into place as you scroll&lt;/h2&gt;
+&lt;p class=&quot;lead&quot; data-reveal data-reveal-stagger=&quot;0.015&quot;&gt;Paragraphs use a much shorter gap between words.&lt;/p&gt;
+&lt;h2 class=&quot;h3&quot; data-reveal=&quot;chars&quot;&gt;Letter by letter&lt;/h2&gt;</code></pre>
 <h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
 <p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
 <div class="specimen">
@@ -611,7 +623,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

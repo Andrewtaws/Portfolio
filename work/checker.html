@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -55,8 +56,8 @@
       <div class="container container--narrow">
         <header class="case-hero">
           <p class="eyebrow">UX design case study · Recite Me</p>
-          <h1>Recite Me Accessibility Checker</h1>
-          <p class="lead">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
+          <h1 data-reveal>Recite Me Accessibility Checker</h1>
+          <p class="lead" data-reveal data-reveal-stagger="0.015">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
         </header>
 
         <dl class="case-meta" aria-label="Project summary">
@@ -89,7 +90,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Overview</h2>
+          <h2 class="split__heading" data-reveal>Overview</h2>
           <div class="prose prose--lead">
             <p>Most organisations know their website should be accessible. Knowing where to start is a different story.</p>
             <p>WCAG is long, technical and full of jargon, and the legal side only adds to the pressure. For many teams, accessibility feels like a mountain they don’t have the time or expertise to climb, so it gets pushed down the backlog.</p>
@@ -98,7 +99,7 @@
         </section>
 
         <section class="split">
-          <h2 class="split__heading">The challenge</h2>
+          <h2 class="split__heading" data-reveal>The challenge</h2>
           <div class="prose">
             <ul>
               <li><strong>Accessibility feels overwhelming.</strong> People didn’t know which issues mattered most or how to fix them.</li>
@@ -109,7 +110,7 @@
         </section>
 
         <section class="split">
-          <h2 class="split__heading">Research</h2>
+          <h2 class="split__heading" data-reveal>Research</h2>
           <div class="prose">
             <h3>Competitor analysis</h3>
             <p>I started by looking at the tools already out there to see what they did well, where they fell short, and where we had an opportunity to stand out. The clearest gap was guidance. Most tools told you <em>what</em> was wrong, but very few explained <em>why</em> it mattered or <em>how</em> to fix it.</p>
@@ -202,7 +203,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Information architecture</h2>
+          <h2 class="split__heading" data-reveal>Information architecture</h2>
           <div class="prose">
             <p>To make sure content sat where people expected to find it, I ran card sorting exercises with colleagues across the business and with external developers. Grouping topics based on how people actually think, rather than how we thought they should, gave us an IA that felt logical to both technical and non-technical users.</p>
           </div>
@@ -219,7 +220,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Key features</h2>
+          <h2 class="split__heading" data-reveal>Key features</h2>
           <div class="prose">
             <h3>Adding a domain</h3>
             <p>Onboarding needed to be quick and painless. Users follow a short, guided flow to add their website. They can add individual pages or upload an XML sitemap to scan the whole site in one go.</p>
@@ -267,7 +268,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h3 class="split__heading">Domain overview</h3>
+          <h3 class="split__heading" data-reveal>Domain overview</h3>
           <div class="prose">
             <p>The domain overview is the heart of the Checker. It shows the results of the latest scan with an overall score, broken down by WCAG level, so users can see at a glance where they stand.</p>
             <p>Each issue opens up into a detailed view explaining what the problem is, why it matters to real people, and how to fix it. This was the part I cared about most. Rather than a list of errors, it’s guidance someone can act on, whatever their technical background.</p>
@@ -296,7 +297,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h3 class="split__heading">Create a report</h3>
+          <h3 class="split__heading" data-reveal>Create a report</h3>
           <div class="prose">
             <p>Accessibility is ongoing work, and teams need to show their progress. The reporting feature lets users build detailed PDF reports in four steps:</p>
             <ol>
@@ -343,7 +344,7 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Designing an accessible accessibility tool</h2>
+          <h2 class="split__heading" data-reveal>Designing an accessible accessibility tool</h2>
           <div class="prose">
             <p>It goes without saying that an accessibility product has to practise what it preaches. The Checker was designed to meet WCAG 2.2 Level AA, and I ran walkthroughs of the Figma prototypes with developers and QA to make sure what we designed held up in the build, both for users and for the technical requirements.</p>
           </div>
@@ -353,14 +354,14 @@
         number of domains or customers using the Checker, reduced onboarding time or support
         queries, client or usability testing feedback, contribution to sales or retention.
         <section class="split">
-          <h2 class="split__heading">Outcome</h2>
+          <h2 class="split__heading" data-reveal>Outcome</h2>
           <div class="prose"><ul><li></li></ul></div>
         </section>
         -->
 
         <!-- TODO (Andrew): add a Reflection section in your own words.
         <section class="split">
-          <h2 class="split__heading">Reflection</h2>
+          <h2 class="split__heading" data-reveal>Reflection</h2>
           <div class="prose"><p></p></div>
         </section>
         -->
@@ -381,7 +382,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

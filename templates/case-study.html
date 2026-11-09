@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/text-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -63,8 +64,8 @@
       <div class="container container--narrow">
         <header class="case-hero">
           <p class="eyebrow">Case study type · Company</p>
-          <h1>Project name</h1>
-          <p class="lead">One-sentence summary of the problem and what you designed.</p>
+          <h1 data-reveal>Project name</h1>
+          <p class="lead" data-reveal data-reveal-stagger="0.015">One-sentence summary of the problem and what you designed.</p>
         </header>
 
         <dl class="case-meta" aria-label="Project summary">
@@ -86,14 +87,14 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Overview</h2>
+          <h2 class="split__heading" data-reveal>Overview</h2>
           <div class="prose prose--lead">
             <p>Set the scene: who it’s for, and why it mattered.</p>
           </div>
         </section>
 
         <section class="split">
-          <h2 class="split__heading">The challenge</h2>
+          <h2 class="split__heading" data-reveal>The challenge</h2>
           <div class="prose">
             <ul>
               <li><strong>Problem one.</strong> Explanation.</li>
@@ -103,7 +104,7 @@
         </section>
 
         <section class="split">
-          <h2 class="split__heading">Key features</h2>
+          <h2 class="split__heading" data-reveal>Key features</h2>
           <div class="prose">
             <h3>Feature name</h3>
             <p>What it does and the design decisions behind it.</p>
@@ -132,14 +133,14 @@
 
       <div class="container container--narrow">
         <section class="split">
-          <h2 class="split__heading">Outcome</h2>
+          <h2 class="split__heading" data-reveal>Outcome</h2>
           <div class="prose">
             <div class="callout"><p><strong>Result:</strong> a measurable outcome.</p></div>
           </div>
         </section>
 
         <section class="split">
-          <h2 class="split__heading">Reflection</h2>
+          <h2 class="split__heading" data-reveal>Reflection</h2>
           <div class="prose prose--lead">
             <p>What you learned, in your own words.</p>
           </div>
@@ -161,7 +162,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
