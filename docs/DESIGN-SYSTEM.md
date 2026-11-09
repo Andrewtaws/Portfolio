@@ -88,7 +88,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Portrait | `.portrait`, `.portrait__img` | Profile photo |
 | Work grid and card | `.work-grid`, `.card` + `--feature`, `--tall`, `--wide` | Homepage case study cards |
 | Case hero | `.case-hero` | Top of a case study |
-| Case summary | `.case-summary`, `__head`, `__title`, `__facts`, `__fact`, `__foot` | Project overview card: role, company and type pills, facts row, methods |
+| Case summary | `.case-summary`, `__head`, `__title`, `__tldr`, `__facts`, `__fact`, `__foot` | Project overview card: role, company and type pills, TL;DR, facts row, methods |
 | Pills | `.pill`, `.pill--accent`, `.pill--sm`, `.pill-list` | Rounded tags |
 | Split section | `.split`, `.split__heading` | Heading left, content right |
 | Prose | `.prose`, `.prose--lead` | Body copy with rhythm |

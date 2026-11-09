@@ -884,8 +884,7 @@
   overflow: hidden;
 }
 
-.case-summary dl,
-.case-summary dd {
+.case-summary :where(dl, dd) {
   margin: 0;
 }
 
@@ -923,6 +922,19 @@
   margin-block-end: var(--space-1);
 }
 
+/* TL;DR: a one- or two-sentence overview under the role and tags */
+.case-summary__tldr {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 65ch;
+}
+
+.case-summary__tldr dd {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+}
+
 /* Facts row: label over value, divided by thin vertical rules */
 .case-summary__facts {
   display: flex;
@@ -952,7 +964,9 @@
 .case-summary__foot {
   display: grid;
   gap: var(--space-3);
-  padding: var(--space-5) clamp(var(--space-5), 3vw, var(--space-6));
+  /* Inset by the card's padding, so the divider lines up with the text */
+  margin-inline: clamp(var(--space-5), 3vw, var(--space-6));
+  padding-block: var(--space-5);
   border-top: 1px solid var(--color-border);
 }
 

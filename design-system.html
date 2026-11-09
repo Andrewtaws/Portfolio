@@ -378,7 +378,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="case-summary">Case summary</h3>
-<p>The project overview card at the top of a case study: the role as a title with pill tags for the company and project type, an optional row of facts (timeline, team, tools) split by thin rules, and a footer of methods as pills. Every label/value pair is a description list, so each label is announced with its value. Leave out the facts row when there’s nothing to show.</p>
+<p>The project overview card at the top of a case study: the role as a title with pill tags for the company and project type, a TL;DR of one or two sentences (announced as “Summary” to screen readers), an optional row of facts (timeline, team, tools) split by thin rules, and a footer of methods as pills. Every label/value pair is a description list, so each label is announced with its value. Leave out the facts row when there’s nothing to show.</p>
 <div class="specimen">
 <div data-reveal class="case-summary" role="group" aria-label="Project summary">
   <div class="case-summary__body">
@@ -392,6 +392,10 @@
         <li class="pill pill--accent">UX design case study</li>
       </ul>
     </div>
+    <dl class="case-summary__tldr">
+      <dt class="case-summary__label"><span aria-hidden="true">TL;DR</span><span class="visually-hidden">Summary</span></dt>
+      <dd>One or two sentences on what the project was and what you did.</dd>
+    </dl>
     <dl class="case-summary__facts">
       <div class="case-summary__fact">
         <dt class="case-summary__label">Timeline</dt>
@@ -426,6 +430,10 @@
         &lt;li class=&quot;pill pill--accent&quot;&gt;UX design case study&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
+    &lt;dl class=&quot;case-summary__tldr&quot;&gt;
+      &lt;dt class=&quot;case-summary__label&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;TL;DR&lt;/span&gt;&lt;span class=&quot;visually-hidden&quot;&gt;Summary&lt;/span&gt;&lt;/dt&gt;
+      &lt;dd&gt;One or two sentences on what the project was and what you did.&lt;/dd&gt;
+    &lt;/dl&gt;
     &lt;dl class=&quot;case-summary__facts&quot;&gt;
       &lt;div class=&quot;case-summary__fact&quot;&gt;
         &lt;dt class=&quot;case-summary__label&quot;&gt;Timeline&lt;/dt&gt;
