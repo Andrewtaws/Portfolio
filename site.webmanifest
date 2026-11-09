@@ -1,0 +1,11 @@
+{
+  "name": "Taws.Design – Andrew Taws",
+  "short_name": "Taws.Design",
+  "icons": [
+    { "src": "assets/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#07354d",
+  "background_color": "#fffcfc",
+  "display": "browser"
+}

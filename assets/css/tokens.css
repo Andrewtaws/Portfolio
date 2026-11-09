@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Taws.Design: design tokens
+   --------------------------------------------------------------------------
+   The single source of truth for colour, type, spacing and shape.
+   Every component reads from these custom properties. Change a value here
+   and it updates everywhere. Documented in design-system.html.
+   ========================================================================== */
+
+/* Fonts: self-hosted Latin subsets (no third-party requests) -------------- */
+@font-face {
+  font-family: "Albert Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/albert-sans-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Borel";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/borel-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/inter-900-latin.woff2") format("woff2");
+}
+
+:root {
+  /* ---- Colour: primitives ---------------------------------------------- */
+  --navy-900: #07354d;   /* Text and headings: 12.7:1 on canvas */
+  --navy-800: #06334a;   /* Buttons */
+  --navy-700: #0d4766;   /* Button hover */
+  --slate-600: #4a6575;  /* Muted text: 6:1 on canvas */
+  --sand-100: #f3f1ef;   /* Card surface */
+  --snow-50: #fffcfc;    /* Page canvas */
+  --white: #ffffff;
+  --black: #000000;
+  --sky-200: #b8d3ed;    /* Media band behind screenshots */
+  --amber-500: #e8890c;  /* Decorative only: never for text or focus */
+  --amber-700: #b35c00;  /* Focus ring on light: 4.6:1 */
+  --amber-300: #ffb84d;  /* Focus ring on dark: 12.2:1 */
+  --green-500: #16a085;  /* Status dot: decorative, always paired with text */
+  --red-700: #b42318;    /* Errors: 6.4:1 */
+
+  /* ---- Colour: semantic roles (use these in components) ----------------- */
+  --color-bg: var(--snow-50);
+  --color-surface: var(--sand-100);
+  --color-surface-raised: var(--white);
+  --color-text: var(--navy-900);
+  --color-text-muted: var(--slate-600);
+  --color-heading: var(--navy-900);
+  --color-link: var(--navy-900);
+  --color-action: var(--navy-800);
+  --color-action-hover: var(--navy-700);
+  --color-on-action: var(--white);
+  --color-accent: var(--amber-500);
+  --color-focus: var(--amber-700);
+  --color-focus-inverse: var(--amber-300);
+  --color-media-band: var(--sky-200);
+  --color-success: var(--green-500);
+  --color-error: var(--red-700);
+  --color-inverse-bg: var(--black);
+  --color-inverse-text: var(--white);
+  --color-border: #d9d4cf;
+  --color-border-strong: var(--navy-900);
+
+  /* ---- Typography ------------------------------------------------------- */
+  --font-sans: "Albert Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-script: "Borel", "Segoe Script", cursive;
+  --font-display: "Inter", "Albert Sans", system-ui, sans-serif;
+
+  /* Fluid type scale: 320px to 1440px viewport */
+  --text-sm: 0.9375rem;                                   /* 15px: smallest text */
+  --text-base: 1.125rem;                                  /* 18px: body */
+  --text-label: 1rem;                                     /* 16px: labels, nav, chips */
+  --text-lead: clamp(1.25rem, 1.164rem + 0.43vw, 1.5rem);  /* 20 to 24px */
+  --text-h3: clamp(1.375rem, 1.226rem + 0.71vw, 1.8125rem); /* 22 to 29px */
+  --text-h2: clamp(1.625rem, 1.486rem + 0.71vw, 2rem);     /* 26 to 32px */
+  --text-card-title: clamp(1.25rem, 1.164rem + 0.43vw, 1.5rem);
+  --text-h1: clamp(2.5rem, 1.786rem + 3.57vw, 4.5rem);     /* 40 to 72px */
+  --text-display: clamp(2.5rem, 1.83rem + 3.35vw, 4.375rem); /* 40 to 70px */
+  --text-script: 1.5rem;                                   /* 24px */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.4;
+  --leading-normal: 1.6;
+
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.04em;
+  --tracking-body: -0.02em;
+
+  /* ---- Spacing (4px base) ----------------------------------------------- */
+  --space-1: 0.25rem;  /* 4  */
+  --space-2: 0.5rem;   /* 8  */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+
+  --section-gap: clamp(var(--space-8), 6vw, var(--space-10));
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --container-max: 75rem;      /* 1200px */
+  --container-narrow: 69.375rem; /* 1110px: case studies */
+  --container-prose: 40rem;    /* 640px: comfortable line length */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+  /* ---- Shape & elevation ----------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgb(7 53 77 / 0.08);
+  --shadow-md: 0 8px 24px rgb(7 53 77 / 0.12);
+
+  /* ---- Interaction ------------------------------------------------------ */
+  --target-min: 44px;          /* Comfortably above the WCAG 2.5.8 minimum */
+  --focus-width: 3px;
+  --focus-offset: 3px;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}

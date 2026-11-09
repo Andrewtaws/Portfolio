@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design system – Taws.Design</title>
+  <meta name="description" content="The Taws.Design design system: tokens, typography, components and page templates used to build andrewtaws.co.uk.">
+  <link rel="canonical" href="https://andrewtaws.co.uk/design-system">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Taws.Design">
+  <meta property="og:title" content="Design system – Taws.Design">
+  <meta property="og:description" content="The Taws.Design design system: tokens, typography, components and page templates used to build andrewtaws.co.uk.">
+  <meta property="og:url" content="https://andrewtaws.co.uk/design-system">
+  <meta property="og:image" content="https://andrewtaws.co.uk/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Andrew Taws, Lead UX Product Designer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#07354d">
+
+  <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="./">Taws.Design<span class="visually-hidden"> – home</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html#work">Work</a></li>
+          <li><a class="site-nav__link" href="about.html">About</a></li>
+          <li><a class="site-nav__link site-nav__link--cta" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+<div class="container container--narrow">
+  <header class="case-hero">
+    <p class="eyebrow">Taws.Design</p>
+    <h1>Design system</h1>
+    <p class="lead">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
+  </header>
+
+  <nav class="ds-nav" aria-label="Design system sections">
+    <ul>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#files">Files</a></li>
+      <li><a href="#colour">Colour</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#spacing">Spacing</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#templates">Page templates</a></li>
+    </ul>
+  </nav>
+
+<section class="split" id="principles">
+  <h2 class="split__heading">Principles</h2>
+  <div class="prose">
+    <ul>
+      <li><strong>Accessible by default.</strong> Every component meets WCAG 2.2 AA out of the box: contrast, focus, target size, semantics. Using the component as documented is enough.</li>
+      <li><strong>Tokens, not values.</strong> Components only read CSS custom properties from <code>tokens.css</code>. Change a token and the whole site follows.</li>
+      <li><strong>HTML first.</strong> Native elements (<code>&lt;details&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;button&gt;</code>) before ARIA. JavaScript only where HTML can’t do the job, and always as an enhancement.</li>
+      <li><strong>Copy, paste, adjust.</strong> Every example on this page is the real markup. Copy it into a page and change the content.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split" id="files">
+  <h2 class="split__heading">Files</h2>
+  <div class="prose">
+    <p>Load the three stylesheets in this order on every page:</p>
+    <ol>
+      <li><code>assets/css/tokens.css</code>: fonts and design tokens (colour, type, spacing, shape)</li>
+      <li><code>assets/css/base.css</code>: reset, element styles, typography, focus and utility classes</li>
+      <li><code>assets/css/components.css</code>: every component below, in BEM naming (<code>.block__element--modifier</code>)</li>
+    </ol>
+    <p>Starting a page? Copy a file from the <code>templates/</code> folder. See <a href="#templates">page templates</a>.</p>
+  </div>
+</section>
+
+<section class="section ds-section" id="colour" aria-labelledby="colour-title">
+<h2 id="colour-title">Colour</h2>
+<div class="prose"><p>Primitive tokens hold the raw values. Components use the <strong>semantic</strong> tokens (<code>--color-text</code>, <code>--color-action</code> and so on), so a theme change happens in one place. The ratio shown is against the page canvas (<code>#fffcfc</code>), or against black for the dark-surface focus colour.</p></div>
+<ul class="swatch-grid" style="margin-block-start: var(--space-5)">
+<li class="swatch"><div class="swatch__colour" style="background:#07354d"></div><div class="swatch__info"><strong>Text, headings, links</strong><code>--navy-900</code><code>#07354d</code><span class="text-muted">12.7:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#06334a"></div><div class="swatch__info"><strong>Primary buttons</strong><code>--navy-800</code><code>#06334a</code><span class="text-muted">13.0:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#0d4766"></div><div class="swatch__info"><strong>Button hover</strong><code>--navy-700</code><code>#0d4766</code><span class="text-muted">9.8:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#4a6575"></div><div class="swatch__info"><strong>Muted text</strong><code>--slate-600</code><code>#4a6575</code><span class="text-muted">6.0:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#fffcfc"></div><div class="swatch__info"><strong>Page canvas</strong><code>--snow-50</code><code>#fffcfc</code><span class="text-muted">Surface</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#f3f1ef"></div><div class="swatch__info"><strong>Card surface</strong><code>--sand-100</code><code>#f3f1ef</code><span class="text-muted">Surface</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#ffffff"></div><div class="swatch__info"><strong>Raised surface, inputs</strong><code>--white</code><code>#ffffff</code><span class="text-muted">Surface</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#b8d3ed"></div><div class="swatch__info"><strong>Media band behind screenshots</strong><code>--sky-200</code><code>#b8d3ed</code><span class="text-muted">Surface</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#000000"></div><div class="swatch__info"><strong>Footer</strong><code>--black</code><code>#000000</code><span class="text-muted">Surface</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#b35c00"></div><div class="swatch__info"><strong>Focus ring on light</strong><code>--amber-700</code><code>#b35c00</code><span class="text-muted">4.6:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#ffb84d"></div><div class="swatch__info"><strong>Focus ring on dark</strong><code>--amber-300</code><code>#ffb84d</code><span class="text-muted">12.2:1, AA text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#e8890c"></div><div class="swatch__info"><strong>Decorative accent only</strong><code>--amber-500</code><code>#e8890c</code><span class="text-muted">2.6:1, not for text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#16a085"></div><div class="swatch__info"><strong>Status dot (decorative)</strong><code>--green-500</code><code>#16a085</code><span class="text-muted">3.2:1, not for text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#b42318"></div><div class="swatch__info"><strong>Errors</strong><code>--red-700</code><code>#b42318</code><span class="text-muted">6.4:1, AA text</span></div></li>
+</ul>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Semantic colour tokens table" style="margin-block-start: var(--space-6)">
+<table class="token-table">
+  <caption class="visually-hidden">Semantic colour tokens</caption>
+  <thead><tr><th scope="col">Semantic token</th><th scope="col">Maps to</th><th scope="col">Use for</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-bg</code></td><td><code>--snow-50</code></td><td>Page background</td></tr>
+    <tr><td><code>--color-surface</code></td><td><code>--sand-100</code></td><td>Cards, summary boxes, form panels</td></tr>
+    <tr><td><code>--color-text</code> / <code>--color-heading</code></td><td><code>--navy-900</code></td><td>All body text and headings</td></tr>
+    <tr><td><code>--color-text-muted</code></td><td><code>--slate-600</code></td><td>Hints, labels in metadata</td></tr>
+    <tr><td><code>--color-action</code></td><td><code>--navy-800</code></td><td>Primary buttons, nav call to action</td></tr>
+    <tr><td><code>--color-focus</code></td><td><code>--amber-700</code></td><td>Focus outlines on light surfaces</td></tr>
+    <tr><td><code>--color-focus-inverse</code></td><td><code>--amber-300</code></td><td>Focus outlines inside <code>.on-dark</code></td></tr>
+    <tr><td><code>--color-media-band</code></td><td><code>--sky-200</code></td><td>Full-width band behind screenshots</td></tr>
+    <tr><td><code>--color-accent</code></td><td><code>--amber-500</code></td><td>Greeting underline, icon circles. Never text.</td></tr>
+    <tr><td><code>--color-error</code></td><td><code>--red-700</code></td><td>Error text and borders</td></tr>
+  </tbody>
+</table>
+</div>
+</section>
+<section class="section ds-section" id="typography" aria-labelledby="type-title">
+<h2 id="type-title">Typography</h2>
+<div class="prose"><p><strong>Albert Sans</strong> (400–700) for everything, <strong>Borel</strong> for the greeting, and <strong>Inter Black</strong> for the footer display line. All fonts are self-hosted. Sizes are fluid between 320px and 1440px viewports using <code>clamp()</code>, so text also scales with browser zoom.</p></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Type scale table" style="margin-block-start: var(--space-5)">
+<table class="token-table">
+  <caption class="visually-hidden">Type scale</caption>
+  <thead><tr><th scope="col">Style</th><th scope="col">Token / class</th><th scope="col">Size</th><th scope="col">Weight</th></tr></thead>
+  <tbody>
+    <tr><td><span class="h1" style="font-size:2.5rem">Heading 1</span></td><td><code>h1</code>, <code>.h1</code>, <code>--text-h1</code></td><td>40–72px</td><td>700</td></tr>
+    <tr><td><span class="h2">Heading 2</span></td><td><code>h2</code>, <code>.h2</code>, <code>--text-h2</code></td><td>26–32px</td><td>600</td></tr>
+    <tr><td><span class="h3">Heading 3</span></td><td><code>h3</code>, <code>.h3</code>, <code>--text-h3</code></td><td>22–29px</td><td>500</td></tr>
+    <tr><td><span class="h4">Heading 4</span></td><td><code>h4</code>, <code>.h4</code></td><td>20–24px</td><td>700</td></tr>
+    <tr><td><span class="lead">Lead paragraph</span></td><td><code>.lead</code>, <code>--text-lead</code></td><td>20–24px</td><td>500</td></tr>
+    <tr><td>Body text</td><td><code>body</code>, <code>--text-base</code></td><td>18px</td><td>400</td></tr>
+    <tr><td><strong style="font-size:1rem">Label</strong></td><td><code>--text-label</code></td><td>16px</td><td>700</td></tr>
+    <tr><td><span class="text-sm">Small text</span></td><td><code>.text-sm</code>, <code>--text-sm</code></td><td>15px (minimum)</td><td>400–700</td></tr>
+    <tr><td><span style="font-family:var(--font-script);font-size:1.5rem">Alreet!</span></td><td><code>.greeting</code>, <code>--font-script</code></td><td>24px</td><td>400</td></tr>
+    <tr><td><span style="font-family:var(--font-display);font-weight:900;font-size:1.75rem">Display</span></td><td><code>.site-footer__title</code>, <code>--text-display</code></td><td>40–70px</td><td>900</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="prose" style="margin-block-start: var(--space-5)"><p>Keep one <code>&lt;h1&gt;</code> per page and never skip a heading level. If a heading needs to look smaller than its level, use a class: <code>&lt;h2 class="h4"&gt;</code>.</p></div>
+</section>
+<section class="section ds-section" id="spacing" aria-labelledby="spacing-title">
+<h2 id="spacing-title">Spacing, shape and focus</h2>
+<div class="prose"><p>A 4px-based scale. Use tokens for every margin, padding and gap.</p></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Spacing scale table" style="margin-block-start: var(--space-5)"><table class="token-table"><caption class="visually-hidden">Spacing scale</caption><thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col"><span class="visually-hidden">Visual size</span></th></tr></thead><tbody>
+<tr><td><code>--space-1</code></td><td>4px</td><td><span style="display:block;height:12px;width:4px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-2</code></td><td>8px</td><td><span style="display:block;height:12px;width:8px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-3</code></td><td>12px</td><td><span style="display:block;height:12px;width:12px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-4</code></td><td>16px</td><td><span style="display:block;height:12px;width:16px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-5</code></td><td>24px</td><td><span style="display:block;height:12px;width:24px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-6</code></td><td>32px</td><td><span style="display:block;height:12px;width:32px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-7</code></td><td>48px</td><td><span style="display:block;height:12px;width:48px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-8</code></td><td>64px</td><td><span style="display:block;height:12px;width:64px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-9</code></td><td>96px</td><td><span style="display:block;height:12px;width:96px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+<tr><td><code>--space-10</code></td><td>128px</td><td><span style="display:block;height:12px;width:128px;max-width:100%;background:var(--navy-900);border-radius:2px" aria-hidden="true"></span></td></tr>
+</tbody></table></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Shape, focus and interaction tokens table" style="margin-block-start: var(--space-6)"><table class="token-table"><caption class="visually-hidden">Shape, focus and interaction tokens</caption><thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use for</th></tr></thead><tbody>
+<tr><td><code>--radius-sm</code></td><td>4px</td><td>Cards, buttons, images, inputs</td></tr>
+<tr><td><code>--radius-lg</code></td><td>18px</td><td>Footer top corners</td></tr>
+<tr><td><code>--focus-width</code> / <code>--focus-offset</code></td><td>3px / 3px</td><td>The focus ring used by every interactive element (WCAG 2.4.7, 2.4.13)</td></tr>
+<tr><td><code>--target-min</code></td><td>44px</td><td>Minimum height of every link and button that isn’t inline in text (WCAG 2.5.8)</td></tr>
+<tr><td><code>--container-max</code></td><td>1200px</td><td><code>.container</code> width</td></tr>
+<tr><td><code>--container-narrow</code></td><td>1110px</td><td><code>.container--narrow</code>, used on case studies</td></tr>
+<tr><td><code>--container-prose</code></td><td>640px</td><td>Maximum line length for body copy</td></tr>
+</tbody></table></div>
+</section>
+<section class="section ds-section" id="layout" aria-labelledby="layout-title">
+<h2 id="layout-title">Layout</h2>
+<h3 id="container">Container</h3>
+<p>Centres content with responsive side gutters. Add <code>container--narrow</code> for case study width.</p>
+<div class="specimen">
+<div class="container">
+  <p>Content sits inside a 1200px column with fluid gutters.</p>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;p&gt;Content sits inside a 1200px column with fluid gutters.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="split-section">Split section</h3>
+<p>The case study pattern: heading on the left, content on the right. Stacks on small screens. The heading becomes sticky on wide screens.</p>
+<div class="specimen">
+<section class="split">
+  <h2 class="split__heading">Overview</h2>
+  <div class="prose">
+    <p>Body copy, lists and sub-headings go here.</p>
+  </div>
+</section>
+</div>
+<pre class="code-block"><code>&lt;section class=&quot;split&quot;&gt;
+  &lt;h2 class=&quot;split__heading&quot;&gt;Overview&lt;/h2&gt;
+  &lt;div class=&quot;prose&quot;&gt;
+    &lt;p&gt;Body copy, lists and sub-headings go here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<h3 id="media-band">Media band</h3>
+<p>A full-width light blue band for screenshots. Place it between containers, never inside one, so it can reach the screen edges. <code>media-band--plain</code> uses the card colour instead.</p>
+<div class="specimen">
+<div class="media-band">
+  <div class="container">
+    <figure class="figure figure--contained">
+      <img src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436"
+           alt="Describe what the screenshot shows" loading="lazy">
+    </figure>
+  </div>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;media-band&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;figure class=&quot;figure figure--contained&quot;&gt;
+      &lt;img src=&quot;assets/images/shared/checker-dashboard.webp&quot; width=&quot;1915&quot; height=&quot;1436&quot;
+           alt=&quot;Describe what the screenshot shows&quot; loading=&quot;lazy&quot;&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="layout-helpers">Layout helpers</h3>
+<p><code>.flow</code> adds consistent space between siblings. <code>.stack</code> is a vertical flex column, <code>.cluster</code> a wrapping row. Set <code>--flow-space</code>, <code>--stack-gap</code> or <code>--cluster-gap</code> to adjust.</p>
+<div class="specimen">
+<ul class="cluster">
+  <li class="chip chip--outline">Cluster item</li>
+  <li class="chip chip--outline">Wraps when space runs out</li>
+  <li class="chip chip--outline">Gap from a token</li>
+</ul>
+</div>
+<pre class="code-block"><code>&lt;ul class=&quot;cluster&quot;&gt;
+  &lt;li class=&quot;chip chip--outline&quot;&gt;Cluster item&lt;/li&gt;
+  &lt;li class=&quot;chip chip--outline&quot;&gt;Wraps when space runs out&lt;/li&gt;
+  &lt;li class=&quot;chip chip--outline&quot;&gt;Gap from a token&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section>
+<section class="section ds-section" id="components" aria-labelledby="components-title">
+<h2 id="components-title">Components</h2>
+<h3 id="buttons">Buttons</h3>
+<p>Use <code>&lt;a class="btn"&gt;</code> for navigation and <code>&lt;button class="btn"&gt;</code> for actions. Variants: <code>btn--primary</code>, <code>btn--secondary</code>, <code>btn--inverse</code> and <code>btn--ghost-inverse</code> (on dark backgrounds), and <code>btn--block</code> for full width.</p>
+<p class="text-sm"><strong>Accessibility:</strong> 44px minimum height. Icons are hidden from assistive tech with <code>aria-hidden="true"</code>, so the visible text is the accessible name. Links that open a new tab add <code>&lt;span class="visually-hidden"&gt; (opens in a new tab)&lt;/span&gt;</code>.</p>
+<div class="specimen">
+<div class="cluster">
+  <a class="btn btn--primary" href="#components">Primary</a>
+  <a class="btn btn--secondary" href="#components">Secondary</a>
+  <button class="btn btn--primary" type="button">
+    <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+    With icon
+  </button>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;cluster&quot;&gt;
+  &lt;a class=&quot;btn btn--primary&quot; href=&quot;#components&quot;&gt;Primary&lt;/a&gt;
+  &lt;a class=&quot;btn btn--secondary&quot; href=&quot;#components&quot;&gt;Secondary&lt;/a&gt;
+  &lt;button class=&quot;btn btn--primary&quot; type=&quot;button&quot;&gt;
+    &lt;svg class=&quot;btn__icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z&quot;/&gt;&lt;/svg&gt;
+    With icon
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="buttons-on-dark">Buttons on dark</h3>
+<p>Inside <code>.on-dark</code> the focus ring switches to the light amber automatically.</p>
+<div class="specimen">
+<div class="on-dark cluster" style="background:var(--black);padding:var(--space-5);border-radius:var(--radius-sm)">
+  <a class="btn btn--inverse" href="#components">Inverse</a>
+  <a class="btn btn--ghost-inverse" href="#components">Ghost inverse</a>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;on-dark cluster&quot; style=&quot;background:var(--black);padding:var(--space-5);border-radius:var(--radius-sm)&quot;&gt;
+  &lt;a class=&quot;btn btn--inverse&quot; href=&quot;#components&quot;&gt;Inverse&lt;/a&gt;
+  &lt;a class=&quot;btn btn--ghost-inverse&quot; href=&quot;#components&quot;&gt;Ghost inverse&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
+<p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
+<div class="specimen">
+<p class="greeting">Alreet!</p>
+<p class="eyebrow">UX design case study · Recite Me</p>
+</div>
+<pre class="code-block"><code>&lt;p class=&quot;greeting&quot;&gt;Alreet!&lt;/p&gt;
+&lt;p class=&quot;eyebrow&quot;&gt;UX design case study · Recite Me&lt;/p&gt;</code></pre>
+<h3 id="chips">Chips</h3>
+<p>Category labels on cards, and outlined chips for lists of skills. Use <code>chip-list</code> on a <code>&lt;ul&gt;</code> for groups.</p>
+<div class="specimen" style="background:var(--color-surface)">
+<p class="chip">UX Design Case Study</p>
+<ul class="chip-list" aria-label="Specialisms" style="margin-block-start: var(--space-4)">
+  <li class="chip chip--outline">Design systems</li>
+  <li class="chip chip--outline">User research</li>
+</ul>
+</div>
+<pre class="code-block"><code>&lt;p class=&quot;chip&quot;&gt;UX Design Case Study&lt;/p&gt;
+&lt;ul class=&quot;chip-list&quot; aria-label=&quot;Specialisms&quot; style=&quot;margin-block-start: var(--space-4)&quot;&gt;
+  &lt;li class=&quot;chip chip--outline&quot;&gt;Design systems&lt;/li&gt;
+  &lt;li class=&quot;chip chip--outline&quot;&gt;User research&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<h3 id="status-badge">Status badge</h3>
+<p>The dot is decorative. The text always carries the meaning.</p>
+<div class="specimen">
+<p class="status-badge"><span class="status-badge__dot" aria-hidden="true"></span>Open to work</p>
+</div>
+<pre class="code-block"><code>&lt;p class=&quot;status-badge&quot;&gt;&lt;span class=&quot;status-badge__dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Open to work&lt;/p&gt;</code></pre>
+<h3 id="scroll-link">Scroll link</h3>
+<p>An in-page link with a decorative icon, such as “Explore my work”.</p>
+<div class="specimen">
+<a class="scroll-link" href="#components">
+  <span class="scroll-link__icon" aria-hidden="true">
+    <svg viewBox="0 0 12 12" focusable="false"><path d="M6 1.5v8M2.5 6 6 9.5 9.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
+  Explore my work
+</a>
+</div>
+<pre class="code-block"><code>&lt;a class=&quot;scroll-link&quot; href=&quot;#components&quot;&gt;
+  &lt;span class=&quot;scroll-link__icon&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 12 12&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M6 1.5v8M2.5 6 6 9.5 9.5 6&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+  Explore my work
+&lt;/a&gt;</code></pre>
+<h3 id="work-card">Work card</h3>
+<p>The heading comes first in the source, so screen reader users hear the title before the category, and CSS grid places it at the bottom visually. The link stretches over the whole card, giving one tab stop and one focus ring. Card images use <code>alt=""</code> because the title already names the card. Modifiers: <code>card--feature</code>, <code>card--tall</code>, <code>card--wide</code>. Wrap cards in <code>&lt;ul class="work-grid"&gt;</code>.</p>
+<div class="specimen">
+<div class="card card--wide" style="max-width:34rem">
+  <h3 class="card__title"><a class="card__link" href="work/design-system.html">Recite Me Design System</a></h3>
+  <p class="chip card__chip">Design System</p>
+  <div class="card__media">
+    <img src="assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="" loading="lazy">
+  </div>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;card card--wide&quot; style=&quot;max-width:34rem&quot;&gt;
+  &lt;h3 class=&quot;card__title&quot;&gt;&lt;a class=&quot;card__link&quot; href=&quot;work/design-system.html&quot;&gt;Recite Me Design System&lt;/a&gt;&lt;/h3&gt;
+  &lt;p class=&quot;chip card__chip&quot;&gt;Design System&lt;/p&gt;
+  &lt;div class=&quot;card__media&quot;&gt;
+    &lt;img src=&quot;assets/images/home/home-card-design-system.webp&quot; width=&quot;1524&quot; height=&quot;684&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="case-meta">Case meta</h3>
+<p>The project summary at the top of a case study. A description list, so each label is announced with its value. Add <code>case-meta__item--wide</code> to span the full row.</p>
+<div class="specimen">
+<dl class="case-meta" aria-label="Project summary">
+  <div class="case-meta__item">
+    <dt>My role</dt>
+    <dd>Lead UX Product Designer</dd>
+  </div>
+  <div class="case-meta__item">
+    <dt>Company</dt>
+    <dd>Recite Me</dd>
+  </div>
+  <div class="case-meta__item case-meta__item--wide">
+    <dt>What I did</dt>
+    <dd>Research, user flows, high-fidelity UI, prototyping</dd>
+  </div>
+</dl>
+</div>
+<pre class="code-block"><code>&lt;dl class=&quot;case-meta&quot; aria-label=&quot;Project summary&quot;&gt;
+  &lt;div class=&quot;case-meta__item&quot;&gt;
+    &lt;dt&gt;My role&lt;/dt&gt;
+    &lt;dd&gt;Lead UX Product Designer&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;case-meta__item&quot;&gt;
+    &lt;dt&gt;Company&lt;/dt&gt;
+    &lt;dd&gt;Recite Me&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;case-meta__item case-meta__item--wide&quot;&gt;
+    &lt;dt&gt;What I did&lt;/dt&gt;
+    &lt;dd&gt;Research, user flows, high-fidelity UI, prototyping&lt;/dd&gt;
+  &lt;/div&gt;
+&lt;/dl&gt;</code></pre>
+<h3 id="figure-and-gallery">Figure and gallery</h3>
+<p>Screenshots go in <code>&lt;figure&gt;</code> with descriptive alt text. Use <code>&lt;figcaption&gt;</code> for a short visible label. Galleries: <code>gallery--2</code>, <code>gallery--3</code>, and <code>gallery--device</code> (a desktop screen beside its mobile version). For very tall screenshots add <code>figure--tall</code> to crop them, plus a link to the full image.</p>
+<p class="text-sm"><strong>Accessibility:</strong> Always set <code>width</code> and <code>height</code> to prevent layout shift. Add <code>loading="lazy"</code> to every image below the fold. Text-heavy images, such as personas, need a full text version: use the disclosure below.</p>
+<div class="specimen" style="background:var(--color-media-band)">
+<ul class="gallery gallery--2">
+  <li>
+    <figure class="figure">
+      <img src="assets/images/checker/checker-12-report-wcag-level.webp" width="1728" height="1117"
+           alt="Create a report, step 2: select the WCAG level." loading="lazy">
+      <figcaption>2. Select the WCAG level</figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure class="figure">
+      <img src="assets/images/checker/checker-13-report-date-range.webp" width="1728" height="1117"
+           alt="Create a report, step 3: add a date range." loading="lazy">
+      <figcaption>3. Set a date range</figcaption>
+    </figure>
+  </li>
+</ul>
+</div>
+<pre class="code-block"><code>&lt;ul class=&quot;gallery gallery--2&quot;&gt;
+  &lt;li&gt;
+    &lt;figure class=&quot;figure&quot;&gt;
+      &lt;img src=&quot;assets/images/checker/checker-12-report-wcag-level.webp&quot; width=&quot;1728&quot; height=&quot;1117&quot;
+           alt=&quot;Create a report, step 2: select the WCAG level.&quot; loading=&quot;lazy&quot;&gt;
+      &lt;figcaption&gt;2. Select the WCAG level&lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;figure class=&quot;figure&quot;&gt;
+      &lt;img src=&quot;assets/images/checker/checker-13-report-date-range.webp&quot; width=&quot;1728&quot; height=&quot;1117&quot;
+           alt=&quot;Create a report, step 3: add a date range.&quot; loading=&quot;lazy&quot;&gt;
+      &lt;figcaption&gt;3. Set a date range&lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<h3 id="disclosure">Disclosure</h3>
+<p>A native <code>&lt;details&gt;</code> element for optional detail, such as a transcript of a text-heavy image. Keyboard and screen reader support come built in.</p>
+<div class="specimen">
+<details class="disclosure">
+  <summary class="disclosure__summary">Read the persona</summary>
+  <div class="disclosure__body">
+    <h4>Bio</h4>
+    <p>Full text alternative for the image goes here.</p>
+  </div>
+</details>
+</div>
+<pre class="code-block"><code>&lt;details class=&quot;disclosure&quot;&gt;
+  &lt;summary class=&quot;disclosure__summary&quot;&gt;Read the persona&lt;/summary&gt;
+  &lt;div class=&quot;disclosure__body&quot;&gt;
+    &lt;h4&gt;Bio&lt;/h4&gt;
+    &lt;p&gt;Full text alternative for the image goes here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+<h3 id="callout">Callout</h3>
+<p>Highlights a key point, quote or result within prose.</p>
+<div class="specimen">
+<div class="callout">
+  <p><strong>Result:</strong> one to three measurable outcomes read well here.</p>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;callout&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; one to three measurable outcomes read well here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="pager">Pager</h3>
+<p>Previous and next links at the end of a case study. Leave out the item that doesn’t apply. <code>.pager__item--next</code> always sits on the right.</p>
+<div class="specimen">
+<nav class="pager" aria-label="Case studies" style="padding:0">
+  <ul class="pager__list">
+    <li class="pager__item--prev">
+      <a class="pager__link" href="work/checker.html" rel="prev">
+        <span class="pager__label">Previous case study</span>
+        <span class="pager__title">Recite Me Accessibility Checker</span>
+      </a>
+    </li>
+    <li class="pager__item--next">
+      <a class="pager__link" href="work/changing-health.html" rel="next">
+        <span class="pager__label">Next case study</span>
+        <span class="pager__title">Changing Health &amp; NHS</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+<pre class="code-block"><code>&lt;nav class=&quot;pager&quot; aria-label=&quot;Case studies&quot; style=&quot;padding:0&quot;&gt;
+  &lt;ul class=&quot;pager__list&quot;&gt;
+    &lt;li class=&quot;pager__item--prev&quot;&gt;
+      &lt;a class=&quot;pager__link&quot; href=&quot;work/checker.html&quot; rel=&quot;prev&quot;&gt;
+        &lt;span class=&quot;pager__label&quot;&gt;Previous case study&lt;/span&gt;
+        &lt;span class=&quot;pager__title&quot;&gt;Recite Me Accessibility Checker&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;pager__item--next&quot;&gt;
+      &lt;a class=&quot;pager__link&quot; href=&quot;work/changing-health.html&quot; rel=&quot;next&quot;&gt;
+        &lt;span class=&quot;pager__label&quot;&gt;Next case study&lt;/span&gt;
+        &lt;span class=&quot;pager__title&quot;&gt;Changing Health &amp;amp; NHS&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+<h3 id="form-fields">Form fields</h3>
+<p>Every field has a visible <code>&lt;label&gt;</code> and the right <code>autocomplete</code> value. Error messages sit between the label and the input, start with hidden “Error:” text, and are linked with <code>aria-describedby</code>. The invalid state uses a thicker border, not only a colour change.</p>
+<p class="text-sm"><strong>Accessibility:</strong> <code>assets/js/contact-form.js</code> shows the validation pattern: validate on submit, show inline errors and an error summary, move focus to the summary, and prefix the page title with “Error:”.</p>
+<div class="specimen">
+<div class="form" style="max-width:32rem">
+  <div class="field">
+    <label class="field__label" for="ds-name">Name</label>
+    <input class="input" id="ds-name" name="ds-name" type="text" autocomplete="name">
+  </div>
+  <div class="field">
+    <label class="field__label" for="ds-email">Email</label>
+    <p class="field__hint" id="ds-email-hint">We’ll only use this to reply.</p>
+    <p class="field__error" id="ds-email-error"><span class="visually-hidden">Error: </span>Enter an email address in the correct format, like name@example.com</p>
+    <input class="input" id="ds-email" name="ds-email" type="email" autocomplete="email"
+           aria-invalid="true" aria-describedby="ds-email-hint ds-email-error">
+  </div>
+  <div class="field">
+    <label class="field__label" for="ds-message">Message <span class="field__optional">(optional)</span></label>
+    <textarea class="textarea" id="ds-message" name="ds-message" rows="4"></textarea>
+  </div>
+  <button class="btn btn--primary" type="button">Send message</button>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;form&quot; style=&quot;max-width:32rem&quot;&gt;
+  &lt;div class=&quot;field&quot;&gt;
+    &lt;label class=&quot;field__label&quot; for=&quot;ds-name&quot;&gt;Name&lt;/label&gt;
+    &lt;input class=&quot;input&quot; id=&quot;ds-name&quot; name=&quot;ds-name&quot; type=&quot;text&quot; autocomplete=&quot;name&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;field&quot;&gt;
+    &lt;label class=&quot;field__label&quot; for=&quot;ds-email&quot;&gt;Email&lt;/label&gt;
+    &lt;p class=&quot;field__hint&quot; id=&quot;ds-email-hint&quot;&gt;We’ll only use this to reply.&lt;/p&gt;
+    &lt;p class=&quot;field__error&quot; id=&quot;ds-email-error&quot;&gt;&lt;span class=&quot;visually-hidden&quot;&gt;Error: &lt;/span&gt;Enter an email address in the correct format, like name@example.com&lt;/p&gt;
+    &lt;input class=&quot;input&quot; id=&quot;ds-email&quot; name=&quot;ds-email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot;
+           aria-invalid=&quot;true&quot; aria-describedby=&quot;ds-email-hint ds-email-error&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;field&quot;&gt;
+    &lt;label class=&quot;field__label&quot; for=&quot;ds-message&quot;&gt;Message &lt;span class=&quot;field__optional&quot;&gt;(optional)&lt;/span&gt;&lt;/label&gt;
+    &lt;textarea class=&quot;textarea&quot; id=&quot;ds-message&quot; name=&quot;ds-message&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;btn btn--primary&quot; type=&quot;button&quot;&gt;Send message&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="error-summary">Error summary</h3>
+<p>Shown above a form when it’s submitted with errors. Give it <code>tabindex="-1"</code> and move focus to it, and link each error to its field.</p>
+<div class="specimen">
+<div class="error-summary" tabindex="-1">
+  <h4 class="error-summary__title">There is a problem</h4>
+  <ul class="error-summary__list">
+    <li><a href="#ds-email">Enter an email address in the correct format, like name@example.com</a></li>
+  </ul>
+</div>
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;error-summary&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;h4 class=&quot;error-summary__title&quot;&gt;There is a problem&lt;/h4&gt;
+  &lt;ul class=&quot;error-summary__list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#ds-email&quot;&gt;Enter an email address in the correct format, like name@example.com&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="contact-list">Contact list</h3>
+<p>A list of icon links, such as email, LinkedIn and CV.</p>
+<div class="specimen">
+<ul class="contact-list">
+  <li><a href="assets/files/andrew-taws-cv.pdf">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+    Download my CV (PDF)</a></li>
+</ul>
+</div>
+<pre class="code-block"><code>&lt;ul class=&quot;contact-list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;assets/files/andrew-taws-cv.pdf&quot;&gt;
+    &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z&quot;/&gt;&lt;/svg&gt;
+    Download my CV (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<h3 id="site-header-and-footer">Site header, footer and skip link</h3>
+<p>Copy these from any page or template. Every page needs, in order: the skip link as the first thing in <code>&lt;body&gt;</code>, the <code>&lt;header class="site-header"&gt;</code> with the main nav, <code>&lt;main id="main" tabindex="-1"&gt;</code>, and the <code>&lt;footer class="site-footer on-dark"&gt;</code>. Mark the current page’s nav link with <code>aria-current="page"</code>.</p>
+<pre class="code-block"><code>&lt;a class=&quot;skip-link&quot; href=&quot;#main&quot;&gt;Skip to main content&lt;/a&gt;
+&lt;header class=&quot;site-header&quot;&gt;
+  &lt;div class=&quot;container site-header__inner&quot;&gt;
+    &lt;a class=&quot;logo&quot; href=&quot;index.html&quot;&gt;Taws.Design&lt;span class=&quot;visually-hidden&quot;&gt; – home&lt;/span&gt;&lt;/a&gt;
+    &lt;nav class=&quot;site-nav&quot; aria-label=&quot;Main&quot;&gt;
+      &lt;ul class=&quot;site-nav__list&quot;&gt;
+        &lt;li&gt;&lt;a class=&quot;site-nav__link&quot; href=&quot;index.html#work&quot;&gt;Work&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;site-nav__link&quot; href=&quot;about.html&quot; aria-current=&quot;page&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;site-nav__link site-nav__link--cta&quot; href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;main id=&quot;main&quot; tabindex=&quot;-1&quot;&gt;
+  …
+&lt;/main&gt;</code></pre>
+</section>
+<section class="section ds-section" id="templates" aria-labelledby="templates-title">
+<h2 id="templates-title">Page templates</h2>
+<div class="prose">
+  <p>The <code>templates/</code> folder has ready-made starting points with the head, header, footer and the right stylesheets already in place:</p>
+  <ul>
+    <li><a href="templates/page.html"><code>templates/page.html</code></a>: a general content page (hero, split sections)</li>
+    <li><a href="templates/case-study.html"><code>templates/case-study.html</code></a>: a case study with summary, media bands, galleries and pager</li>
+  </ul>
+  <h3>Creating a new page</h3>
+  <ol>
+    <li>Copy a template to the right place, for example <code>work/new-project.html</code>.</li>
+    <li>Fix the relative paths. Templates sit one folder deep, so they use <code>../</code>. A page at the root needs <code>../</code> removed.</li>
+    <li>Update the <code>&lt;title&gt;</code>, meta description, canonical and Open Graph URLs.</li>
+    <li>Remove <code>&lt;meta name="robots" content="noindex"&gt;</code>.</li>
+    <li>Replace the placeholder content. Keep one <code>&lt;h1&gt;</code> and don’t skip heading levels.</li>
+    <li>Give every image a <code>width</code>, <code>height</code> and meaningful <code>alt</code>, or <code>alt=""</code> if it’s decorative.</li>
+    <li>Add a card to the homepage and update the pager links on neighbouring case studies.</li>
+    <li>Test: tab through the page, zoom to 400%, and run an axe scan.</li>
+  </ol>
+</div>
+</section>
+</div>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <ul class="cluster site-footer__actions">
+        <!-- TODO (Andrew): replace the placeholder email address. -->
+        <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-7.4 5.2a1 1 0 0 1-1.2 0L4 7.4ZM5.9 7l6.1 4.3L18.1 7H5.9Z"/></svg>
+          Email me</a></li>
+        <li><a class="btn btn--ghost-inverse" href="https://www.linkedin.com/in/andrewtaws/" target="_blank" rel="noopener">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a class="btn btn--ghost-inverse" href="assets/files/andrew-taws-cv.pdf">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+          Download CV <span class="text-sm">(PDF)</span></a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <p>© 2026 Andrew Taws</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="accessibility.html">Accessibility statement</a></li>
+            <li><a href="design-system.html" aria-current="page">Design system</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
