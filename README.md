@@ -17,10 +17,13 @@ work/                      Case studies
   design-system.html
   client-portal.html
 templates/                 Starting points for new pages (noindex)
+tools/stamp-assets.py      Versions CSS/JS links so browsers don't use stale copies
 assets/
   css/tokens.css           Design tokens and @font-face
   css/base.css             Reset, typography, focus, utilities
   css/components.css       Components (BEM)
+  js/site.js               Sticky header bar and mobile menu
+  js/scroll-reveal.js      Scroll fade-ins and intro text animation
   js/contact-form.js       Form validation (progressive enhancement)
   fonts/                   Self-hosted Albert Sans, Borel, Inter
   images/                  WebP images, one folder per page
@@ -39,6 +42,16 @@ python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000.
+
+## After changing CSS or JavaScript
+
+Run this from the repository root before committing:
+
+```bash
+python3 tools/stamp-assets.py
+```
+
+It adds a version to every stylesheet and script link (for example `components.css?v=3f9a1c2e`), based on each file's contents. When a file changes, its version changes, so visitors' browsers fetch the new file straight away instead of using an old cached copy.
 
 ## Adding a page
 
