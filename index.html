@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/text-reveal.js" defer></script>
+  <script src="assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,8 +56,8 @@
       <section class="hero hero--home">
         <div class="hero__content">
           <p class="greeting">Alreet!</p>
-          <h1 data-reveal>I’m Andrew Taws, a Lead UX Product Designer currently based in Newcastle</h1>
-          <p class="lead" data-reveal data-reveal-stagger="0.015">I have 10 years of experience working as a designer, dedicated to creating innovative and accessible products.</p>
+          <h1>I’m Andrew Taws, a Lead UX Product Designer currently based in Newcastle</h1>
+          <p class="lead">I have 10 years of experience working as a designer, dedicated to creating innovative and accessible products.</p>
           <!-- TODO (Andrew): review these specialism chips. -->
           <ul class="chip-list hero__chips" aria-label="Specialisms">
             <li class="chip chip--outline">Accessibility (WCAG 2.2 AA)</li>
@@ -86,39 +86,39 @@
       <section class="work" id="work" aria-labelledby="work-title">
         <h2 class="visually-hidden" id="work-title">Selected work</h2>
         <ul class="work-grid">
-          <li class="work-grid__item--feature">
+          <li data-reveal class="work-grid__item--feature">
             <div class="card card--feature">
-              <h3 class="card__title"><a class="card__link" href="work/checker.html">Recite Me Accessibility Checker</a></h3>
+              <h3 class="card__title" style="view-transition-name: checker-title"><a class="card__link" href="work/checker.html">Recite Me Accessibility Checker</a></h3>
               <p class="chip card__chip figma-frame">UX Design Case Study</p>
               <div class="card__media">
-                <img src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="" loading="lazy" decoding="async">
+                <img style="view-transition-name: checker-media" src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
-          <li class="work-grid__item--tall">
+          <li data-reveal class="work-grid__item--tall">
             <div class="card card--tall">
-              <h3 class="card__title"><a class="card__link" href="work/changing-health.html">Changing Health &amp; NHS</a></h3>
+              <h3 class="card__title" style="view-transition-name: changing-health-title"><a class="card__link" href="work/changing-health.html">Changing Health &amp; NHS</a></h3>
               <p class="chip card__chip figma-frame">Product Design</p>
               <div class="card__media">
-                <img src="assets/images/home/home-card-changing-health.webp" width="430" height="1350" alt="" loading="lazy" decoding="async">
+                <img style="view-transition-name: changing-health-media" src="assets/images/home/home-card-changing-health.webp" width="430" height="1350" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
-          <li class="work-grid__item--a">
+          <li data-reveal class="work-grid__item--a">
             <div class="card card--wide">
-              <h3 class="card__title"><a class="card__link" href="work/design-system.html">Recite Me Design System</a></h3>
+              <h3 class="card__title" style="view-transition-name: design-system-title"><a class="card__link" href="work/design-system.html">Recite Me Design System</a></h3>
               <p class="chip card__chip figma-frame">Design System</p>
               <div class="card__media">
-                <img src="assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
+                <img style="view-transition-name: design-system-media" src="assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
-          <li class="work-grid__item--b">
+          <li data-reveal class="work-grid__item--b">
             <div class="card card--wide">
-              <h3 class="card__title"><a class="card__link" href="work/client-portal.html">Recite Me Client Portal</a></h3>
+              <h3 class="card__title" style="view-transition-name: client-portal-title"><a class="card__link" href="work/client-portal.html">Recite Me Client Portal</a></h3>
               <p class="chip card__chip figma-frame">Product Design</p>
               <div class="card__media">
-                <img src="assets/images/home/home-card-client-portal.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
+                <img style="view-transition-name: client-portal-media" src="assets/images/home/home-card-client-portal.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
@@ -129,7 +129,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">

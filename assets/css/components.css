@@ -494,42 +494,118 @@
   background-repeat: no-repeat;
 }
 
-/* Text reveal ------------------------------------------------------------
-   Set up by assets/js/text-reveal.js on elements with [data-reveal]. Each
-   word drops from above with a slight skew and settles into place, one after
-   another (--i is its position, --reveal-stagger the gap). The pieces only
-   exist when JavaScript has run and motion is allowed. */
-.reveal__piece {
-  display: inline-block;
-  transform: translateY(-250%) skewY(-5deg);
+/* Scroll reveal ----------------------------------------------------------
+   Set up by assets/js/scroll-reveal.js on [data-reveal] elements that start
+   below the fold. They fade gently up as they scroll into view; content on
+   screen at load is never hidden. Nothing here applies without JavaScript
+   or with reduced motion, because the script doesn't add these classes. */
+.reveal--fade {
   opacity: 0;
+  transform: translateY(1.5rem);
   transition:
-    transform var(--duration-reveal) var(--ease-reveal),
-    opacity calc(var(--duration-reveal) * 0.4) ease;
-  transition-delay: calc(var(--i, 0) * var(--reveal-stagger, 0.1s));
+    opacity var(--duration-reveal) var(--ease-reveal),
+    transform var(--duration-reveal) var(--ease-reveal);
 }
 
-.reveal--chars .reveal__piece {
-  transform: translateY(-105%);
-  transition-timing-function: var(--ease-in-out), ease;
-}
-
-/* Keep each word's letters together so lines still wrap between words */
-.reveal__word {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.reveal.is-revealed .reveal__piece {
-  transform: none;
+.reveal--fade.is-revealed {
   opacity: 1;
+  transform: none;
+}
+
+.reveal--words .reveal__piece {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.35em);
+  transition:
+    opacity var(--duration-reveal) ease,
+    transform var(--duration-reveal) var(--ease-reveal);
+  transition-delay: calc(var(--i, 0) * var(--reveal-stagger, 0.04s));
+}
+
+.reveal--words.is-revealed .reveal__piece {
+  opacity: 1;
+  transform: none;
+}
+
+/* Never keep focused content faded or moving */
+.reveal:focus-within,
+.reveal:focus-within .reveal__piece {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 @media print {
+  .reveal,
   .reveal__piece {
-    transform: none !important;
     opacity: 1 !important;
+    transform: none !important;
   }
+}
+
+/* Page transitions -------------------------------------------------------
+   Cross-document view transitions, inspired by brand.dropbox.com: when a
+   case study card is clicked, its image grows into the case study's hero
+   screenshot and its title into the page heading, while the rest of the
+   page crossfades. Matching elements share a view-transition-name (set
+   inline, e.g. style="view-transition-name: checker-media"). Back plays it
+   in reverse. Browsers without support simply navigate. Off for reduced
+   motion. */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
+/* Titles size to their text so they scale cleanly between pages */
+[style*="view-transition-name"]:is(h1, h3) {
+  width: fit-content;
+  view-transition-class: vt-title;
+}
+
+::view-transition-group(*) {
+  animation-duration: var(--duration-page);
+  animation-timing-function: var(--ease-in-out);
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out calc(var(--duration-page) * 0.4) ease both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in calc(var(--duration-page) * 0.6) ease calc(var(--duration-page) * 0.4) both;
+}
+
+::view-transition-old(*):not(:only-child),
+::view-transition-new(*):not(:only-child) {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The small and large titles differ in shape, so hand over quickly
+   rather than showing both at once */
+::view-transition-old(*.vt-title) {
+  animation-name: vt-fade-out;
+  animation-duration: calc(var(--duration-page) * 0.3);
+}
+
+::view-transition-new(*.vt-title) {
+  animation-name: vt-fade-in;
+  animation-delay: calc(var(--duration-page) * 0.3);
+  animation-duration: calc(var(--duration-page) * 0.5);
+  animation-fill-mode: both;
+}
+
+@keyframes vt-fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
 }
 
 /* 07 Scroll link ("Explore my work") ------------------------------------- */

@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/site.js" defer></script>
-  <script src="../assets/js/text-reveal.js" defer></script>
+  <script src="../assets/js/scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,11 +56,11 @@
       <div class="container container--narrow">
         <header class="case-hero">
           <p class="eyebrow">UX design case study · Recite Me</p>
-          <h1 data-reveal>Recite Me Accessibility Checker</h1>
-          <p class="lead" data-reveal data-reveal-stagger="0.015">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
+          <h1 style="view-transition-name: checker-title">Recite Me Accessibility Checker</h1>
+          <p class="lead">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
         </header>
 
-        <dl class="case-meta" aria-label="Project summary">
+        <dl data-reveal class="case-meta" aria-label="Project summary">
           <div class="case-meta__item">
             <dt>My role</dt>
             <dd>Lead UX Product Designer</dd>
@@ -80,17 +80,17 @@
         </dl>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="The Recite Me Accessibility Checker dashboard for an NHS trust website, showing an overall accessibility score of 75% and scores for WCAG levels A, AA and AAA, with a findings breakdown table below." fetchpriority="high">
+            <img src="../assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="The Recite Me Accessibility Checker dashboard for an NHS trust website, showing an overall accessibility score of 75% and scores for WCAG levels A, AA and AAA, with a findings breakdown table below." fetchpriority="high" style="view-transition-name: checker-media">
           </figure>
         </div>
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Overview</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Overview</h2>
           <div class="prose prose--lead">
             <p>Most organisations know their website should be accessible. Knowing where to start is a different story.</p>
             <p>WCAG is long, technical and full of jargon, and the legal side only adds to the pressure. For many teams, accessibility feels like a mountain they don’t have the time or expertise to climb, so it gets pushed down the backlog.</p>
@@ -98,8 +98,8 @@
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>The challenge</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">The challenge</h2>
           <div class="prose">
             <ul>
               <li><strong>Accessibility feels overwhelming.</strong> People didn’t know which issues mattered most or how to fix them.</li>
@@ -109,8 +109,8 @@
           </div>
         </section>
 
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Research</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Research</h2>
           <div class="prose">
             <h3>Competitor analysis</h3>
             <p>I started by looking at the tools already out there to see what they did well, where they fell short, and where we had an opportunity to stand out. The clearest gap was guidance. Most tools told you <em>what</em> was wrong, but very few explained <em>why</em> it mattered or <em>how</em> to fix it.</p>
@@ -122,7 +122,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li class="persona">
@@ -202,15 +202,15 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Information architecture</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Information architecture</h2>
           <div class="prose">
             <p>To make sure content sat where people expected to find it, I ran card sorting exercises with colleagues across the business and with external developers. Grouping topics based on how people actually think, rather than how we thought they should, gave us an IA that felt logical to both technical and non-technical users.</p>
           </div>
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
             <img src="../assets/images/checker/checker-15.webp" width="2000" height="1175" alt="Checker sitemap produced from the card sorting. The Scanner branches into six sections: Overview, My Domains, My Scan History, Create a Report, Resource Hub and Team Management, each with its pages and actions listed beneath." loading="lazy" decoding="async">
@@ -219,8 +219,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Key features</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Key features</h2>
           <div class="prose">
             <h3>Adding a domain</h3>
             <p>Onboarding needed to be quick and painless. Users follow a short, guided flow to add their website. They can add individual pages or upload an XML sitemap to scan the whole site in one go.</p>
@@ -229,7 +229,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -267,8 +267,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Domain overview</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Domain overview</h3>
           <div class="prose">
             <p>The domain overview is the heart of the Checker. It shows the results of the latest scan with an overall score, broken down by WCAG level, so users can see at a glance where they stand.</p>
             <p>Each issue opens up into a detailed view explaining what the problem is, why it matters to real people, and how to fix it. This was the part I cared about most. Rather than a list of errors, it’s guidance someone can act on, whatever their technical background.</p>
@@ -276,7 +276,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -296,8 +296,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h3 class="split__heading" data-reveal>Create a report</h3>
+        <section class="split" data-reveal>
+          <h3 class="split__heading">Create a report</h3>
           <div class="prose">
             <p>Accessibility is ongoing work, and teams need to show their progress. The reporting feature lets users build detailed PDF reports in four steps:</p>
             <ol>
@@ -311,7 +311,7 @@
         </section>
       </div>
 
-      <div class="media-band">
+      <div class="media-band" data-reveal>
         <div class="container">
           <ul class="gallery gallery--2">
             <li>
@@ -343,8 +343,8 @@
       </div>
 
       <div class="container container--narrow">
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Designing an accessible accessibility tool</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Designing an accessible accessibility tool</h2>
           <div class="prose">
             <p>It goes without saying that an accessibility product has to practise what it preaches. The Checker was designed to meet WCAG 2.2 Level AA, and I ran walkthroughs of the Figma prototypes with developers and QA to make sure what we designed held up in the build, both for users and for the technical requirements.</p>
           </div>
@@ -353,20 +353,20 @@
         <!-- TODO (Andrew): add an Outcome section with one to three real results, e.g.
         number of domains or customers using the Checker, reduced onboarding time or support
         queries, client or usability testing feedback, contribution to sales or retention.
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Outcome</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Outcome</h2>
           <div class="prose"><ul><li></li></ul></div>
         </section>
         -->
 
         <!-- TODO (Andrew): add a Reflection section in your own words.
-        <section class="split">
-          <h2 class="split__heading" data-reveal>Reflection</h2>
+        <section class="split" data-reveal>
+          <h2 class="split__heading">Reflection</h2>
           <div class="prose"><p></p></div>
         </section>
         -->
 
-        <nav class="pager" aria-label="Case studies">
+        <nav data-reveal class="pager" aria-label="Case studies">
           <ul class="pager__list">
             <li class="pager__item--next">
               <a class="pager__link" href="changing-health.html" rel="next">
@@ -382,7 +382,7 @@
 
   <footer class="site-footer on-dark">
     <div class="container">
-      <h2 class="site-footer__title" data-reveal="chars">Let’s create something canny!</h2>
+      <h2 class="site-footer__title" data-reveal="words">Let’s create something canny!</h2>
       <ul class="cluster site-footer__actions">
         <!-- TODO (Andrew): replace the placeholder email address. -->
         <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
