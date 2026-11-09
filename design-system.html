@@ -299,22 +299,8 @@
   &lt;p&gt;This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="page-transition">Page transition</h3>
-<p>When a homepage card is clicked, its image grows into the case study’s hero screenshot and its title into the page heading, while the rest of the page crossfades and the header stays put. It’s built with the browser’s cross-document view transitions (<code>@view-transition</code> in <code>components.css</code>), and Back plays it in reverse. To connect two elements across pages, give both the same name inline. Each name must be unique on its page.</p>
-<p class="text-sm"><strong>Accessibility:</strong> Off for reduced motion. Browsers without view transitions (currently Firefox) simply load the next page. The transition takes 0.6 seconds and doesn’t affect focus or what screen readers announce.</p>
-<div class="specimen">
-<p class="text-sm">On the homepage card:</p>
-<pre class="code-block"><code>&lt;h3 class="card__title" style="view-transition-name: checker-title"&gt;…&lt;/h3&gt;
-&lt;img style="view-transition-name: checker-media" src="…" alt=""&gt;</code></pre>
-<p class="text-sm">On the case study page:</p>
-<pre class="code-block"><code>&lt;h1 style="view-transition-name: checker-title"&gt;…&lt;/h1&gt;
-&lt;img style="view-transition-name: checker-media" src="…" alt="…"&gt;</code></pre>
-</div>
-<pre class="code-block"><code>&lt;p class=&quot;text-sm&quot;&gt;On the homepage card:&lt;/p&gt;
-&lt;pre class=&quot;code-block&quot;&gt;&lt;code&gt;&amp;lt;h3 class=&quot;card__title&quot; style=&quot;view-transition-name: checker-title&quot;&amp;gt;…&amp;lt;/h3&amp;gt;
-&amp;lt;img style=&quot;view-transition-name: checker-media&quot; src=&quot;…&quot; alt=&quot;&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p class=&quot;text-sm&quot;&gt;On the case study page:&lt;/p&gt;
-&lt;pre class=&quot;code-block&quot;&gt;&lt;code&gt;&amp;lt;h1 style=&quot;view-transition-name: checker-title&quot;&amp;gt;…&amp;lt;/h1&amp;gt;
-&amp;lt;img style=&quot;view-transition-name: checker-media&quot; src=&quot;…&quot; alt=&quot;…&quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<p>Every page change has a short fade: the old page fades out in 0.15s and the new one fades in over 0.25s with an 8px rise. It’s set once in <code>components.css</code> with <code>@view-transition</code>, so new pages get it automatically. Timings are the <code>--duration-page-out</code> and <code>--duration-page-in</code> tokens.</p>
+<p class="text-sm"><strong>Accessibility:</strong> off for reduced motion. Browsers without view transitions (currently Firefox) simply load the page. It doesn’t affect focus or what screen readers announce.</p>
 <h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
 <p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
 <div class="specimen">
