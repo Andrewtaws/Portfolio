@@ -673,6 +673,36 @@
   .hero__media .portrait {
     max-width: 14rem;
   }
+
+  /* Homepage: no photo on small screens. The "Open to work" badge sits on
+     the same line as the greeting, on the right. It stays after the intro
+     in the source, so reading order is unchanged. */
+  .hero--home {
+    position: relative;
+  }
+
+  .hero--home .hero__media {
+    position: absolute;
+    top: var(--space-6);
+    right: 0;
+    order: 0;
+  }
+
+  .hero--home .portrait {
+    max-width: none;
+    overflow: visible;
+  }
+
+  .hero--home .portrait__img {
+    display: none;
+  }
+
+  .hero--home .portrait .status-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    box-shadow: none;
+  }
 }
 
 @media (min-width: 56em) {
