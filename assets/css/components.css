@@ -683,7 +683,9 @@
 
   .hero--home .hero__media {
     position: absolute;
-    top: var(--space-6);
+    /* Nudged up so "Open to work" centres on the "Alreet!" lettering
+       (the greeting's box also holds its orange underline) */
+    top: calc(var(--space-6) - 5px);
     right: 0;
     order: 0;
   }
