@@ -42,6 +42,7 @@ The only "needs review" items were textareas and a scrolling table, where axe co
 | Intro text (letter/word blur-in): screen readers hear the full text once; pieces are `aria-hidden`; plays once in under 2 seconds | 1.3.1, 2.2.2 | ✅ |
 | Scroll reveals: nothing on screen at load is hidden, nothing stays hidden after scrolling, and focused content shows at full opacity immediately | 2.4.7, 2.4.11 | ✅ |
 | "Open to work" pulse stops after about 4.5 seconds | 2.2.2 | ✅ |
+| Scroll highlight on large paragraphs: faded letters stay at 68% opacity (4.7:1), so text passes AA at every scroll position; screen readers get the paragraph once; scan mid-highlight: 0 violations | 1.4.3, 1.3.1 | ✅ |
 | Page fade between pages (0.4s); browsers without view transitions just load the page | 2.3.3 | ✅ |
 | No horizontal scrolling at 390px or 1440px on any page | 1.4.10 | ✅ |
 | Sticky header: tabbing forwards and backwards through 6 pages (2,000+ focus stops), nothing is ever entirely hidden by the bar, and focusing a header link never makes the page jump | 2.4.11 | ✅ |
