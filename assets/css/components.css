@@ -1125,8 +1125,9 @@
 }
 
 .code-block {
-  overflow-x: auto;
   padding: var(--space-4);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   background: var(--navy-900);
   color: var(--white);
   border-radius: var(--radius-sm);
@@ -1166,6 +1167,19 @@ code {
 
 .table-wrap {
   overflow-x: auto;
+}
+
+/* Docs page rhythm */
+.ds-section > * + * {
+  margin-block-start: var(--space-4);
+}
+
+.ds-section > h3 {
+  margin-block-start: var(--space-8);
+}
+
+.ds-section > .code-block {
+  margin-block-start: var(--space-3);
 }
 
 .ds-nav {
