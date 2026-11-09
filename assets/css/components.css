@@ -412,11 +412,49 @@
 }
 
 .status-badge__dot {
-  width: 0.75rem;
-  height: 0.75rem;
+  position: relative;
+  width: 0.875rem;
+  height: 0.875rem;
   border-radius: 50%;
   background: var(--color-success);
-  box-shadow: 0 0 0 3px rgb(22 160 133 / 0.25);
+}
+
+/* Pulse, as on the original site: two rings ripple out from the dot.
+   It plays twice per ring (about 4.5 seconds in all) and then stops, so it
+   stays under the 5-second limit for motion that starts by itself
+   (WCAG 2.2.2 Pause, Stop, Hide). Turned off for reduced motion. */
+.status-badge__dot::before,
+.status-badge__dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-success);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status-badge__dot::before,
+  .status-badge__dot::after {
+    animation: status-pulse 1.8s cubic-bezier(0, 0, 0.2, 1) 2 both;
+  }
+
+  .status-badge__dot::after {
+    animation-delay: 0.9s;
+  }
+}
+
+@keyframes status-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale(3.85);
+    opacity: 0;
+  }
 }
 
 /* Figma frame -----------------------------------------------------------
@@ -1418,6 +1456,11 @@ code {
   .status-badge__dot {
     background: CanvasText;
     forced-color-adjust: none;
+  }
+
+  .status-badge__dot::before,
+  .status-badge__dot::after {
+    display: none;
   }
 
   .card:hover {
