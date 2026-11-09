@@ -566,6 +566,18 @@
   white-space: nowrap;
 }
 
+/* Scroll highlight: letters darken as the paragraph is scrolled through.
+   Opacity is set per letter by the script; the faded floor (0.68) keeps
+   the text above 4.5:1. */
+.reveal__letter {
+  transition: opacity 0.12s linear;
+}
+
+/* The hidden spoken copy shouldn't be duplicated when copying text */
+.reveal__spoken {
+  user-select: none;
+}
+
 /* Never keep focused content faded or moving */
 .reveal:focus-within,
 .reveal:focus-within .reveal__piece {
@@ -577,7 +589,8 @@
 
 @media print {
   .reveal,
-  .reveal__piece {
+  .reveal__piece,
+  .reveal__letter {
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;

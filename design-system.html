@@ -27,9 +27,9 @@
   <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css?v=712f9270">
   <link rel="stylesheet" href="assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="assets/css/components.css?v=584d75bc">
+  <link rel="stylesheet" href="assets/css/components.css?v=7e931295">
   <script src="assets/js/site.js?v=2c1fa34d" defer></script>
-  <script src="assets/js/scroll-reveal.js?v=0b1bdbcd" defer></script>
+  <script src="assets/js/scroll-reveal.js?v=9ff9afed" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -285,7 +285,7 @@
   &lt;a class=&quot;btn btn--ghost-inverse&quot; href=&quot;#components&quot;&gt;Ghost inverse&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="scroll-reveal">Scroll reveal</h3>
-<p>Content below the fold fades gently up into view as the page scrolls. Anything already on screen when the page loads shows straight away. Add <code>data-reveal</code> to a section, band, card or list item. <code>data-reveal="words"</code> makes a short plain-text heading rise in word by word instead, as on the footer title, and <code>data-reveal-stagger</code> sets the gap in seconds (0.04 by default). For intro text, as on the original site, <code>data-reveal="intro-chars"</code> (greetings, eyebrows) and <code>data-reveal="intro-words"</code> (page headings) make letters or words rise 10px and blur into focus, including on load. <code>data-reveal-delay</code> holds one back, so the heading follows the greeting. Needs <code>assets/js/scroll-reveal.js</code>.</p>
+<p>Content below the fold fades gently up into view as the page scrolls. Anything already on screen when the page loads shows straight away. Add <code>data-reveal</code> to a section, band, card or list item. <code>data-reveal="words"</code> makes a short plain-text heading rise in word by word instead, as on the footer title, and <code>data-reveal-stagger</code> sets the gap in seconds (0.04 by default). For intro text, as on the original site, <code>data-reveal="intro-chars"</code> (greetings, eyebrows) and <code>data-reveal="intro-words"</code> (page headings) make letters or words rise 10px and blur into focus, including on load. <code>data-reveal-delay</code> holds one back, so the heading follows the greeting. For large paragraphs, <code>data-reveal="highlight"</code> darkens the letters one after another as the paragraph is scrolled through, tied to the scroll position, so scrolling back fades them again. Faded letters stay at 68% opacity, the lightest navy that still meets 4.5:1. Needs <code>assets/js/scroll-reveal.js</code>.</p>
 <p class="text-sm"><strong>Accessibility:</strong> Nothing is hidden without JavaScript or with reduced motion on. Anything that gets keyboard focus shows immediately. For <code>words</code>, screen readers get one hidden copy of the full text, so it’s never read in fragments.</p>
 <div class="specimen">
 <p class="greeting" data-reveal="intro-chars">Alreet!</p>
@@ -293,12 +293,14 @@
 <div data-reveal class="callout">
   <p>This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.</p>
 </div>
+<p class="lead" data-reveal="highlight">This paragraph darkens letter by letter as you scroll past it, and fades again if you scroll back up.</p>
 </div>
 <pre class="code-block"><code>&lt;p class=&quot;greeting&quot; data-reveal=&quot;intro-chars&quot;&gt;Alreet!&lt;/p&gt;
 &lt;h2 class=&quot;h3&quot; data-reveal=&quot;intro-words&quot; data-reveal-delay=&quot;0.3&quot;&gt;Words blur into focus&lt;/h2&gt;
 &lt;div data-reveal class=&quot;callout&quot;&gt;
   &lt;p&gt;This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;p class=&quot;lead&quot; data-reveal=&quot;highlight&quot;&gt;This paragraph darkens letter by letter as you scroll past it, and fades again if you scroll back up.&lt;/p&gt;</code></pre>
 <h3 id="page-transition">Page transition</h3>
 <p>Every page change has a short fade: the old page fades out in 0.15s and the new one fades in over 0.25s with an 8px rise. It’s set once in <code>components.css</code> with <code>@view-transition</code>, so new pages get it automatically. Timings are the <code>--duration-page-out</code> and <code>--duration-page-in</code> tokens.</p>
 <p class="text-sm"><strong>Accessibility:</strong> off for reduced motion. Browsers without view transitions (currently Firefox) simply load the page. It doesn’t affect focus or what screen readers announce.</p>
