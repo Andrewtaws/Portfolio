@@ -40,6 +40,9 @@ The only "needs review" items were textareas and a scrolling table, where axe co
 | Forced colours (Windows High Contrast): card, chip, button and badge edges stay visible, and the focus ring uses `Highlight` | 1.4.11 | ✅ |
 | Reduced motion turns off the card hover movement and smooth scrolling | 2.3.3 | ✅ |
 | No horizontal scrolling at 390px or 1440px on any page | 1.4.10 | ✅ |
+| Sticky header: tabbing forwards and backwards through 6 pages (2,000+ focus stops), nothing is ever entirely hidden by the bar, and focusing a header link never makes the page jump | 2.4.11 | ✅ |
+| Sticky header switches off on viewports shorter than 640px (400% zoom, landscape phones) | 1.4.10 | ✅ |
+| Mobile Menu button: `aria-expanded` state, Escape closes it and returns focus, it closes when focus leaves the header, and the links stay visible without JavaScript | 4.1.2, 2.1.1 | ✅ |
 
 ### Not yet tested
 

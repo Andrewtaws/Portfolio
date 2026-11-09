@@ -42,7 +42,9 @@
 
 /* 02 Site header & nav ---------------------------------------------------- */
 .site-header {
-  padding-block: var(--space-5);
+  position: relative;
+  z-index: 50;
+  padding-block: var(--space-4);
 }
 
 .site-header__inner {
@@ -50,7 +52,139 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3) var(--space-5);
+  gap: var(--space-2) var(--space-5);
+  padding: var(--space-2) 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--duration-base) ease,
+    box-shadow var(--duration-base) ease,
+    padding var(--duration-base) var(--ease-out);
+}
+
+/* Sticky bar ------------------------------------------------------------
+   The header stays at the top of tall-enough viewports. It's switched off on
+   short viewports (e.g. 400% zoom, landscape phones) so it never covers much
+   of the screen (WCAG 1.4.10, 2.4.11).
+   Without JavaScript: a plain sticky header on the page background.
+   With JavaScript (html.js): transparent at the top of the page, and once
+   the page is scrolled (.is-stuck) it becomes a floating rounded bar. */
+@media (min-height: 40em) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+  }
+
+  .js .site-header {
+    background: transparent;
+  }
+
+  .site-header.is-stuck .site-header__inner {
+    padding-inline: clamp(var(--space-3), 2vw, var(--space-5));
+    background: var(--color-surface-raised);
+    box-shadow:
+      0 1px 1px -1px rgb(0 0 0 / 0.18),
+      0 4px 12px -2px rgb(7 53 77 / 0.16),
+      0 12px 32px -8px rgb(7 53 77 / 0.12);
+  }
+
+  /* Keep focused elements and anchor targets clear of the bar (2.4.11).
+     --header-height is measured by site.js. The fallback covers a
+     two-row header on small screens. */
+  html {
+    scroll-padding-top: calc(var(--header-height, 8.5rem) + var(--space-4));
+  }
+
+  /* The header's own controls are always visible, so cancel that padding
+     for them. Otherwise focusing a nav link while scrolled down would make
+     the browser jump the page to "reveal" it. */
+  .site-header * {
+    scroll-margin-top: calc(-1 * (var(--header-height, 8.5rem) + var(--space-4)));
+  }
+}
+
+/* Menu button (small screens, JavaScript only) --------------------------
+   Below 34em the links don't fit on one row, so, as on the original site,
+   they move behind a "Menu" button. It's a disclosure button: aria-expanded
+   reports its state, and without JavaScript it stays hidden and the links
+   simply wrap below the logo. */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-label);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+.nav-toggle:hover {
+  border-color: var(--color-border-strong);
+}
+
+.nav-toggle__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.nav-toggle__close,
+.nav-toggle[aria-expanded="true"] .nav-toggle__open {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__close {
+  display: inline;
+}
+
+@media (max-width: 33.99em) {
+  .js .nav-toggle:not([hidden]) {
+    display: inline-flex;
+  }
+
+  .js .site-header__inner {
+    position: relative;
+  }
+
+  /* The open menu floats over the page as a panel, so opening it never
+     pushes the content down */
+  .js .site-nav {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    left: 0;
+    right: 0;
+    padding: var(--space-3);
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .js .site-nav:not(.is-open) {
+    display: none;
+  }
+
+  .js .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-1);
+  }
+
+  .js .site-nav__link {
+    width: 100%;
+    padding-inline: var(--space-4);
+  }
+
+  .js .site-nav__link--cta {
+    justify-content: center;
+    margin-inline-start: 0;
+    margin-block-start: var(--space-2);
+  }
 }
 
 .logo {
@@ -1205,6 +1339,11 @@ code {
 
 /* 27 Forced colours (Windows High Contrast) ------------------------------ */
 @media (forced-colors: active) {
+  .site-header.is-stuck .site-header__inner,
+  .nav-toggle {
+    border-color: CanvasText;
+  }
+
   .card,
   .chip,
   .status-badge,

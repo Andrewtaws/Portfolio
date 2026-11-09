@@ -22,6 +22,12 @@ html {
   scroll-padding-top: var(--space-6);
 }
 
+/* Push the target of an in-page link a little further down, so it isn't
+   pressed against the top edge */
+:target {
+  scroll-margin-top: var(--space-4);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
