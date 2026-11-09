@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recite Me Accessibility Checker – UX Case Study | Andrew Taws</title>
+  <meta name="description" content="How I designed the Recite Me Accessibility Checker, a tool that scans any website against WCAG and tells people exactly how to fix what it finds.">
+  <link rel="canonical" href="https://andrewtaws.co.uk/work/checker">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Taws.Design">
+  <meta property="og:title" content="Recite Me Accessibility Checker – UX Case Study | Andrew Taws">
+  <meta property="og:description" content="How I designed the Recite Me Accessibility Checker, a tool that scans any website against WCAG and tells people exactly how to fix what it finds.">
+  <meta property="og:url" content="https://andrewtaws.co.uk/work/checker">
+  <meta property="og:image" content="https://andrewtaws.co.uk/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Andrew Taws, Lead UX Product Designer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#07354d">
+
+  <link rel="preload" href="../assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="../index.html">Taws.Design<span class="visually-hidden"> – home</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html#work">Work</a></li>
+          <li><a class="site-nav__link" href="../about.html">About</a></li>
+          <li><a class="site-nav__link site-nav__link--cta" href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <article>
+      <div class="container container--narrow">
+        <header class="case-hero">
+          <p class="eyebrow">UX design case study · Recite Me</p>
+          <h1>Recite Me Accessibility Checker</h1>
+          <p class="lead">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
+        </header>
+
+        <dl class="case-meta" aria-label="Project summary">
+          <div class="case-meta__item">
+            <dt>My role</dt>
+            <dd>Lead UX Product Designer</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Company</dt>
+            <dd>Recite Me</dd>
+          </div>
+          <!-- TODO (Andrew): add Timeline and Team, e.g. "2022–2023" and "Product Owner, 4 developers, QA".
+          <div class="case-meta__item"><dt>Timeline</dt><dd></dd></div>
+          <div class="case-meta__item"><dt>Team</dt><dd></dd></div>
+          -->
+          <div class="case-meta__item case-meta__item--wide">
+            <dt>What I did</dt>
+            <dd>Competitor analysis, user interviews, personas, card sorting, information architecture, user flows, high-fidelity UI, prototyping</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <figure class="figure figure--hero">
+            <img src="../assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="The Recite Me Accessibility Checker dashboard for an NHS trust website, showing an overall accessibility score of 75% and scores for WCAG levels A, AA and AAA, with a findings breakdown table below." fetchpriority="high">
+          </figure>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h2 class="split__heading">Overview</h2>
+          <div class="prose prose--lead">
+            <p>Most organisations know their website should be accessible. Knowing where to start is a different story.</p>
+            <p>WCAG is long, technical and full of jargon, and the legal side only adds to the pressure. For many teams, accessibility feels like a mountain they don’t have the time or expertise to climb, so it gets pushed down the backlog.</p>
+            <p>The Recite Me Accessibility Checker was built to change that. Users add their website, the Checker scans it against WCAG, and they get a clear score along with practical, plain-English advice on how to fix each issue. My goal was simple: take something confusing and make it feel achievable.</p>
+          </div>
+        </section>
+
+        <section class="split">
+          <h2 class="split__heading">The challenge</h2>
+          <div class="prose">
+            <ul>
+              <li><strong>Accessibility feels overwhelming.</strong> People didn’t know which issues mattered most or how to fix them.</li>
+              <li><strong>Existing tools spoke to experts.</strong> Many competitors gave developers a raw list of errors, leaving content editors, marketers and managers behind.</li>
+              <li><strong>Progress was hard to show.</strong> Teams needed a way to prove to stakeholders that things were improving over time.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="split">
+          <h2 class="split__heading">Research</h2>
+          <div class="prose">
+            <h3>Competitor analysis</h3>
+            <p>I started by looking at the tools already out there to see what they did well, where they fell short, and where we had an opportunity to stand out. The clearest gap was guidance. Most tools told you <em>what</em> was wrong, but very few explained <em>why</em> it mattered or <em>how</em> to fix it.</p>
+            <h3>User interviews</h3>
+            <p>We ran a series of interviews with people who would be using the Checker day to day. These conversations helped us understand their pain points, how accessibility fitted into their existing workflows, and what they’d actually need from a tool like this.</p>
+            <h3>Personas</h3>
+            <p>From the interviews I created two user personas. They kept real people at the centre of every design decision, and gave the wider team a shared reference point when we were weighing up priorities.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <ul class="gallery gallery--2">
+            <li class="persona">
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-02.webp" width="2000" height="1952" alt="Persona card for Charles Leclerc, a UX and product designer. Full details follow in the expandable section below." loading="lazy" decoding="async">
+                <figcaption>Persona: Charles Leclerc, UX/Product Designer</figcaption>
+              </figure>
+              <details class="disclosure">
+                <summary class="disclosure__summary">Read Charles’s persona</summary>
+                <div class="disclosure__body">
+                  <dl>
+                    <dt>Age</dt><dd>30</dd>
+                    <dt>Education</dt><dd>BA Graphic Design</dd>
+                    <dt>Occupation</dt><dd>UX/Product Designer</dd>
+                    <dt>Location</dt><dd>Newcastle</dd>
+                    <dt>Tech literacy</dt><dd>Medium</dd>
+                  </dl>
+                  <h4>Bio</h4>
+                  <p>Charles works for a small healthcare start-up. He recently moved into UX and product design after four years as a graphic designer. He wants to create user-centred, accessible designs, but finds keeping up to date with the WCAG guidelines challenging. He needs a tool to help him review the accessibility of the products his company’s developers have built.</p>
+                  <h4>Quote</h4>
+                  <p>“I want to be able to deliver the best and most accessible experience for all of our product users.”</p>
+                  <h4>Core needs</h4>
+                  <ul>
+                    <li>To scan products he has helped design for accessibility issues</li>
+                    <li>To monitor the company’s products over time</li>
+                    <li>To learn more about accessibility and WCAG, and how they affect users’ needs</li>
+                  </ul>
+                  <h4>Frustrations</h4>
+                  <ul>
+                    <li>Finds it hard to see the accessibility issues in the company’s products</li>
+                    <li>Finds WCAG difficult to understand and remember, and needs the guidelines explained simply</li>
+                    <li>Struggles to give developers feedback without clear accessibility results</li>
+                  </ul>
+                  <h4>Personality and brands</h4>
+                  <p>Introvert, into music. Uses Apple, Grammarly and Spotify.</p>
+                </div>
+              </details>
+            </li>
+            <li class="persona">
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-03.webp" width="2000" height="1952" alt="Persona card for Stephanie Holland, who works in marketing. Full details follow in the expandable section below." loading="lazy" decoding="async">
+                <figcaption>Persona: Stephanie Holland, Marketing</figcaption>
+              </figure>
+              <details class="disclosure">
+                <summary class="disclosure__summary">Read Stephanie’s persona</summary>
+                <div class="disclosure__body">
+                  <dl>
+                    <dt>Age</dt><dd>42</dd>
+                    <dt>Education</dt><dd>Master’s in Business</dd>
+                    <dt>Occupation</dt><dd>Marketing</dd>
+                    <dt>Location</dt><dd>Cardiff</dd>
+                    <dt>Tech literacy</dt><dd>Medium</dd>
+                  </dl>
+                  <h4>Bio</h4>
+                  <p>Stephanie works in the marketing department of a small college.</p>
+                  <h4>Quote</h4>
+                  <p>“I’m not a developer, so I found some of the results difficult to understand. I had a lot of results and didn’t know where to start.”</p>
+                  <h4>Core needs</h4>
+                  <ul>
+                    <li>To see what fixes her organisation’s website needs, in a way that’s easy to understand</li>
+                    <li>To add developers to her team so they can fix the issues found</li>
+                    <li>To create and download PDF reports and email them to colleagues</li>
+                  </ul>
+                  <h4>Frustrations</h4>
+                  <ul>
+                    <li>Finds it difficult to create accessible content</li>
+                    <li>Has to work with external agencies for development work</li>
+                    <li>Doesn’t know much about WCAG or how to tell developers what needs updating</li>
+                  </ul>
+                  <h4>Personality and brands</h4>
+                  <p>Extrovert, keen reader. Uses Apple, Facebook and HubSpot.</p>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h2 class="split__heading">Information architecture</h2>
+          <div class="prose">
+            <p>To make sure content sat where people expected to find it, I ran card sorting exercises with colleagues across the business and with external developers. Grouping topics based on how people actually think, rather than how we thought they should, gave us an IA that felt logical to both technical and non-technical users.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <figure class="figure figure--hero">
+            <img src="../assets/images/checker/checker-15.webp" width="2000" height="1175" alt="Checker sitemap produced from the card sorting. The Scanner branches into six sections: Overview, My Domains, My Scan History, Create a Report, Resource Hub and Team Management, each with its pages and actions listed beneath." loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h2 class="split__heading">Key features</h2>
+          <div class="prose">
+            <h3>Adding a domain</h3>
+            <p>Onboarding needed to be quick and painless. Users follow a short, guided flow to add their website. They can add individual pages or upload an XML sitemap to scan the whole site in one go.</p>
+            <p>During setup, users also choose the WCAG level they’re aiming for (A, AA or AAA), so the results are relevant to their goals from the very first scan.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <ul class="gallery gallery--2">
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-04-sign-in.webp" width="1728" height="1117" alt="Recite Me sign-in page with username and password fields." loading="lazy" decoding="async">
+                <figcaption>Sign in</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-05-add-domain-start.webp" width="1728" height="1117" alt="Welcome screen titled “Start your accessibility journey”, explaining that users can scan their domains, find issues, learn how to fix them and track progress, with an Add Domain button." loading="lazy" decoding="async">
+                <figcaption>Welcome: start your accessibility journey</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-06-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 1 of 5: “Add a site” form with Site Name and Site URL fields. A progress indicator shows the steps Your Site, Page Configuration, Select Scan Level, Scan Settings and Confirmation." loading="lazy" decoding="async">
+                <figcaption>Step 1: your site</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-07-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 3: Select Scan Level, with a card for each of WCAG Level A, AA and AAA explaining what each level means." loading="lazy" decoding="async">
+                <figcaption>Step 3: choose the WCAG level</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-08-add-domain-confirmation.webp" width="1728" height="1117" alt="Add Domain, step 5: Confirmation, summarising the domain, page configuration, scan level and advanced settings, each with an Edit Section button, and Save or Save and Scan buttons." loading="lazy" decoding="async">
+                <figcaption>Step 5: confirm and scan</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h3 class="split__heading">Domain overview</h3>
+          <div class="prose">
+            <p>The domain overview is the heart of the Checker. It shows the results of the latest scan with an overall score, broken down by WCAG level, so users can see at a glance where they stand.</p>
+            <p>Each issue opens up into a detailed view explaining what the problem is, why it matters to real people, and how to fix it. This was the part I cared about most. Rather than a list of errors, it’s guidance someone can act on, whatever their technical background.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <ul class="gallery gallery--2">
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-18-add-domain-step.webp" width="1924" height="1423" alt="My Domains page listing each domain with its number of pages, current rating, last scan date, and View Results and Scan Now buttons. One row is expanded to show the scanned page." loading="lazy" decoding="async">
+                <figcaption>My domains</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-10-error-detail.webp" width="1699" height="1558" alt="Detail view of a Non-text Content issue showing a screenshot of where the error occurs, the code snippet, a plain-English description, Recite’s recommended fix, the affected URLs and a Jira integration." loading="lazy" decoding="async">
+                <figcaption>An issue explained in detail, so anyone can fix it</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h3 class="split__heading">Create a report</h3>
+          <div class="prose">
+            <p>Accessibility is ongoing work, and teams need to show their progress. The reporting feature lets users build detailed PDF reports in four steps:</p>
+            <ol>
+              <li>Choose the domain</li>
+              <li>Select the WCAG level</li>
+              <li>Set a date range</li>
+              <li>Pick the sections to include</li>
+            </ol>
+            <p>The reports can track a site’s score over time or show how many issues have been fixed within a set period, which makes it much easier to demonstrate progress to managers and stakeholders.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="media-band">
+        <div class="container">
+          <ul class="gallery gallery--2">
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-11-report-search-domain.webp" width="1728" height="1117" alt="Create a report, step 1: search for and choose a domain." loading="lazy" decoding="async">
+                <figcaption>1. Choose the domain</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-12-report-wcag-level.webp" width="1728" height="1117" alt="Create a report, step 2: select the WCAG level." loading="lazy" decoding="async">
+                <figcaption>2. Select the WCAG level</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-13-report-date-range.webp" width="1728" height="1117" alt="Create a report, step 3: add a date range." loading="lazy" decoding="async">
+                <figcaption>3. Set a date range</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="figure">
+                <img src="../assets/images/checker/checker-14-report-sections.webp" width="1728" height="1117" alt="Create a report, step 4: choose which sections to include in the PDF." loading="lazy" decoding="async">
+                <figcaption>4. Pick the sections to include</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container container--narrow">
+        <section class="split">
+          <h2 class="split__heading">Designing an accessible accessibility tool</h2>
+          <div class="prose">
+            <p>It goes without saying that an accessibility product has to practise what it preaches. The Checker was designed to meet WCAG 2.2 Level AA, and I ran walkthroughs of the Figma prototypes with developers and QA to make sure what we designed held up in the build, both for users and for the technical requirements.</p>
+          </div>
+        </section>
+
+        <!-- TODO (Andrew): add an Outcome section with one to three real results, e.g.
+        number of domains or customers using the Checker, reduced onboarding time or support
+        queries, client or usability testing feedback, contribution to sales or retention.
+        <section class="split">
+          <h2 class="split__heading">Outcome</h2>
+          <div class="prose"><ul><li></li></ul></div>
+        </section>
+        -->
+
+        <!-- TODO (Andrew): add a Reflection section in your own words.
+        <section class="split">
+          <h2 class="split__heading">Reflection</h2>
+          <div class="prose"><p></p></div>
+        </section>
+        -->
+
+        <nav class="pager" aria-label="Case studies">
+          <ul class="pager__list">
+            <li class="pager__item--next">
+              <a class="pager__link" href="changing-health.html" rel="next">
+                <span class="pager__label">Next case study</span>
+                <span class="pager__title">Changing Health &amp; NHS</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <ul class="cluster site-footer__actions">
+        <!-- TODO (Andrew): replace the placeholder email address. -->
+        <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-7.4 5.2a1 1 0 0 1-1.2 0L4 7.4ZM5.9 7l6.1 4.3L18.1 7H5.9Z"/></svg>
+          Email me</a></li>
+        <li><a class="btn btn--ghost-inverse" href="https://www.linkedin.com/in/andrewtaws/" target="_blank" rel="noopener">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a class="btn btn--ghost-inverse" href="../assets/files/andrew-taws-cv.pdf">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+          Download CV <span class="text-sm">(PDF)</span></a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <p>© 2026 Andrew Taws</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="../accessibility.html">Accessibility statement</a></li>
+            <li><a href="../design-system.html">Design system</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

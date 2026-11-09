@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Andrew Taws – Lead UX Product Designer</title>
+  <meta name="description" content="Get in touch with Andrew Taws about a project, a role or just to say hi.">
+  <link rel="canonical" href="https://andrewtaws.co.uk/contact">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Taws.Design">
+  <meta property="og:title" content="Contact Andrew Taws – Lead UX Product Designer">
+  <meta property="og:description" content="Get in touch with Andrew Taws about a project, a role or just to say hi.">
+  <meta property="og:url" content="https://andrewtaws.co.uk/contact">
+  <meta property="og:image" content="https://andrewtaws.co.uk/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Andrew Taws, Lead UX Product Designer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#07354d">
+
+  <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script src="assets/js/contact-form.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="./">Taws.Design<span class="visually-hidden"> – home</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html#work">Work</a></li>
+          <li><a class="site-nav__link" href="about.html">About</a></li>
+          <li><a class="site-nav__link site-nav__link--cta" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <div class="hero hero--contact">
+        <div class="hero__content">
+          <p class="greeting">Shy bairns get nowt</p>
+          <h1>Contact me</h1>
+          <p class="lead">If you have a project or business opportunity you would like to discuss, or just want to say hi, feel free to reach out.</p>
+
+          <h2 class="h4 contact__subheading">Other ways to get in touch</h2>
+          <ul class="contact-list">
+            <!-- TODO (Andrew): replace the placeholder email address here and in the form's data-email. -->
+            <li><a href="mailto:hello@andrewtaws.co.uk">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-7.4 5.2a1 1 0 0 1-1.2 0L4 7.4ZM5.9 7l6.1 4.3L18.1 7H5.9Z"/></svg>
+              hello@andrewtaws.co.uk</a></li>
+            <li><a href="https://www.linkedin.com/in/andrewtaws/" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+              LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="assets/files/andrew-taws-cv.pdf">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+              Download my CV (PDF)</a></li>
+          </ul>
+        </div>
+
+        <div class="hero__media hero__media--form">
+          <section class="contact-form" aria-labelledby="form-title">
+            <h2 class="h3" id="form-title">Send me a message</h2>
+
+            <div class="error-summary" id="error-summary" tabindex="-1" hidden>
+              <h3 class="error-summary__title">There is a problem</h3>
+              <ul class="error-summary__list"></ul>
+            </div>
+
+            <form class="form" id="contact-form" action="mailto:hello@andrewtaws.co.uk" method="post" enctype="text/plain" data-email="hello@andrewtaws.co.uk" novalidate>
+              <p class="field__hint">All fields are required.</p>
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <p class="field__error" id="name-error" hidden></p>
+                <input class="input" id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <p class="field__error" id="email-error" hidden></p>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">Message</label>
+                <p class="field__error" id="message-error" hidden></p>
+                <textarea class="textarea" id="message" name="message" rows="6" required></textarea>
+              </div>
+
+              <div class="stack">
+                <button class="btn btn--primary btn--block" type="submit">Send message</button>
+                <p class="field__hint" id="send-hint">Sending opens your email app with your message ready to go.</p>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <h2 class="site-footer__title">Let’s create something canny!</h2>
+      <ul class="cluster site-footer__actions">
+        <!-- TODO (Andrew): replace the placeholder email address. -->
+        <li><a class="btn btn--inverse" href="mailto:hello@andrewtaws.co.uk">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-7.4 5.2a1 1 0 0 1-1.2 0L4 7.4ZM5.9 7l6.1 4.3L18.1 7H5.9Z"/></svg>
+          Email me</a></li>
+        <li><a class="btn btn--ghost-inverse" href="https://www.linkedin.com/in/andrewtaws/" target="_blank" rel="noopener">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a class="btn btn--ghost-inverse" href="assets/files/andrew-taws-cv.pdf">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 18h16v2H4v-2Z"/></svg>
+          Download CV <span class="text-sm">(PDF)</span></a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <p>© 2026 Andrew Taws</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="accessibility.html">Accessibility statement</a></li>
+            <li><a href="design-system.html">Design system</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

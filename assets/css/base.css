@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Taws.Design: base
+   --------------------------------------------------------------------------
+   Reset, element defaults, typography, focus and utility classes.
+   Depends on tokens.css.
+   ========================================================================== */
+
+/* ---- Reset ------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--space-6);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+figcaption {
+  overflow-wrap: break-word;
+}
+
+/* ---- Typography -------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-heading);
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: var(--text-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+h2,
+.h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-heading);
+}
+
+h3,
+.h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-heading);
+}
+
+h4,
+.h4 {
+  font-size: var(--text-lead);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-body);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.lead {
+  font-size: var(--text-lead);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-body);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+strong,
+b {
+  font-weight: var(--weight-bold);
+}
+
+/* ---- Links ------------------------------------------------------------- */
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---- Focus: one clear, consistent ring everywhere (2.4.7, 2.4.11, 2.4.13)  */
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: var(--focus-offset);
+  border-radius: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* On dark surfaces, flip to the light ring */
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-focus-inverse);
+}
+
+/* Programmatic focus targets (e.g. skip link destination, error summary) */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+[tabindex="-1"]:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+}
+
+/* ---- Selection --------------------------------------------------------- */
+::selection {
+  background-color: var(--navy-900);
+  color: var(--white);
+}
+
+/* ---- Utilities --------------------------------------------------------- */
+
+/* Hide visually, keep for assistive tech */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Centred, padded page container */
+.container {
+  width: min(100% - (var(--gutter) * 2), var(--container-max));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - (var(--gutter) * 2), var(--container-narrow));
+}
+
+/* Vertical rhythm: consistent space between siblings */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+ul.cluster,
+ul.stack {
+  padding: 0;
+  list-style: none;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, var(--space-4));
+}
+
+.section {
+  padding-block: var(--section-gap);
+}
+
+.section--tight-top {
+  padding-block-start: var(--space-6);
+}
+
+/* ---- Motion preferences (2.3.3) ---------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
