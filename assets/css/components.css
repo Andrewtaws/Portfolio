@@ -527,10 +527,40 @@
   transform: none;
 }
 
+/* Intro: letters or words rise 10px and blur into focus (as on the original
+   Framer site). Letters also grow from 90%. */
+.reveal--intro .reveal__piece {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px) scale(var(--reveal-scale, 1));
+  transition:
+    opacity var(--duration-intro) var(--ease-reveal),
+    filter var(--duration-intro) var(--ease-reveal),
+    transform var(--duration-intro) var(--ease-reveal);
+  transition-delay: calc(var(--reveal-delay, 0s) + var(--i, 0) * var(--reveal-stagger, 0.04s));
+}
+
+.reveal--chars {
+  --reveal-scale: 0.9;
+}
+
+.reveal--intro.is-revealed .reveal__piece {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.reveal__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 /* Never keep focused content faded or moving */
 .reveal:focus-within,
 .reveal:focus-within .reveal__piece {
   opacity: 1;
+  filter: none;
   transform: none;
   transition: none;
 }
@@ -539,6 +569,7 @@
   .reveal,
   .reveal__piece {
     opacity: 1 !important;
+    filter: none !important;
     transform: none !important;
   }
 }
