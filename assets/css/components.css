@@ -871,43 +871,130 @@
   max-width: 46rem;
 }
 
-/* 12 Case meta (role summary) -------------------------------------------- */
-.case-meta {
-  display: grid;
-  gap: var(--space-4) var(--space-6);
+/* 12 Case summary (project overview card) ------------------------------
+   Rounded card at the top of a case study: the role as a title with pill
+   tags, a row of label/value facts split by thin rules, and a footer
+   listing the methods used. Label/value pairs are description lists, so
+   each label is announced with its value. */
+.case-summary {
   margin-block-end: clamp(var(--space-7), 6vw, var(--space-9));
-  padding: var(--space-5);
   background: var(--color-surface);
   border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
 }
 
-.case-meta__item dt {
+.case-summary dl,
+.case-summary dd {
+  margin: 0;
+}
+
+.case-summary__label {
   font-size: var(--text-sm);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
   color: var(--color-text-muted);
   letter-spacing: 0;
 }
 
-.case-meta__item dd {
-  margin: 0;
+.case-summary__body {
+  display: grid;
+  gap: var(--space-5);
+  padding: clamp(var(--space-5), 3vw, var(--space-6));
+}
+
+.case-summary__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-5);
+}
+
+.case-summary__title {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-heading);
+  text-wrap: balance;
+}
+
+.case-summary__head .case-summary__label {
+  margin-block-end: var(--space-1);
+}
+
+/* Facts row: label over value, divided by thin vertical rules */
+.case-summary__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) 0;
+}
+
+.case-summary__fact {
+  display: grid;
+  gap: var(--space-1);
+  padding-inline: var(--space-5);
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.case-summary__fact:first-child {
+  padding-inline-start: 0;
+  border-inline-start: 0;
+}
+
+.case-summary__fact dd {
+  font-size: var(--text-lead);
   font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-heading);
 }
 
-.case-meta__item--wide {
-  grid-column: 1 / -1;
+.case-summary__foot {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5) clamp(var(--space-5), 3vw, var(--space-6));
+  border-top: 1px solid var(--color-border);
 }
 
-@media (min-width: 40em) {
-  .case-meta {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 39.99em) {
+  .case-summary__fact {
+    flex-basis: 100%;
+    padding-inline: 0;
+    border-inline-start: 0;
   }
 }
 
-@media (min-width: 64em) {
-  .case-meta {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+/* Pills: rounded tags, neutral or accent */
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: var(--space-1) var(--space-4);
+  background: var(--color-surface-raised);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  line-height: 1.3;
+  color: var(--color-heading);
+}
+
+.pill--accent {
+  background: var(--color-accent-soft);
+}
+
+.pill--sm {
+  min-height: 0;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
 }
 
 /* 13 Split section (heading left, content right) ------------------------- */
@@ -1555,7 +1642,8 @@ code {
   .card,
   .chip,
   .status-badge,
-  .case-meta,
+  .case-summary,
+  .pill,
   .pager__link,
   .btn,
   .site-nav__link--cta {

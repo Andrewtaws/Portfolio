@@ -68,13 +68,40 @@
           <p class="lead">One-sentence summary of the problem and what you designed.</p>
         </header>
 
-        <dl data-reveal class="case-meta" aria-label="Project summary">
-          <div class="case-meta__item"><dt>My role</dt><dd>Role</dd></div>
-          <div class="case-meta__item"><dt>Company</dt><dd>Company</dd></div>
-          <div class="case-meta__item"><dt>Timeline</dt><dd>Year–year</dd></div>
-          <div class="case-meta__item"><dt>Team</dt><dd>Who you worked with</dd></div>
-          <div class="case-meta__item case-meta__item--wide"><dt>What I did</dt><dd>Methods and deliverables</dd></div>
-        </dl>
+        <div data-reveal class="case-summary" role="group" aria-label="Project summary">
+          <div class="case-summary__body">
+            <div class="case-summary__head">
+              <dl>
+                <dt class="case-summary__label">My role</dt>
+                <dd class="case-summary__title">Role</dd>
+              </dl>
+              <ul class="pill-list" aria-label="Company and project type">
+                <li class="pill">Company</li>
+                <li class="pill pill--accent">Case study type</li>
+              </ul>
+            </div>
+            <dl class="case-summary__facts">
+              <div class="case-summary__fact">
+                <dt class="case-summary__label">Timeline</dt>
+                <dd>Year–year</dd>
+              </div>
+              <div class="case-summary__fact">
+                <dt class="case-summary__label">Team</dt>
+                <dd>Who you worked with</dd>
+              </div>
+            </dl>
+          </div>
+          <dl class="case-summary__foot">
+            <dt class="case-summary__label">What I did</dt>
+            <dd>
+              <ul class="pill-list">
+                <li class="pill pill--sm">Method</li>
+                <li class="pill pill--sm">Method</li>
+                <li class="pill pill--sm">Deliverable</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
       </div>
 
       <div class="media-band" data-reveal>

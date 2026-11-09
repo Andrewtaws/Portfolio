@@ -60,26 +60,39 @@
           <p class="lead">One source of truth for a growing product suite, keeping every product consistent, accessible and quicker to build.</p>
         </header>
 
-        <dl data-reveal class="case-meta" aria-label="Project summary">
-          <div class="case-meta__item">
-            <dt>My role</dt>
-            <dd>Lead UX Product Designer</dd>
+        <div data-reveal class="case-summary" role="group" aria-label="Project summary">
+          <div class="case-summary__body">
+            <div class="case-summary__head">
+              <dl>
+                <dt class="case-summary__label">My role</dt>
+                <dd class="case-summary__title">Lead UX Product Designer</dd>
+              </dl>
+              <ul class="pill-list" aria-label="Company and project type">
+                <li class="pill">Recite Me</li>
+                <li class="pill pill--accent">Design system</li>
+              </ul>
+            </div>
+            <dl class="case-summary__facts">
+              <div class="case-summary__fact">
+                <dt class="case-summary__label">Tools</dt>
+                <dd>Figma</dd>
+              </div>
+            </dl>
+            <!-- TODO (Andrew): add Timeline and Team (e.g. "me plus front-end developers"), and any other tools such as Storybook or tokens tooling. -->
           </div>
-          <div class="case-meta__item">
-            <dt>Company</dt>
-            <dd>Recite Me</dd>
-          </div>
-          <div class="case-meta__item">
-            <dt>Tools</dt>
-            <dd>Figma</dd>
-          </div>
-          <!-- TODO (Andrew): add Timeline and Team (e.g. "me plus front-end developers"),
-          and any other tools such as Storybook or tokens tooling. -->
-          <div class="case-meta__item case-meta__item--wide">
-            <dt>What I did</dt>
-            <dd>Audit, foundations, components, documentation, developer handover</dd>
-          </div>
-        </dl>
+          <dl class="case-summary__foot">
+            <dt class="case-summary__label">What I did</dt>
+            <dd>
+              <ul class="pill-list">
+                <li class="pill pill--sm">Audit</li>
+                <li class="pill pill--sm">Foundations</li>
+                <li class="pill pill--sm">Components</li>
+                <li class="pill pill--sm">Documentation</li>
+                <li class="pill pill--sm">Developer handover</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
       </div>
 
       <div class="media-band" data-reveal>

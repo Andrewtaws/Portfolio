@@ -60,24 +60,41 @@
           <p class="lead">Making accessibility less daunting: a tool that scans any website against WCAG and tells people exactly how to fix what it finds.</p>
         </header>
 
-        <dl data-reveal class="case-meta" aria-label="Project summary">
-          <div class="case-meta__item">
-            <dt>My role</dt>
-            <dd>Lead UX Product Designer</dd>
+        <div data-reveal class="case-summary" role="group" aria-label="Project summary">
+          <div class="case-summary__body">
+            <div class="case-summary__head">
+              <dl>
+                <dt class="case-summary__label">My role</dt>
+                <dd class="case-summary__title">Lead UX Product Designer</dd>
+              </dl>
+              <ul class="pill-list" aria-label="Company and project type">
+                <li class="pill">Recite Me</li>
+                <li class="pill pill--accent">UX design case study</li>
+              </ul>
+            </div>
+            <!-- TODO (Andrew): add Timeline and Team, e.g. "2022–2023" and "Product Owner, 4 developers, QA".
+            <dl class="case-summary__facts">
+              <div class="case-summary__fact"><dt class="case-summary__label">Timeline</dt><dd></dd></div>
+              <div class="case-summary__fact"><dt class="case-summary__label">Team</dt><dd></dd></div>
+            </dl>
+            -->
           </div>
-          <div class="case-meta__item">
-            <dt>Company</dt>
-            <dd>Recite Me</dd>
-          </div>
-          <!-- TODO (Andrew): add Timeline and Team, e.g. "2022–2023" and "Product Owner, 4 developers, QA".
-          <div class="case-meta__item"><dt>Timeline</dt><dd></dd></div>
-          <div class="case-meta__item"><dt>Team</dt><dd></dd></div>
-          -->
-          <div class="case-meta__item case-meta__item--wide">
-            <dt>What I did</dt>
-            <dd>Competitor analysis, user interviews, personas, card sorting, information architecture, user flows, high-fidelity UI, prototyping</dd>
-          </div>
-        </dl>
+          <dl class="case-summary__foot">
+            <dt class="case-summary__label">What I did</dt>
+            <dd>
+              <ul class="pill-list">
+                <li class="pill pill--sm">Competitor analysis</li>
+                <li class="pill pill--sm">User interviews</li>
+                <li class="pill pill--sm">Personas</li>
+                <li class="pill pill--sm">Card sorting</li>
+                <li class="pill pill--sm">Information architecture</li>
+                <li class="pill pill--sm">User flows</li>
+                <li class="pill pill--sm">High-fidelity UI</li>
+                <li class="pill pill--sm">Prototyping</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
       </div>
 
       <div class="media-band" data-reveal>
