@@ -145,6 +145,22 @@
 @media (max-width: 33.99em) {
   .js .nav-toggle:not([hidden]) {
     display: inline-flex;
+    justify-content: center;
+    min-width: var(--target-min);
+    padding: var(--space-2);
+  }
+
+  /* As on the original site: a bigger logo and a 70px bar on phones */
+  .js .logo {
+    font-size: 2rem;
+  }
+
+  .js .site-header__inner {
+    min-height: 4.375rem;
+  }
+
+  .js .site-header.is-stuck .site-header__inner {
+    padding-inline: var(--space-5) var(--space-3);
   }
 
   .js .site-header__inner {
@@ -401,6 +417,43 @@
   border-radius: 50%;
   background: var(--color-success);
   box-shadow: 0 0 0 3px rgb(22 160 133 / 0.25);
+}
+
+/* Figma frame -----------------------------------------------------------
+   A nod to Figma's component selection: a 1px violet outline with a white
+   square handle on each corner. Add .figma-frame to any element (it's used
+   on the card tags and the "Open to Work" badge). Purely decorative: the
+   handles are one pseudo-element drawn with layered backgrounds, so there's
+   no extra markup and nothing for assistive tech to announce.
+   --frame-handle sets the handle size (default 5px). */
+.figma-frame {
+  --frame-handle: 5px;
+  position: relative;
+  border: 1px solid var(--color-frame);
+  border-radius: 0;
+}
+
+.figma-frame--lg {
+  --frame-handle: 8px;
+}
+
+.figma-frame::after {
+  --h: var(--frame-handle);
+  --i: calc(var(--frame-handle) - 2px);
+  content: "";
+  position: absolute;
+  inset: calc(var(--h) / -2 - 0.5px);
+  pointer-events: none;
+  background:
+    linear-gradient(var(--white), var(--white)) 1px 1px / var(--i) var(--i),
+    linear-gradient(var(--white), var(--white)) calc(100% - 1px) 1px / var(--i) var(--i),
+    linear-gradient(var(--white), var(--white)) 1px calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--white), var(--white)) calc(100% - 1px) calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--color-frame), var(--color-frame)) 0 0 / var(--h) var(--h),
+    linear-gradient(var(--color-frame), var(--color-frame)) 100% 0 / var(--h) var(--h),
+    linear-gradient(var(--color-frame), var(--color-frame)) 0 100% / var(--h) var(--h),
+    linear-gradient(var(--color-frame), var(--color-frame)) 100% 100% / var(--h) var(--h);
+  background-repeat: no-repeat;
 }
 
 /* 07 Scroll link ("Explore my work") ------------------------------------- */
@@ -1344,6 +1397,7 @@ code {
     border-color: CanvasText;
   }
 
+  .figma-frame,
   .card,
   .chip,
   .status-badge,
