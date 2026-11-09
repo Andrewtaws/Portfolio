@@ -47,6 +47,7 @@
   --amber-300: #ffb84d;  /* Focus ring on dark: 12.2:1 */
   --green-500: #16a085;  /* Status dot: decorative, always paired with text */
   --red-700: #b42318;    /* Errors: 6.4:1 */
+  --violet-500: #8f55e4; /* Figma-style selection frame: 4:1 on cards. Decorative */
 
   /* ---- Colour: semantic roles (use these in components) ----------------- */
   --color-bg: var(--snow-50);
@@ -65,6 +66,7 @@
   --color-media-band: var(--sky-200);
   --color-success: var(--green-500);
   --color-error: var(--red-700);
+  --color-frame: var(--violet-500);
   --color-inverse-bg: var(--black);
   --color-inverse-text: var(--white);
   --color-border: #d9d4cf;

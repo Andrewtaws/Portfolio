@@ -39,6 +39,7 @@ Load the three stylesheets in that order on every page.
 | Focus (dark) | `--color-focus-inverse` (`--amber-300`) | `#ffb84d` | 12.2:1 on black |
 | Accent | `--color-accent` (`--amber-500`) | `#e8890c` | Decorative only, never text |
 | Error | `--color-error` (`--red-700`) | `#b42318` | 6.4:1 |
+| Figma frame | `--color-frame` (`--violet-500`) | `#8f55e4` | 4:1 on cards. Decorative only |
 | Footer | `--color-inverse-bg` | `#000000` | |
 
 ### Type
@@ -76,6 +77,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Greeting, eyebrow | `.greeting`, `.eyebrow` | Above an `<h1>` |
 | Chips | `.chip`, `.chip--outline`, `.chip-list` | Categories and skills |
 | Status badge | `.status-badge` | e.g. "Open to work" |
+| Figma frame | `.figma-frame`, `.figma-frame--lg` | Figma-style selection outline with corner handles, on any element. Decorative |
 | Scroll link | `.scroll-link` | In-page link with an icon |
 | Home hero | `.hero`, `.hero__content`, `.hero__media` | Intro with portrait |
 | Portrait | `.portrait`, `.portrait__img` | Profile photo |
