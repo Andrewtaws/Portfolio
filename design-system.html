@@ -54,8 +54,8 @@
   <main id="main" tabindex="-1">
 <div class="container container--narrow">
   <header class="case-hero">
-    <p class="eyebrow">Taws.Design</p>
-    <h1>Design system</h1>
+    <p class="eyebrow" data-reveal="intro-chars">Taws.Design</p>
+    <h1 data-reveal="intro-words" data-reveal-delay="0.3">Design system</h1>
     <p class="lead">The tokens, styles and components used to build this site. Everything here is accessible by default and ready to reuse on new pages.</p>
   </header>
 
@@ -284,14 +284,18 @@
   &lt;a class=&quot;btn btn--ghost-inverse&quot; href=&quot;#components&quot;&gt;Ghost inverse&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="scroll-reveal">Scroll reveal</h3>
-<p>Content below the fold fades gently up into view as the page scrolls. Anything already on screen when the page loads shows straight away. Add <code>data-reveal</code> to a section, band, card or list item. <code>data-reveal="words"</code> makes a short plain-text heading rise in word by word instead, as on the footer title, and <code>data-reveal-stagger</code> sets the gap in seconds (0.04 by default). Needs <code>assets/js/scroll-reveal.js</code>.</p>
+<p>Content below the fold fades gently up into view as the page scrolls. Anything already on screen when the page loads shows straight away. Add <code>data-reveal</code> to a section, band, card or list item. <code>data-reveal="words"</code> makes a short plain-text heading rise in word by word instead, as on the footer title, and <code>data-reveal-stagger</code> sets the gap in seconds (0.04 by default). For intro text, as on the original site, <code>data-reveal="intro-chars"</code> (greetings, eyebrows) and <code>data-reveal="intro-words"</code> (page headings) make letters or words rise 10px and blur into focus, including on load. <code>data-reveal-delay</code> holds one back, so the heading follows the greeting. Needs <code>assets/js/scroll-reveal.js</code>.</p>
 <p class="text-sm"><strong>Accessibility:</strong> Nothing is hidden without JavaScript or with reduced motion on. Anything that gets keyboard focus shows immediately. For <code>words</code>, screen readers get one hidden copy of the full text, so it’s never read in fragments.</p>
 <div class="specimen">
+<p class="greeting" data-reveal="intro-chars">Alreet!</p>
+<h2 class="h3" data-reveal="intro-words" data-reveal-delay="0.3">Words blur into focus</h2>
 <div data-reveal class="callout">
   <p>This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.</p>
 </div>
 </div>
-<pre class="code-block"><code>&lt;div data-reveal class=&quot;callout&quot;&gt;
+<pre class="code-block"><code>&lt;p class=&quot;greeting&quot; data-reveal=&quot;intro-chars&quot;&gt;Alreet!&lt;/p&gt;
+&lt;h2 class=&quot;h3&quot; data-reveal=&quot;intro-words&quot; data-reveal-delay=&quot;0.3&quot;&gt;Words blur into focus&lt;/h2&gt;
+&lt;div data-reveal class=&quot;callout&quot;&gt;
   &lt;p&gt;This box fades up when it scrolls into view. If it was already on screen when the page loaded, it just shows.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="page-transition">Page transition</h3>
@@ -314,8 +318,8 @@
 <h3 id="greeting-and-eyebrow">Greeting and eyebrow</h3>
 <p>The handwritten greeting and the small label above case study headings, both with the amber underline. Use them above an <code>&lt;h1&gt;</code>.</p>
 <div class="specimen">
-<p class="greeting">Alreet!</p>
-<p class="eyebrow">UX design case study · Recite Me</p>
+<p class="greeting" data-reveal="intro-chars">Alreet!</p>
+<p class="eyebrow" data-reveal="intro-chars">UX design case study · Recite Me</p>
 </div>
 <pre class="code-block"><code>&lt;p class=&quot;greeting&quot;&gt;Alreet!&lt;/p&gt;
 &lt;p class=&quot;eyebrow&quot;&gt;UX design case study · Recite Me&lt;/p&gt;</code></pre>
