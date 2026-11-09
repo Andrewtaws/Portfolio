@@ -41,6 +41,7 @@ Load the three stylesheets in that order on every page.
 | Accent | `--color-accent` (`--amber-500`) | `#e8890c` | Decorative only, never text |
 | Error | `--color-error` (`--red-700`) | `#b42318` | 6.4:1 |
 | Figma frame | `--color-frame` (`--violet-500`) | `#8f55e4` | 4:1 on cards. Decorative only |
+| Accent pill | `--color-accent-soft` (`--violet-100`) | `#ece2fb` | Navy text 10.4:1 |
 | Footer | `--color-inverse-bg` | `#000000` | |
 
 ### Type
@@ -87,7 +88,8 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Portrait | `.portrait`, `.portrait__img` | Profile photo |
 | Work grid and card | `.work-grid`, `.card` + `--feature`, `--tall`, `--wide` | Homepage case study cards |
 | Case hero | `.case-hero` | Top of a case study |
-| Case meta | `.case-meta`, `.case-meta__item--wide` | Role, company, timeline |
+| Case summary | `.case-summary`, `__head`, `__title`, `__facts`, `__fact`, `__foot` | Project overview card: role, company and type pills, facts row, methods |
+| Pills | `.pill`, `.pill--accent`, `.pill--sm`, `.pill-list` | Rounded tags |
 | Split section | `.split`, `.split__heading` | Heading left, content right |
 | Prose | `.prose`, `.prose--lead` | Body copy with rhythm |
 | Media band | `.media-band`, `--plain` | Full-width screenshot band |

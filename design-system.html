@@ -116,6 +116,7 @@
 <li class="swatch"><div class="swatch__colour" style="background:#16a085"></div><div class="swatch__info"><strong>Status dot (decorative)</strong><code>--green-500</code><code>#16a085</code><span class="text-muted">3.2:1, not for text</span></div></li>
 <li class="swatch"><div class="swatch__colour" style="background:#b42318"></div><div class="swatch__info"><strong>Errors</strong><code>--red-700</code><code>#b42318</code><span class="text-muted">6.4:1, AA text</span></div></li>
 <li class="swatch"><div class="swatch__colour" style="background:#8f55e4"></div><div class="swatch__info"><strong>Figma frame (decorative)</strong><code>--violet-500</code><code>#8f55e4</code><span class="text-muted">4.5:1, not for text</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#ece2fb"></div><div class="swatch__info"><strong>Accent pill background</strong><code>--violet-100</code><code>#ece2fb</code><span class="text-muted">1.2:1</span></div></li>
 </ul>
 <div class="table-wrap" tabindex="0" role="region" aria-label="Semantic colour tokens table" style="margin-block-start: var(--space-6)">
 <table class="token-table">
@@ -376,38 +377,90 @@
     &lt;img src=&quot;assets/images/home/home-card-design-system.webp&quot; width=&quot;1524&quot; height=&quot;684&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<h3 id="case-meta">Case meta</h3>
-<p>The project summary at the top of a case study. A description list, so each label is announced with its value. Add <code>case-meta__item--wide</code> to span the full row.</p>
+<h3 id="case-summary">Case summary</h3>
+<p>The project overview card at the top of a case study: the role as a title with pill tags for the company and project type, an optional row of facts (timeline, team, tools) split by thin rules, and a footer of methods as pills. Every label/value pair is a description list, so each label is announced with its value. Leave out the facts row when there’s nothing to show.</p>
 <div class="specimen">
-<dl data-reveal class="case-meta" aria-label="Project summary">
-  <div class="case-meta__item">
-    <dt>My role</dt>
-    <dd>Lead UX Product Designer</dd>
+<div data-reveal class="case-summary" role="group" aria-label="Project summary">
+  <div class="case-summary__body">
+    <div class="case-summary__head">
+      <dl>
+        <dt class="case-summary__label">My role</dt>
+        <dd class="case-summary__title">Lead UX Product Designer</dd>
+      </dl>
+      <ul class="pill-list" aria-label="Company and project type">
+        <li class="pill">Recite Me</li>
+        <li class="pill pill--accent">UX design case study</li>
+      </ul>
+    </div>
+    <dl class="case-summary__facts">
+      <div class="case-summary__fact">
+        <dt class="case-summary__label">Timeline</dt>
+        <dd>2022–2023</dd>
+      </div>
+      <div class="case-summary__fact">
+        <dt class="case-summary__label">Team</dt>
+        <dd>Product, 4 developers, QA</dd>
+      </div>
+    </dl>
   </div>
-  <div class="case-meta__item">
-    <dt>Company</dt>
-    <dd>Recite Me</dd>
-  </div>
-  <div class="case-meta__item case-meta__item--wide">
-    <dt>What I did</dt>
-    <dd>Research, user flows, high-fidelity UI, prototyping</dd>
-  </div>
-</dl>
+  <dl class="case-summary__foot">
+    <dt class="case-summary__label">What I did</dt>
+    <dd>
+      <ul class="pill-list">
+        <li class="pill pill--sm">User interviews</li>
+        <li class="pill pill--sm">Prototyping</li>
+      </ul>
+    </dd>
+  </dl>
 </div>
-<pre class="code-block"><code>&lt;dl class=&quot;case-meta&quot; aria-label=&quot;Project summary&quot;&gt;
-  &lt;div class=&quot;case-meta__item&quot;&gt;
-    &lt;dt&gt;My role&lt;/dt&gt;
-    &lt;dd&gt;Lead UX Product Designer&lt;/dd&gt;
+</div>
+<pre class="code-block"><code>&lt;div class=&quot;case-summary&quot; role=&quot;group&quot; aria-label=&quot;Project summary&quot;&gt;
+  &lt;div class=&quot;case-summary__body&quot;&gt;
+    &lt;div class=&quot;case-summary__head&quot;&gt;
+      &lt;dl&gt;
+        &lt;dt class=&quot;case-summary__label&quot;&gt;My role&lt;/dt&gt;
+        &lt;dd class=&quot;case-summary__title&quot;&gt;Lead UX Product Designer&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;ul class=&quot;pill-list&quot; aria-label=&quot;Company and project type&quot;&gt;
+        &lt;li class=&quot;pill&quot;&gt;Recite Me&lt;/li&gt;
+        &lt;li class=&quot;pill pill--accent&quot;&gt;UX design case study&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;dl class=&quot;case-summary__facts&quot;&gt;
+      &lt;div class=&quot;case-summary__fact&quot;&gt;
+        &lt;dt class=&quot;case-summary__label&quot;&gt;Timeline&lt;/dt&gt;
+        &lt;dd&gt;2022–2023&lt;/dd&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;case-summary__fact&quot;&gt;
+        &lt;dt class=&quot;case-summary__label&quot;&gt;Team&lt;/dt&gt;
+        &lt;dd&gt;Product, 4 developers, QA&lt;/dd&gt;
+      &lt;/div&gt;
+    &lt;/dl&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;case-meta__item&quot;&gt;
-    &lt;dt&gt;Company&lt;/dt&gt;
-    &lt;dd&gt;Recite Me&lt;/dd&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;case-meta__item case-meta__item--wide&quot;&gt;
-    &lt;dt&gt;What I did&lt;/dt&gt;
-    &lt;dd&gt;Research, user flows, high-fidelity UI, prototyping&lt;/dd&gt;
-  &lt;/div&gt;
-&lt;/dl&gt;</code></pre>
+  &lt;dl class=&quot;case-summary__foot&quot;&gt;
+    &lt;dt class=&quot;case-summary__label&quot;&gt;What I did&lt;/dt&gt;
+    &lt;dd&gt;
+      &lt;ul class=&quot;pill-list&quot;&gt;
+        &lt;li class=&quot;pill pill--sm&quot;&gt;User interviews&lt;/li&gt;
+        &lt;li class=&quot;pill pill--sm&quot;&gt;Prototyping&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="pills">Pills</h3>
+<p>Rounded tags. <code>pill</code> is neutral (white), <code>pill--accent</code> uses the soft violet, and <code>pill--sm</code> is the compact size used for lists of methods. Group them in <code>&lt;ul class="pill-list"&gt;</code>.</p>
+<div class="specimen" style="background:var(--color-surface)">
+<ul class="pill-list" aria-label="Example pills">
+  <li class="pill">Neutral</li>
+  <li class="pill pill--accent">Accent</li>
+  <li class="pill pill--sm">Small</li>
+</ul>
+</div>
+<pre class="code-block"><code>&lt;ul class=&quot;pill-list&quot; aria-label=&quot;Example pills&quot;&gt;
+  &lt;li class=&quot;pill&quot;&gt;Neutral&lt;/li&gt;
+  &lt;li class=&quot;pill pill--accent&quot;&gt;Accent&lt;/li&gt;
+  &lt;li class=&quot;pill pill--sm&quot;&gt;Small&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 <h3 id="figure-and-gallery">Figure and gallery</h3>
 <p>Screenshots go in <code>&lt;figure&gt;</code> with descriptive alt text. Use <code>&lt;figcaption&gt;</code> for a short visible label. Galleries: <code>gallery--2</code>, <code>gallery--3</code>, and <code>gallery--device</code> (a desktop screen beside its mobile version). For very tall screenshots add <code>figure--tall</code> to crop them, plus a link to the full image.</p>
 <p class="text-sm"><strong>Accessibility:</strong> Always set <code>width</code> and <code>height</code> to prevent layout shift. Add <code>loading="lazy"</code> to every image below the fold. Text-heavy images, such as personas, need a full text version: use the disclosure below.</p>
