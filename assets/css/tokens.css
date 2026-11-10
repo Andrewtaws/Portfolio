@@ -49,6 +49,9 @@
   --red-700: #b42318;    /* Errors: 6.4:1 */
   --violet-500: #8f55e4; /* Figma-style selection frame: 4:1 on cards. Decorative */
   --violet-100: #ece2fb; /* Accent pill background: navy text 10.4:1 */
+  --mint-100: #dcf2e7;   /* Pastel pill: navy text 11.0:1 */
+  --peach-100: #fde4d3;  /* Pastel pill: navy text 10.6:1 */
+  --sky-100: #dbeafa;    /* Pastel pill: navy text 10.6:1 */
 
   /* ---- Colour: semantic roles (use these in components) ----------------- */
   --color-bg: var(--snow-50);

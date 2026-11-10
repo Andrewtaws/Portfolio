@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js")</script>
   <title>Recite Me Design System – Case Study | Andrew Taws</title>
   <meta name="description" content="How I built the Recite Me Design System, a single source of truth that keeps a growing suite of accessibility products consistent, accessible and quicker to build.">
   <link rel="canonical" href="https://andrewtaws.co.uk/work/design-system">
@@ -25,11 +26,11 @@
   <meta name="theme-color" content="#07354d">
 
   <link rel="preload" href="../assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/tokens.css?v=712f9270">
+  <link rel="stylesheet" href="../assets/css/tokens.css?v=0ecc602a">
   <link rel="stylesheet" href="../assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="../assets/css/components.css?v=7e931295">
+  <link rel="stylesheet" href="../assets/css/components.css?v=6465d4ff">
   <script src="../assets/js/site.js?v=2c1fa34d" defer></script>
-  <script src="../assets/js/scroll-reveal.js?v=9ff9afed" defer></script>
+  <script src="../assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,7 +38,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="../index.html">Taws.Design<span class="visually-hidden"> – home</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" hidden>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list">
         <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="nav-toggle__open" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/><path class="nav-toggle__close" d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg>
         <span class="visually-hidden">Menu</span>
       </button>
@@ -103,7 +104,7 @@
       <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="The Typography page of the Recite Me Design System, with a large “Aa Bb Cc” specimen of the typeface." fetchpriority="high">
+            <img srcset="../assets/images/home/home-card-design-system-640.webp 640w, ../assets/images/home/home-card-design-system-1024.webp 1024w, ../assets/images/home/home-card-design-system.webp 1524w" sizes="(min-width: 70em) 1024px, 92vw" src="../assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="The Typography page of the Recite Me Design System, with a large “Aa Bb Cc” specimen of the typeface." fetchpriority="high">
           </figure>
         </div>
       </div>
@@ -150,13 +151,13 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-01.webp" width="1440" height="2131" alt="Typography page (1.0) documenting the typeface, responsive behaviour and the type scale from H1 to body text, with sizes for each." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-01-640.webp 640w, ../assets/images/design-system/design-system-01-1024.webp 1024w, ../assets/images/design-system/design-system-01.webp 1440w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-01.webp" width="1440" height="2131" alt="Typography page (1.0) documenting the typeface, responsive behaviour and the type scale from H1 to body text, with sizes for each." loading="lazy" decoding="async">
                 <figcaption>Typography. <a class="figure__open" href="../assets/images/design-system/design-system-01.webp">View full page<span class="visually-hidden">: Typography</span></a></figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-02.webp" width="1716" height="2454" alt="Colours page (2.0) showing primary, secondary and tertiary palettes as swatches, with notes on accessible contrast." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-02-640.webp 640w, ../assets/images/design-system/design-system-02-1024.webp 1024w, ../assets/images/design-system/design-system-02-1440.webp 1440w, ../assets/images/design-system/design-system-02.webp 1716w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-02.webp" width="1716" height="2454" alt="Colours page (2.0) showing primary, secondary and tertiary palettes as swatches, with notes on accessible contrast." loading="lazy" decoding="async">
                 <figcaption>Colours. <a class="figure__open" href="../assets/images/design-system/design-system-02.webp">View full page<span class="visually-hidden">: Colours</span></a></figcaption>
               </figure>
             </li>
@@ -179,13 +180,13 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-03.webp" width="1440" height="2664" alt="Buttons page documenting primary, secondary and tertiary buttons, warning, disabled and icon buttons, button groups and links, each with their states." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-03-640.webp 640w, ../assets/images/design-system/design-system-03-1024.webp 1024w, ../assets/images/design-system/design-system-03.webp 1440w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-03.webp" width="1440" height="2664" alt="Buttons page documenting primary, secondary and tertiary buttons, warning, disabled and icon buttons, button groups and links, each with their states." loading="lazy" decoding="async">
                 <figcaption>Buttons. <a class="figure__open" href="../assets/images/design-system/design-system-03.webp">View full page<span class="visually-hidden">: Buttons</span></a></figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-04.webp" width="1440" height="4201" alt="Validation messages page (4.0) showing error summaries and inline field errors, with guidance on when and how to use them." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-04-640.webp 640w, ../assets/images/design-system/design-system-04-1024.webp 1024w, ../assets/images/design-system/design-system-04.webp 1440w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-04.webp" width="1440" height="4201" alt="Validation messages page (4.0) showing error summaries and inline field errors, with guidance on when and how to use them." loading="lazy" decoding="async">
                 <figcaption>Validation messages. <a class="figure__open" href="../assets/images/design-system/design-system-04.webp">View full page<span class="visually-hidden">: Validation messages</span></a></figcaption>
               </figure>
             </li>
@@ -208,13 +209,13 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-05.webp" width="1440" height="1930" alt="Inset text component page (3.0) explaining when to use inset text, with examples for domain name special characters and sitemap URL format." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-05-640.webp 640w, ../assets/images/design-system/design-system-05-1024.webp 1024w, ../assets/images/design-system/design-system-05.webp 1440w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-05.webp" width="1440" height="1930" alt="Inset text component page (3.0) explaining when to use inset text, with examples for domain name special characters and sitemap URL format." loading="lazy" decoding="async">
                 <figcaption>Inset text. <a class="figure__open" href="../assets/images/design-system/design-system-05.webp">View full page<span class="visually-hidden">: Inset text</span></a></figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure figure--tall">
-                <img src="../assets/images/design-system/design-system-06.webp" width="1440" height="2960" alt="Forms page showing sign-in, error state and create account form patterns built from the system’s components." loading="lazy" decoding="async">
+                <img srcset="../assets/images/design-system/design-system-06-640.webp 640w, ../assets/images/design-system/design-system-06-1024.webp 1024w, ../assets/images/design-system/design-system-06.webp 1440w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/design-system/design-system-06.webp" width="1440" height="2960" alt="Forms page showing sign-in, error state and create account form patterns built from the system’s components." loading="lazy" decoding="async">
                 <figcaption>Forms. <a class="figure__open" href="../assets/images/design-system/design-system-06.webp">View full page<span class="visually-hidden">: Forms</span></a></figcaption>
               </figure>
             </li>
@@ -237,7 +238,7 @@
       <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/shared/checker-17-and-design-system-07.webp" width="1728" height="1117" alt="The design system in use: the Accessibility Checker’s “Start your accessibility journey” screen, built with the system’s typography, colours and buttons." loading="lazy" decoding="async">
+            <img srcset="../assets/images/shared/checker-17-and-design-system-07-640.webp 640w, ../assets/images/shared/checker-17-and-design-system-07-1024.webp 1024w, ../assets/images/shared/checker-17-and-design-system-07-1440.webp 1440w, ../assets/images/shared/checker-17-and-design-system-07.webp 1728w" sizes="(min-width: 70em) 1024px, 92vw" src="../assets/images/shared/checker-17-and-design-system-07.webp" width="1728" height="1117" alt="The design system in use: the Accessibility Checker’s “Start your accessibility journey” screen, built with the system’s typography, colours and buttons." loading="lazy" decoding="async">
             <figcaption>The system in use in the Accessibility Checker</figcaption>
           </figure>
         </div>

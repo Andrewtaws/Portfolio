@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js")</script>
   <title>Andrew Taws – Lead UX Product Designer, Accessibility Specialist</title>
   <meta name="description" content="Andrew Taws is a Lead UX Product Designer in Newcastle with 10 years' experience designing accessible products, design systems and healthcare services.">
   <link rel="canonical" href="https://andrewtaws.co.uk/">
@@ -25,11 +26,11 @@
   <meta name="theme-color" content="#07354d">
 
   <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=712f9270">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=0ecc602a">
   <link rel="stylesheet" href="assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="assets/css/components.css?v=7e931295">
+  <link rel="stylesheet" href="assets/css/components.css?v=6465d4ff">
   <script src="assets/js/site.js?v=2c1fa34d" defer></script>
-  <script src="assets/js/scroll-reveal.js?v=9ff9afed" defer></script>
+  <script src="assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,7 +38,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="./">Taws.Design<span class="visually-hidden"> – home</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" hidden>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list">
         <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="nav-toggle__open" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/><path class="nav-toggle__close" d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg>
         <span class="visually-hidden">Menu</span>
       </button>
@@ -59,11 +60,11 @@
           <h1 data-reveal="intro-words" data-reveal-delay="0.3">I’m Andrew Taws, a Lead UX Product Designer currently based in Newcastle</h1>
           <p class="lead">I have 10 years of experience working as a designer, dedicated to creating innovative and accessible products.</p>
           <!-- TODO (Andrew): review these specialism chips. -->
-          <ul class="chip-list hero__chips" aria-label="Specialisms">
-            <li class="chip chip--outline">Accessibility (WCAG 2.2 AA)</li>
-            <li class="chip chip--outline">Design systems</li>
-            <li class="chip chip--outline">User research</li>
-            <li class="chip chip--outline">Healthcare UX</li>
+          <ul class="pill-list hero__chips" aria-label="Specialisms">
+            <li class="pill pill--violet">Accessibility (WCAG 2.2 AA)</li>
+            <li class="pill pill--mint">Design systems</li>
+            <li class="pill pill--peach">User research</li>
+            <li class="pill pill--sky">Healthcare UX</li>
           </ul>
           <p class="hero__actions">
             <a class="scroll-link" href="#work">
@@ -77,7 +78,7 @@
 
         <div class="hero__media">
           <div class="portrait">
-            <img class="portrait__img" src="assets/images/shared/profile-andrew-taws.webp" width="1200" height="1351" alt="Andrew Taws" fetchpriority="high">
+            <img srcset="assets/images/shared/profile-andrew-taws-640.webp 640w, assets/images/shared/profile-andrew-taws-1024.webp 1024w, assets/images/shared/profile-andrew-taws.webp 1200w" sizes="(min-width: 75em) 448px, (min-width: 56em) 36vw, 14rem" class="portrait__img" src="assets/images/shared/profile-andrew-taws.webp" width="1200" height="1351" alt="Andrew Taws" loading="lazy" decoding="async">
             <p class="status-badge figma-frame figma-frame--lg"><span class="status-badge__dot" aria-hidden="true"></span>Open to work</p>
           </div>
         </div>
@@ -91,7 +92,7 @@
               <h3 class="card__title"><a class="card__link" href="work/checker.html">Recite Me Accessibility Checker</a></h3>
               <p class="chip card__chip figma-frame">UX Design Case Study</p>
               <div class="card__media">
-                <img src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="" loading="lazy" decoding="async">
+                <img srcset="assets/images/shared/checker-dashboard-640.webp 640w, assets/images/shared/checker-dashboard-1024.webp 1024w, assets/images/shared/checker-dashboard-1440.webp 1440w, assets/images/shared/checker-dashboard.webp 1915w" sizes="(min-width: 75em) 540px, (min-width: 48em) 45vw, 92vw" src="assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
@@ -109,7 +110,7 @@
               <h3 class="card__title"><a class="card__link" href="work/design-system.html">Recite Me Design System</a></h3>
               <p class="chip card__chip figma-frame">Design System</p>
               <div class="card__media">
-                <img src="assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
+                <img srcset="assets/images/home/home-card-design-system-640.webp 640w, assets/images/home/home-card-design-system-1024.webp 1024w, assets/images/home/home-card-design-system.webp 1524w" sizes="(min-width: 75em) 510px, (min-width: 48em) 44vw, 92vw" src="assets/images/home/home-card-design-system.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
@@ -118,7 +119,7 @@
               <h3 class="card__title"><a class="card__link" href="work/client-portal.html">Recite Me Client Portal</a></h3>
               <p class="chip card__chip figma-frame">Product Design</p>
               <div class="card__media">
-                <img src="assets/images/home/home-card-client-portal.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
+                <img srcset="assets/images/home/home-card-client-portal-640.webp 640w, assets/images/home/home-card-client-portal-1024.webp 1024w, assets/images/home/home-card-client-portal.webp 1524w" sizes="(min-width: 75em) 510px, (min-width: 48em) 44vw, 92vw" src="assets/images/home/home-card-client-portal.webp" width="1524" height="684" alt="" loading="lazy" decoding="async">
               </div>
             </div>
           </li>
