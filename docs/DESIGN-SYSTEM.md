@@ -42,7 +42,7 @@ Load the three stylesheets in that order on every page.
 | Error | `--color-error` (`--red-700`) | `#b42318` | 6.4:1 |
 | Figma frame | `--color-frame` (`--violet-500`) | `#8f55e4` | 4:1 on cards. Decorative only |
 | Accent pill | `--color-accent-soft` (`--violet-100`) | `#ece2fb` | Navy text 10.4:1 |
-| Pastel pills | `--mint-100`, `--peach-100`, `--sky-100` | `#dcf2e7`, `#fde4d3`, `#dbeafa` | Navy text 10.6–11.0:1 |
+| Pastel pills | `--mint-100`, `--peach-100`, `--sky-100`, `--lemon-100` | `#dcf2e7`, `#fde4d3`, `#dbeafa`, `#fbf0c2` | Navy text 10.6–11.3:1 |
 | Footer | `--color-inverse-bg` | `#000000` | |
 
 ### Type
@@ -91,7 +91,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Work grid and card | `.work-grid`, `.card` + `--feature`, `--tall`, `--wide` | Homepage case study cards |
 | Case hero | `.case-hero` | Top of a case study |
 | Case summary | `.case-summary`, `__head`, `__title`, `__tldr`, `__facts`, `__fact`, `__foot` | Project overview card: role, company and type pills, TL;DR, facts row, methods |
-| Pills | `.pill`, `.pill--violet` (`--accent`), `.pill--mint`, `.pill--peach`, `.pill--sky`, `.pill--sm`, `.pill-list` | Rounded tags; pastel variants keep navy text above 10:1 |
+| Pills | `.pill`, `.pill--violet` (`--accent`), `.pill--mint`, `.pill--peach`, `.pill--sky`, `.pill--lemon`, `.pill--sm`, `.pill-list` | Rounded tags; pastel variants keep navy text above 10:1 |
 | Split section | `.split`, `.split__heading` | Heading left, content right |
 | Prose | `.prose`, `.prose--lead` | Body copy with rhythm |
 | Media band | `.media-band`, `--plain` | Full-width screenshot band |
