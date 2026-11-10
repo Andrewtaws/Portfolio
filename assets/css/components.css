@@ -739,6 +739,14 @@
   .hero__media {
     margin-block-start: var(--space-7);
   }
+
+  /* Homepage specialisms: let the row run under the photo (the space
+     there is empty) so all the pills sit on one line where they fit;
+     they still wrap if even the full page width is too narrow */
+  .hero--home .hero__chips {
+    width: max-content;
+    max-width: min(var(--container-max), 100vw - 2 * var(--gutter));
+  }
 }
 
 /* 09 Portrait ------------------------------------------------------------- */
