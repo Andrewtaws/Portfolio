@@ -468,6 +468,66 @@
   }
 }
 
+/* Pill playground --------------------------------------------------------
+   Set up by assets/js/pill-playground.js on [data-playground]: the pills
+   drop in, bounce, and can be dragged and thrown (and scattered by shaking
+   a phone). Only with JavaScript and when motion is allowed; otherwise the
+   pills are a normal static row. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Reserve the play area up front, so nothing shifts when it starts */
+  .js [data-playground] {
+    position: relative;
+    align-items: flex-start;
+    align-content: flex-start;
+    min-height: 10rem;
+  }
+
+  /* Hidden until the script has placed them; shown anyway after 2s in
+     case the script never runs */
+  .js [data-playground]:not(.is-live) > .pill {
+    opacity: 0;
+    animation: playground-failsafe 0s 2s forwards;
+  }
+
+  [data-playground].is-live {
+    overflow: clip;
+  }
+
+  [data-playground].is-live > .pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    will-change: transform;
+  }
+
+  [data-playground].is-live > .pill.is-dragging {
+    z-index: 1;
+    cursor: grabbing;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 56em) {
+  .js [data-playground] {
+    min-height: 7rem;
+  }
+
+  /* Use the full page width below the photo as the play area */
+  .js .hero--home [data-playground] {
+    width: min(var(--container-max), 100vw - 2 * var(--gutter));
+  }
+}
+
+@keyframes playground-failsafe {
+  to {
+    opacity: 1;
+  }
+}
+
 /* Figma frame -----------------------------------------------------------
    A nod to Figma's component selection: a 1px violet outline with a white
    square handle on each corner. Add .figma-frame to any element (it's used
