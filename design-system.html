@@ -26,9 +26,9 @@
   <meta name="theme-color" content="#07354d">
 
   <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=712f9270">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=0ecc602a">
   <link rel="stylesheet" href="assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="assets/css/components.css?v=4421ce4d">
+  <link rel="stylesheet" href="assets/css/components.css?v=6465d4ff">
   <script src="assets/js/site.js?v=2c1fa34d" defer></script>
   <script src="assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
 </head>
@@ -118,6 +118,9 @@
 <li class="swatch"><div class="swatch__colour" style="background:#b42318"></div><div class="swatch__info"><strong>Errors</strong><code>--red-700</code><code>#b42318</code><span class="text-muted">6.4:1, AA text</span></div></li>
 <li class="swatch"><div class="swatch__colour" style="background:#8f55e4"></div><div class="swatch__info"><strong>Figma frame (decorative)</strong><code>--violet-500</code><code>#8f55e4</code><span class="text-muted">4.5:1, not for text</span></div></li>
 <li class="swatch"><div class="swatch__colour" style="background:#ece2fb"></div><div class="swatch__info"><strong>Accent pill background</strong><code>--violet-100</code><code>#ece2fb</code><span class="text-muted">1.2:1</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#dcf2e7"></div><div class="swatch__info"><strong>Pastel pill</strong><code>--mint-100</code><code>#dcf2e7</code><span class="text-muted">1.1:1</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#fde4d3"></div><div class="swatch__info"><strong>Pastel pill</strong><code>--peach-100</code><code>#fde4d3</code><span class="text-muted">1.2:1</span></div></li>
+<li class="swatch"><div class="swatch__colour" style="background:#dbeafa"></div><div class="swatch__info"><strong>Pastel pill</strong><code>--sky-100</code><code>#dbeafa</code><span class="text-muted">1.2:1</span></div></li>
 </ul>
 <div class="table-wrap" tabindex="0" role="region" aria-label="Semantic colour tokens table" style="margin-block-start: var(--space-6)">
 <table class="token-table">
@@ -459,17 +462,23 @@
   &lt;/dl&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="pills">Pills</h3>
-<p>Rounded tags. <code>pill</code> is neutral (white), <code>pill--accent</code> uses the soft violet, and <code>pill--sm</code> is the compact size used for lists of methods. Group them in <code>&lt;ul class="pill-list"&gt;</code>.</p>
+<p>Rounded tags. <code>pill</code> is neutral (white). Pastel variants: <code>pill--violet</code> (also <code>pill--accent</code>), <code>pill--mint</code>, <code>pill--peach</code> and <code>pill--sky</code>, all with navy text above 10:1. <code>pill--sm</code> is the compact size used for lists of methods. Group them in <code>&lt;ul class="pill-list"&gt;</code>.</p>
 <div class="specimen" style="background:var(--color-surface)">
 <ul class="pill-list" aria-label="Example pills">
   <li class="pill">Neutral</li>
-  <li class="pill pill--accent">Accent</li>
+  <li class="pill pill--violet">Violet</li>
+  <li class="pill pill--mint">Mint</li>
+  <li class="pill pill--peach">Peach</li>
+  <li class="pill pill--sky">Sky</li>
   <li class="pill pill--sm">Small</li>
 </ul>
 </div>
 <pre class="code-block"><code>&lt;ul class=&quot;pill-list&quot; aria-label=&quot;Example pills&quot;&gt;
   &lt;li class=&quot;pill&quot;&gt;Neutral&lt;/li&gt;
-  &lt;li class=&quot;pill pill--accent&quot;&gt;Accent&lt;/li&gt;
+  &lt;li class=&quot;pill pill--violet&quot;&gt;Violet&lt;/li&gt;
+  &lt;li class=&quot;pill pill--mint&quot;&gt;Mint&lt;/li&gt;
+  &lt;li class=&quot;pill pill--peach&quot;&gt;Peach&lt;/li&gt;
+  &lt;li class=&quot;pill pill--sky&quot;&gt;Sky&lt;/li&gt;
   &lt;li class=&quot;pill pill--sm&quot;&gt;Small&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 <h3 id="figure-and-gallery">Figure and gallery</h3>

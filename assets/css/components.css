@@ -1057,8 +1057,22 @@
   color: var(--color-heading);
 }
 
-.pill--accent {
+.pill--accent,
+.pill--violet {
   background: var(--color-accent-soft);
+}
+
+/* Pastel variants: navy text stays above 10:1 on every colour */
+.pill--mint {
+  background: var(--mint-100);
+}
+
+.pill--peach {
+  background: var(--peach-100);
+}
+
+.pill--sky {
+  background: var(--sky-100);
 }
 
 .pill--sm {
