@@ -19,7 +19,6 @@ The live, visual version of this guide is [`design-system.html`](../design-syste
 | `assets/js/site.js` | Sticky header bar and mobile menu button (load on every page) |
 | `assets/js/scroll-reveal.js` | Fades below-the-fold `[data-reveal]` content into view on scroll (load on every page) |
 | `assets/js/contact-form.js` | Form validation and error summary pattern |
-| `assets/js/pill-playground.js` | Homepage pill playground: drop in, drag and throw, shake to scatter (homepage only) |
 | `templates/page.html` | Starting point for a general page |
 | `templates/case-study.html` | Starting point for a case study |
 
@@ -93,7 +92,6 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Case hero | `.case-hero` | Top of a case study |
 | Case summary | `.case-summary`, `__head`, `__title`, `__tldr`, `__facts`, `__fact`, `__foot` | Project overview card: role, company and type pills, TL;DR, facts row, methods |
 | Pills | `.pill`, `.pill--violet` (`--accent`), `.pill--mint`, `.pill--peach`, `.pill--sky`, `.pill--lemon`, `.pill--sm`, `.pill-list` | Rounded tags; pastel variants keep navy text above 10:1 |
-| Pill playground | `data-playground` on a `.pill-list` | Pills drop in and bounce, can be dragged and thrown, and scatter when a phone is shaken, then drift home. The list stays a normal list for screen readers. Off for reduced motion and without JavaScript |
 | Split section | `.split`, `.split__heading` | Heading left, content right |
 | Prose | `.prose`, `.prose--lead` | Body copy with rhythm |
 | Media band | `.media-band`, `--plain` | Full-width screenshot band |
