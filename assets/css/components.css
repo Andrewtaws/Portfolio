@@ -1075,6 +1075,10 @@
   background: var(--sky-100);
 }
 
+.pill--lemon {
+  background: var(--lemon-100);
+}
+
 .pill--sm {
   min-height: 0;
   padding: var(--space-1) var(--space-3);

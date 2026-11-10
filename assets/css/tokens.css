@@ -52,6 +52,7 @@
   --mint-100: #dcf2e7;   /* Pastel pill: navy text 11.0:1 */
   --peach-100: #fde4d3;  /* Pastel pill: navy text 10.6:1 */
   --sky-100: #dbeafa;    /* Pastel pill: navy text 10.6:1 */
+  --lemon-100: #fbf0c2;  /* Pastel pill: navy text 11.3:1 */
 
   /* ---- Colour: semantic roles (use these in components) ----------------- */
   --color-bg: var(--snow-50);
