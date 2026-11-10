@@ -148,14 +148,45 @@
     });
   }
 
+  // Split highlight paragraphs lazily, about a screen before they're
+  // reached, so long pages don't do all the work on load
+  var pending = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      pending.unobserve(entry.target);
+      var item = splitLetters(entry.target);
+      if (item) {
+        highlights.push(item);
+        startHighlights();
+      }
+    });
+  }, { rootMargin: "100% 0px" });
+
+  var listening = false;
+  function startHighlights() {
+    paint();
+    if (listening) return;
+    listening = true;
+    var ticking = false;
+    var onScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        ticking = false;
+        paint();
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+  }
+
   var fold = window.innerHeight;
 
   Array.prototype.forEach.call(targets, function (el) {
     var mode = el.getAttribute("data-reveal");
 
     if (mode === "highlight") {
-      var item = splitLetters(el);
-      if (item) highlights.push(item);
+      pending.observe(el); // split only when it comes near the screen
       return;
     }
 
@@ -178,18 +209,4 @@
     observer.observe(el);
   });
 
-  if (highlights.length) {
-    var ticking = false;
-    var onScroll = function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        ticking = false;
-        paint();
-      });
-    };
-    paint();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-  }
 })();

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js")</script>
   <title>Recite Me Accessibility Checker – UX Case Study | Andrew Taws</title>
   <meta name="description" content="How I designed the Recite Me Accessibility Checker, a tool that scans any website against WCAG and tells people exactly how to fix what it finds.">
   <link rel="canonical" href="https://andrewtaws.co.uk/work/checker">
@@ -27,9 +28,9 @@
   <link rel="preload" href="../assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/tokens.css?v=712f9270">
   <link rel="stylesheet" href="../assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="../assets/css/components.css?v=7e931295">
+  <link rel="stylesheet" href="../assets/css/components.css?v=4421ce4d">
   <script src="../assets/js/site.js?v=2c1fa34d" defer></script>
-  <script src="../assets/js/scroll-reveal.js?v=9ff9afed" defer></script>
+  <script src="../assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,7 +38,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="../index.html">Taws.Design<span class="visually-hidden"> – home</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" hidden>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list">
         <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="nav-toggle__open" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/><path class="nav-toggle__close" d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg>
         <span class="visually-hidden">Menu</span>
       </button>
@@ -105,7 +106,7 @@
       <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="The Recite Me Accessibility Checker dashboard for an NHS trust website, showing an overall accessibility score of 75% and scores for WCAG levels A, AA and AAA, with a findings breakdown table below." fetchpriority="high">
+            <img srcset="../assets/images/shared/checker-dashboard-640.webp 640w, ../assets/images/shared/checker-dashboard-1024.webp 1024w, ../assets/images/shared/checker-dashboard-1440.webp 1440w, ../assets/images/shared/checker-dashboard.webp 1915w" sizes="(min-width: 70em) 1024px, 92vw" src="../assets/images/shared/checker-dashboard.webp" width="1915" height="1436" alt="The Recite Me Accessibility Checker dashboard for an NHS trust website, showing an overall accessibility score of 75% and scores for WCAG levels A, AA and AAA, with a findings breakdown table below." fetchpriority="high">
           </figure>
         </div>
       </div>
@@ -149,7 +150,7 @@
           <ul class="gallery gallery--2">
             <li class="persona">
               <figure class="figure">
-                <img src="../assets/images/checker/checker-02.webp" width="2000" height="1952" alt="Persona card for Charles Leclerc, a UX and product designer. Full details follow in the expandable section below." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-02-640.webp 640w, ../assets/images/checker/checker-02-1024.webp 1024w, ../assets/images/checker/checker-02-1440.webp 1440w, ../assets/images/checker/checker-02.webp 2000w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-02.webp" width="2000" height="1952" alt="Persona card for Charles Leclerc, a UX and product designer. Full details follow in the expandable section below." loading="lazy" decoding="async">
                 <figcaption>Persona: Charles Leclerc, UX/Product Designer</figcaption>
               </figure>
               <details class="disclosure">
@@ -185,7 +186,7 @@
             </li>
             <li class="persona">
               <figure class="figure">
-                <img src="../assets/images/checker/checker-03.webp" width="2000" height="1952" alt="Persona card for Stephanie Holland, who works in marketing. Full details follow in the expandable section below." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-03-640.webp 640w, ../assets/images/checker/checker-03-1024.webp 1024w, ../assets/images/checker/checker-03-1440.webp 1440w, ../assets/images/checker/checker-03.webp 2000w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-03.webp" width="2000" height="1952" alt="Persona card for Stephanie Holland, who works in marketing. Full details follow in the expandable section below." loading="lazy" decoding="async">
                 <figcaption>Persona: Stephanie Holland, Marketing</figcaption>
               </figure>
               <details class="disclosure">
@@ -235,7 +236,7 @@
       <div class="media-band" data-reveal>
         <div class="container">
           <figure class="figure figure--hero">
-            <img src="../assets/images/checker/checker-15.webp" width="2000" height="1175" alt="Checker sitemap produced from the card sorting. The Scanner branches into six sections: Overview, My Domains, My Scan History, Create a Report, Resource Hub and Team Management, each with its pages and actions listed beneath." loading="lazy" decoding="async">
+            <img srcset="../assets/images/checker/checker-15-640.webp 640w, ../assets/images/checker/checker-15-1024.webp 1024w, ../assets/images/checker/checker-15-1440.webp 1440w, ../assets/images/checker/checker-15.webp 2000w" sizes="(min-width: 70em) 1024px, 92vw" src="../assets/images/checker/checker-15.webp" width="2000" height="1175" alt="Checker sitemap produced from the card sorting. The Scanner branches into six sections: Overview, My Domains, My Scan History, Create a Report, Resource Hub and Team Management, each with its pages and actions listed beneath." loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
@@ -256,31 +257,31 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-04-sign-in.webp" width="1728" height="1117" alt="Recite Me sign-in page with username and password fields." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-04-sign-in-640.webp 640w, ../assets/images/checker/checker-04-sign-in-1024.webp 1024w, ../assets/images/checker/checker-04-sign-in-1440.webp 1440w, ../assets/images/checker/checker-04-sign-in.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-04-sign-in.webp" width="1728" height="1117" alt="Recite Me sign-in page with username and password fields." loading="lazy" decoding="async">
                 <figcaption>Sign in</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-05-add-domain-start.webp" width="1728" height="1117" alt="Welcome screen titled “Start your accessibility journey”, explaining that users can scan their domains, find issues, learn how to fix them and track progress, with an Add Domain button." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-05-add-domain-start-640.webp 640w, ../assets/images/checker/checker-05-add-domain-start-1024.webp 1024w, ../assets/images/checker/checker-05-add-domain-start-1440.webp 1440w, ../assets/images/checker/checker-05-add-domain-start.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-05-add-domain-start.webp" width="1728" height="1117" alt="Welcome screen titled “Start your accessibility journey”, explaining that users can scan their domains, find issues, learn how to fix them and track progress, with an Add Domain button." loading="lazy" decoding="async">
                 <figcaption>Welcome: start your accessibility journey</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-06-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 1 of 5: “Add a site” form with Site Name and Site URL fields. A progress indicator shows the steps Your Site, Page Configuration, Select Scan Level, Scan Settings and Confirmation." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-06-add-domain-step-640.webp 640w, ../assets/images/checker/checker-06-add-domain-step-1024.webp 1024w, ../assets/images/checker/checker-06-add-domain-step-1440.webp 1440w, ../assets/images/checker/checker-06-add-domain-step.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-06-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 1 of 5: “Add a site” form with Site Name and Site URL fields. A progress indicator shows the steps Your Site, Page Configuration, Select Scan Level, Scan Settings and Confirmation." loading="lazy" decoding="async">
                 <figcaption>Step 1: your site</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-07-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 3: Select Scan Level, with a card for each of WCAG Level A, AA and AAA explaining what each level means." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-07-add-domain-step-640.webp 640w, ../assets/images/checker/checker-07-add-domain-step-1024.webp 1024w, ../assets/images/checker/checker-07-add-domain-step-1440.webp 1440w, ../assets/images/checker/checker-07-add-domain-step.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-07-add-domain-step.webp" width="1728" height="1117" alt="Add Domain, step 3: Select Scan Level, with a card for each of WCAG Level A, AA and AAA explaining what each level means." loading="lazy" decoding="async">
                 <figcaption>Step 3: choose the WCAG level</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-08-add-domain-confirmation.webp" width="1728" height="1117" alt="Add Domain, step 5: Confirmation, summarising the domain, page configuration, scan level and advanced settings, each with an Edit Section button, and Save or Save and Scan buttons." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-08-add-domain-confirmation-640.webp 640w, ../assets/images/checker/checker-08-add-domain-confirmation-1024.webp 1024w, ../assets/images/checker/checker-08-add-domain-confirmation-1440.webp 1440w, ../assets/images/checker/checker-08-add-domain-confirmation.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-08-add-domain-confirmation.webp" width="1728" height="1117" alt="Add Domain, step 5: Confirmation, summarising the domain, page configuration, scan level and advanced settings, each with an Edit Section button, and Save or Save and Scan buttons." loading="lazy" decoding="async">
                 <figcaption>Step 5: confirm and scan</figcaption>
               </figure>
             </li>
@@ -303,13 +304,13 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-18-add-domain-step.webp" width="1924" height="1423" alt="My Domains page listing each domain with its number of pages, current rating, last scan date, and View Results and Scan Now buttons. One row is expanded to show the scanned page." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-18-add-domain-step-640.webp 640w, ../assets/images/checker/checker-18-add-domain-step-1024.webp 1024w, ../assets/images/checker/checker-18-add-domain-step-1440.webp 1440w, ../assets/images/checker/checker-18-add-domain-step.webp 1924w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-18-add-domain-step.webp" width="1924" height="1423" alt="My Domains page listing each domain with its number of pages, current rating, last scan date, and View Results and Scan Now buttons. One row is expanded to show the scanned page." loading="lazy" decoding="async">
                 <figcaption>My domains</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-10-error-detail.webp" width="1699" height="1558" alt="Detail view of a Non-text Content issue showing a screenshot of where the error occurs, the code snippet, a plain-English description, Recite’s recommended fix, the affected URLs and a Jira integration." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-10-error-detail-640.webp 640w, ../assets/images/checker/checker-10-error-detail-1024.webp 1024w, ../assets/images/checker/checker-10-error-detail-1440.webp 1440w, ../assets/images/checker/checker-10-error-detail.webp 1699w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-10-error-detail.webp" width="1699" height="1558" alt="Detail view of a Non-text Content issue showing a screenshot of where the error occurs, the code snippet, a plain-English description, Recite’s recommended fix, the affected URLs and a Jira integration." loading="lazy" decoding="async">
                 <figcaption>An issue explained in detail, so anyone can fix it</figcaption>
               </figure>
             </li>
@@ -338,25 +339,25 @@
           <ul class="gallery gallery--2">
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-11-report-search-domain.webp" width="1728" height="1117" alt="Create a report, step 1: search for and choose a domain." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-11-report-search-domain-640.webp 640w, ../assets/images/checker/checker-11-report-search-domain-1024.webp 1024w, ../assets/images/checker/checker-11-report-search-domain-1440.webp 1440w, ../assets/images/checker/checker-11-report-search-domain.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-11-report-search-domain.webp" width="1728" height="1117" alt="Create a report, step 1: search for and choose a domain." loading="lazy" decoding="async">
                 <figcaption>1. Choose the domain</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-12-report-wcag-level.webp" width="1728" height="1117" alt="Create a report, step 2: select the WCAG level." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-12-report-wcag-level-640.webp 640w, ../assets/images/checker/checker-12-report-wcag-level-1024.webp 1024w, ../assets/images/checker/checker-12-report-wcag-level-1440.webp 1440w, ../assets/images/checker/checker-12-report-wcag-level.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-12-report-wcag-level.webp" width="1728" height="1117" alt="Create a report, step 2: select the WCAG level." loading="lazy" decoding="async">
                 <figcaption>2. Select the WCAG level</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-13-report-date-range.webp" width="1728" height="1117" alt="Create a report, step 3: add a date range." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-13-report-date-range-640.webp 640w, ../assets/images/checker/checker-13-report-date-range-1024.webp 1024w, ../assets/images/checker/checker-13-report-date-range-1440.webp 1440w, ../assets/images/checker/checker-13-report-date-range.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-13-report-date-range.webp" width="1728" height="1117" alt="Create a report, step 3: add a date range." loading="lazy" decoding="async">
                 <figcaption>3. Set a date range</figcaption>
               </figure>
             </li>
             <li>
               <figure class="figure">
-                <img src="../assets/images/checker/checker-14-report-sections.webp" width="1728" height="1117" alt="Create a report, step 4: choose which sections to include in the PDF." loading="lazy" decoding="async">
+                <img srcset="../assets/images/checker/checker-14-report-sections-640.webp 640w, ../assets/images/checker/checker-14-report-sections-1024.webp 1024w, ../assets/images/checker/checker-14-report-sections-1440.webp 1440w, ../assets/images/checker/checker-14-report-sections.webp 1728w" sizes="(min-width: 70em) 500px, (min-width: 40em) 46vw, 92vw" src="../assets/images/checker/checker-14-report-sections.webp" width="1728" height="1117" alt="Create a report, step 4: choose which sections to include in the PDF." loading="lazy" decoding="async">
                 <figcaption>4. Pick the sections to include</figcaption>
               </figure>
             </li>

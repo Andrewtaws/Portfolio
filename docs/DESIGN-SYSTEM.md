@@ -118,7 +118,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 
 1. Copy `templates/case-study.html` into `work/`.
 2. Update the `<title>`, meta description, canonical URL and `og:url`, and remove `<meta name="robots" content="noindex">`.
-3. Add images to `assets/images/<project>/` as WebP, up to 2000px wide.
-4. Add a card to `index.html` and update the pager links on the neighbouring case studies.
+3. Add images to `assets/images/<project>/` as WebP, up to 2000px wide, then run `python3 tools/responsive-images.py` to make smaller copies and add `srcset`.
+4. Add a card to `index.html`, update the pager links on the neighbouring case studies, and add the page to `sitemap.xml`.
 5. Run `python3 tools/stamp-assets.py` so the page's CSS and JS links carry the current version (also after any CSS or JS change).
 6. Run the checks above.
