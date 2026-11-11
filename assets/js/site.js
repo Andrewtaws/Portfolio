@@ -10,6 +10,11 @@
    - Small screens: the "Menu" disclosure button shows and hides the nav.
      Escape closes it and returns focus to the button, and it closes when
      focus leaves the header or a link is chosen.
+   - "Pause animations" switch: a toggle button (aria-pressed) that adds
+     .motion-paused to <html>, which stops every animation and transition
+     (WCAG 2.2.2). The choice is saved in localStorage and re-applied by a
+     one-line script in each page's <head> before anything is drawn.
+     Other scripts hear about changes through a "motionchange" event.
    Without JavaScript the header is still sticky, on a solid background,
    and the nav links are always visible.
    ========================================================================== */
@@ -75,6 +80,27 @@
 
     nav.addEventListener("click", function (event) {
       if (event.target.closest("a")) setOpen(false);
+    });
+  }
+
+  /* Pause animations switch --------------------------------------------- */
+  var motion = header.querySelector(".motion-toggle");
+
+  if (motion) {
+    var sync = function () {
+      motion.setAttribute("aria-pressed", root.classList.contains("motion-paused") ? "true" : "false");
+    };
+    sync();
+
+    motion.addEventListener("click", function () {
+      var paused = !root.classList.contains("motion-paused");
+      root.classList.toggle("motion-paused", paused);
+      sync();
+      try {
+        if (paused) localStorage.setItem("motion", "paused");
+        else localStorage.removeItem("motion");
+      } catch (e) { /* storage blocked: applies to this page only */ }
+      document.dispatchEvent(new CustomEvent("motionchange", { detail: { paused: paused } }));
     });
   }
 

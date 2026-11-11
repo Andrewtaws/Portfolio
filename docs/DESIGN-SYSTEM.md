@@ -75,7 +75,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Component | Class | Use |
 |---|---|---|
 | Skip link | `.skip-link` | First element in `<body>` |
-| Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 34em. |
+| Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 44em. Includes the "Pause animations" switch (`.motion-toggle`, `aria-pressed`), which stops every animation site-wide and is remembered (`html.motion-paused`); hidden for reduced motion and without JavaScript. |
 | Buttons | `.btn` + `--primary`, `--secondary`, `--inverse`, `--ghost-inverse`, `--block` | `<a>` to navigate, `<button>` for actions |
 | Scroll reveal | `data-reveal`, `data-reveal="words"`, `data-reveal-stagger` | Below-the-fold content fades up on scroll; on-screen content shows at once. Off for reduced motion and without JavaScript |
 | Scroll highlight | `data-reveal="highlight"` | Letters of a large paragraph darken as it's scrolled through (scrubbed). Faded floor 68% opacity keeps 4.5:1. Plain text only; off for reduced motion |
