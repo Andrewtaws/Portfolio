@@ -85,7 +85,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Chips | `.chip`, `.chip--outline`, `.chip-list` | Categories and skills |
 | Status badge | `.status-badge` | e.g. "Open to work" |
 | Figma frame | `.figma-frame`, `.figma-frame--lg` | Figma-style selection outline with corner handles, on any element. Decorative |
-| Scroll link | `.scroll-link` | In-page link with an icon |
+| Scroll link | `.scroll-link`, `.scroll-link--nudge` | In-page link with an icon. `--nudge` dips the arrow three times after load (under 5 seconds) and on hover; off for reduced motion. On the homepage on mobile it reads "View work" and shares the last row with the final pill |
 | Home hero | `.hero`, `.hero__content`, `.hero__media` | Intro with portrait |
 | Portrait | `.portrait`, `.portrait__img` | Profile photo |
 | Work grid and card | `.work-grid`, `.card` + `--feature`, `--tall`, `--wide` | Homepage case study cards |

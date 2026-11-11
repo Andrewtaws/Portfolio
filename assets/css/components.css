@@ -666,6 +666,28 @@
   height: 0.75rem;
 }
 
+/* Attention nudge: the arrow dips three times shortly after load (under
+   5 seconds in total, so no pause control is needed) and again on hover */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-link--nudge .scroll-link__icon {
+    animation: scroll-nudge 1.1s var(--ease-in-out) 1.6s 3;
+  }
+
+  .scroll-link--nudge:hover .scroll-link__icon {
+    animation: scroll-nudge 1.1s var(--ease-in-out) infinite;
+  }
+}
+
+@keyframes scroll-nudge {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(3px);
+  }
+}
+
 /* 08 Home hero ------------------------------------------------------------ */
 .hero {
   display: grid;
@@ -679,12 +701,16 @@
   max-width: 46rem;
 }
 
-.hero__chips {
+.hero__tags {
   margin-block-start: var(--space-5);
 }
 
 .hero__actions {
   margin-block-start: var(--space-6);
+}
+
+.hero__action-short {
+  display: none;
 }
 
 /* Small screens: photo first, as on the original site (image only, so
@@ -728,6 +754,48 @@
     left: auto;
     bottom: auto;
     box-shadow: none;
+  }
+
+  /* Homepage: the "View work" link joins the end of the pill rows (next
+     to "SaaS UX" where it fits). The list box steps aside for layout only;
+     it is still announced as a list of five specialisms. */
+  .hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .hero__tags > .hero__chips {
+    display: contents;
+  }
+
+  /* Line break before the last pill, so "SaaS UX" and "View work" always
+     share the final row whatever the phone width. The negative margin on
+     that row cancels the extra row gap the break adds. Visual and reading
+     order stay the same. */
+  .hero__tags > .hero__chips::before {
+    content: "";
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .hero__tags .pill:last-child,
+  .hero__tags > .hero__actions {
+    order: 2;
+    margin-block-start: calc(-1 * var(--space-2));
+  }
+
+  .hero__tags > .hero__actions {
+    margin-inline-start: var(--space-3);
+  }
+
+  .hero__action-long {
+    display: none;
+  }
+
+  .hero__action-short {
+    display: inline;
   }
 }
 
