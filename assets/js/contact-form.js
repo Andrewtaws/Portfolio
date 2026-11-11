@@ -10,7 +10,7 @@
      (WCAG 3.3.1, 3.3.3, 4.1.3)
    - a valid message is sent in the background; the confirmation then
      replaces the form and receives focus
-   - if sending fails, the error summary explains and offers an email link
+   - if sending fails, the error summary explains and offers a LinkedIn link
    ========================================================================== */
 (function () {
   "use strict";
@@ -122,18 +122,15 @@
   }
 
   function showSendError() {
-    var to = form.getAttribute("data-email");
-    var name = form.elements.name.value.trim();
-    var body = form.elements.message.value.trim() + "\n\n" + name + "\n" + form.elements.email.value.trim();
     summaryTitle.textContent = "Your message could not be sent";
     summaryList.innerHTML = "";
     var li = document.createElement("li");
     li.appendChild(document.createTextNode("Please try again in a moment, or "));
     var a = document.createElement("a");
-    a.href = "mailto:" + to +
-      "?subject=" + encodeURIComponent("Portfolio enquiry from " + name) +
-      "&body=" + encodeURIComponent(body);
-    a.textContent = "send it from your email app";
+    a.href = "https://www.linkedin.com/in/andrewtaws/";
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML = 'message me on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>';
     li.appendChild(a);
     li.appendChild(document.createTextNode(" instead. Your message is still in the form."));
     summaryList.appendChild(li);
