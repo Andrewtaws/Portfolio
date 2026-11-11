@@ -1542,6 +1542,48 @@
   border-width: 3px;
 }
 
+/* Contact form: honeypot field for spam bots (never shown or announced) */
+.form__trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Sent confirmation: shown by the script, or by :target after the no-JS
+   form returns to contact.html#sent */
+.form-sent {
+  display: none;
+  margin-block-end: var(--space-5);
+}
+
+.form-sent.is-visible,
+.form-sent:target {
+  display: block;
+}
+
+.form-sent:target ~ .form,
+.form-sent.is-visible ~ .form {
+  display: none;
+}
+
+.form-sent__title {
+  font-size: var(--text-lead);
+  font-weight: var(--weight-bold);
+}
+
+.form-sent__title + p {
+  margin-block-start: var(--space-2);
+}
+
+/* Sending: the button stays focusable but ignores repeat presses */
+.btn[aria-disabled="true"] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
 /* 23 Error summary -------------------------------------------------------- */
 .error-summary {
   padding: var(--space-5);

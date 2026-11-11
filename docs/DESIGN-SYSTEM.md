@@ -18,7 +18,7 @@ The live, visual version of this guide is [`design-system.html`](../design-syste
 | `assets/css/components.css` | All components (BEM naming) and forced-colours support |
 | `assets/js/site.js` | Sticky header bar and mobile menu button (load on every page) |
 | `assets/js/scroll-reveal.js` | Fades below-the-fold `[data-reveal]` content into view on scroll (load on every page) |
-| `assets/js/contact-form.js` | Form validation and error summary pattern |
+| `assets/js/contact-form.js` | Form validation, error summary, and sending through FormSubmit (formsubmit.co) without an email app; works without JavaScript too |
 | `templates/page.html` | Starting point for a general page |
 | `templates/case-study.html` | Starting point for a case study |
 
