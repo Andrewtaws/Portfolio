@@ -10,10 +10,12 @@
    - Small screens: the "Menu" disclosure button shows and hides the nav.
      Escape closes it and returns focus to the button, and it closes when
      focus leaves the header or a link is chosen.
-   - "Pause animations" button: adds .motion-paused to <html>, which stops
-     every animation and transition (WCAG 2.2.2). Its name switches between
-     "Pause animations" and "Play animations", and a status message
-     confirms the change for screen readers. Escape hides its tooltip. The choice is saved in localStorage and re-applied by a
+   - "Motion" switch (role="switch"): turning it off adds .motion-paused to
+     <html>, which stops every animation and transition (WCAG 2.2.2).
+   - Theme picker: moon (Dark mode) and sun (Light mode) toggle buttons
+     (aria-pressed) set data-theme="dark" or "light" on <html>. Until one is
+     used, the site follows the device setting (and the buttons show that). Choices are stored in localStorage and
+     re-applied by the head script before anything is drawn. The choice is saved in localStorage and re-applied by a
      one-line script in each page's <head> before anything is drawn.
      Other scripts hear about changes through a "motionchange" event.
    Without JavaScript the header is still sticky, on a solid background,
@@ -84,18 +86,15 @@
     });
   }
 
-  /* Pause animations button ---------------------------------------------- */
+  /* Motion switch -------------------------------------------------------- */
   var motion = header.querySelector(".motion-toggle");
 
   if (motion) {
-    var label = motion.querySelector(".motion-toggle__label");
-    var status = document.createElement("p");
-    status.className = "visually-hidden";
-    status.setAttribute("role", "status");
-    document.body.appendChild(status);
-
+    var motionState = motion.querySelector(".motion-toggle__state");
     var sync = function () {
-      label.textContent = root.classList.contains("motion-paused") ? "Play animations" : "Pause animations";
+      var on = !root.classList.contains("motion-paused");
+      motion.setAttribute("aria-checked", on ? "true" : "false");
+      if (motionState) motionState.textContent = on ? "\u00a0on" : "\u00a0off";
     };
     sync();
 
@@ -103,31 +102,39 @@
       var paused = !root.classList.contains("motion-paused");
       root.classList.toggle("motion-paused", paused);
       sync();
-      status.textContent = paused ? "Animations paused" : "Animations playing";
       try {
         if (paused) localStorage.setItem("motion", "paused");
         else localStorage.removeItem("motion");
       } catch (e) { /* storage blocked: applies to this page only */ }
       document.dispatchEvent(new CustomEvent("motionchange", { detail: { paused: paused } }));
     });
+  }
 
-    // Tooltip: Escape hides it (WCAG 1.4.13) until the pointer leaves or
-    // focus moves away
-    var showTip = function () { motion.classList.remove("is-tip-hidden"); };
-    motion.addEventListener("keydown", function (event) {
-      // Only when the label is a tooltip (not in the phone menu, where
-      // Escape closes the menu instead)
-      var isTip = getComputedStyle(label).position === "absolute";
-      if (event.key === "Escape" && isTip && !motion.classList.contains("is-tip-hidden")) {
-        motion.classList.add("is-tip-hidden");
-        event.stopPropagation();
-      }
+  /* Theme picker (moon / sun) ------------------------------------------- */
+  var themeButtons = header.querySelectorAll("[data-theme-choice]");
+
+  if (themeButtons.length) {
+    var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+    var current = function () {
+      return root.getAttribute("data-theme") || (systemDark.matches ? "dark" : "light");
+    };
+    var syncTheme = function () {
+      var active = current();
+      Array.prototype.forEach.call(themeButtons, function (btn) {
+        btn.setAttribute("aria-pressed", btn.getAttribute("data-theme-choice") === active ? "true" : "false");
+      });
+    };
+    syncTheme();
+    if (systemDark.addEventListener) systemDark.addEventListener("change", syncTheme);
+
+    Array.prototype.forEach.call(themeButtons, function (btn) {
+      btn.addEventListener("click", function () {
+        var choice = btn.getAttribute("data-theme-choice");
+        root.setAttribute("data-theme", choice);
+        syncTheme();
+        try { localStorage.setItem("theme", choice); } catch (e) { /* this page only */ }
+      });
     });
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && motion.matches(":hover")) motion.classList.add("is-tip-hidden");
-    });
-    motion.addEventListener("mouseleave", showTip);
-    motion.addEventListener("blur", showTip);
   }
 
   if ("ResizeObserver" in window) {

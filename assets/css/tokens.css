@@ -77,6 +77,25 @@
   --color-inverse-text: var(--white);
   --color-border: #d9d4cf;
   --color-border-strong: var(--navy-900);
+  --color-on-inverse: var(--black);       /* Text on light buttons in the footer */
+  --color-inverse-hover: var(--sand-100);
+  --color-frame-handle: var(--white);     /* Figma frame corner handles */
+  --color-input-bg: var(--white);
+  --color-figure-bg: var(--white);        /* Behind screenshots with transparency */
+  --color-selection-bg: var(--navy-900);
+  --color-selection-text: var(--white);
+  --color-code-bg: var(--navy-900);
+  --color-code-text: var(--white);
+  --color-pill-violet: var(--violet-100);
+  --color-pill-mint: var(--mint-100);
+  --color-pill-peach: var(--peach-100);
+  --color-pill-sky: var(--sky-100);
+  --color-pill-lemon: var(--lemon-100);
+  --shadow-bar:
+    0 1px 1px -1px rgb(0 0 0 / 0.18),
+    0 4px 12px -2px rgb(7 53 77 / 0.16),
+    0 12px 32px -8px rgb(7 53 77 / 0.12);
+  color-scheme: light;
 
   /* ---- Typography ------------------------------------------------------- */
   --font-sans: "Albert Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -151,4 +170,105 @@
   --duration-intro: 0.8s;                          /* Intro text blur-in */
   --duration-page-out: 0.15s;                      /* Page transition: old page out */
   --duration-page-in: 0.25s;                       /* Page transition: new page in */
+}
+
+/* ---- Dark theme ----------------------------------------------------------
+   Follows the device setting, unless the visitor picks a theme with the
+   "Dark mode" switch (stored and applied as data-theme on <html> by the
+   head script). Only semantic tokens change; components need no edits. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Deep navy-slate, never pure black. Every text pair is above 4.5:1 and
+       every UI edge above 3:1 (checked in docs/DESIGN-SYSTEM.md). */
+    --color-bg: #0f1c25;              /* Text 14.8:1 */
+    --color-surface: #172a36;         /* Text 12.6:1 */
+    --color-surface-raised: #1d3341;  /* Text 11.2:1 */
+    --color-text: #e8eef2;
+    --color-text-muted: #a7bac7;      /* 6.6:1 on raised surfaces */
+    --color-heading: #f3f7f9;
+    --color-link: #e8eef2;
+    --color-action: #8ecbef;          /* Light buttons, dark text 10.2:1 */
+    --color-action-hover: #b5dcf4;
+    --color-on-action: #0b1820;
+    --color-focus: #ffb84d;           /* 8.6:1 or more on every surface */
+    --color-focus-inverse: #ffb84d;
+    --color-media-band: #24445a;
+    --color-success: #3fd0a2;
+    --color-error: #ff958b;           /* 6.2:1 or more */
+    --color-frame: #b08af2;           /* 5.5:1 on cards */
+    --color-inverse-bg: #0a1620;      /* Footer: darker than the page, not black */
+    --color-inverse-text: #f3f7f9;
+    --color-border: #3a5566;
+    --color-border-strong: #e8eef2;
+    --color-on-inverse: #0a1620;
+    --color-inverse-hover: #d3e1ea;
+  --color-inverse-hover: #d3e1ea;
+    --color-frame-handle: #172a36;
+    --color-input-bg: #132530;
+    --color-figure-bg: #ffffff;
+    --color-selection-bg: #8ecbef;
+    --color-selection-text: #0b1820;
+    --color-code-bg: #08131b;
+    --color-code-text: #e8eef2;
+    --color-pill-violet: #3d2f5e;     /* Pill text 8.7 to 10.2:1 */
+    --color-pill-mint: #1f4537;
+    --color-pill-peach: #4e3121;
+    --color-pill-sky: #1f3c57;
+    --color-pill-lemon: #4a411a;
+    --color-accent-soft: #3d2f5e;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
+    --shadow-bar:
+      0 0 0 1px #2b4352,
+      0 4px 12px -2px rgb(0 0 0 / 0.5),
+      0 12px 32px -8px rgb(0 0 0 / 0.45);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  /* Deep navy-slate, never pure black. Every text pair is above 4.5:1 and
+     every UI edge above 3:1 (checked in docs/DESIGN-SYSTEM.md). */
+  --color-bg: #0f1c25;              /* Text 14.8:1 */
+  --color-surface: #172a36;         /* Text 12.6:1 */
+  --color-surface-raised: #1d3341;  /* Text 11.2:1 */
+  --color-text: #e8eef2;
+  --color-text-muted: #a7bac7;      /* 6.6:1 on raised surfaces */
+  --color-heading: #f3f7f9;
+  --color-link: #e8eef2;
+  --color-action: #8ecbef;          /* Light buttons, dark text 10.2:1 */
+  --color-action-hover: #b5dcf4;
+  --color-on-action: #0b1820;
+  --color-focus: #ffb84d;           /* 8.6:1 or more on every surface */
+  --color-focus-inverse: #ffb84d;
+  --color-media-band: #24445a;
+  --color-success: #3fd0a2;
+  --color-error: #ff958b;           /* 6.2:1 or more */
+  --color-frame: #b08af2;           /* 5.5:1 on cards */
+  --color-inverse-bg: #0a1620;      /* Footer: darker than the page, not black */
+  --color-inverse-text: #f3f7f9;
+  --color-border: #3a5566;
+  --color-border-strong: #e8eef2;
+  --color-on-inverse: #0a1620;
+  --color-inverse-hover: #d3e1ea;
+  --color-frame-handle: #172a36;
+  --color-input-bg: #132530;
+  --color-figure-bg: #ffffff;
+  --color-selection-bg: #8ecbef;
+  --color-selection-text: #0b1820;
+  --color-code-bg: #08131b;
+  --color-code-text: #e8eef2;
+  --color-pill-violet: #3d2f5e;     /* Pill text 8.7 to 10.2:1 */
+  --color-pill-mint: #1f4537;
+  --color-pill-peach: #4e3121;
+  --color-pill-sky: #1f3c57;
+  --color-pill-lemon: #4a411a;
+  --color-accent-soft: #3d2f5e;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
+  --shadow-bar:
+    0 0 0 1px #2b4352,
+    0 4px 12px -2px rgb(0 0 0 / 0.5),
+    0 12px 32px -8px rgb(0 0 0 / 0.45);
+  color-scheme: dark;
 }

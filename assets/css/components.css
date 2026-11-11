@@ -83,10 +83,7 @@
   .site-header.is-stuck .site-header__inner {
     padding-inline: clamp(var(--space-3), 2vw, var(--space-5));
     background: var(--color-surface-raised);
-    box-shadow:
-      0 1px 1px -1px rgb(0 0 0 / 0.18),
-      0 4px 12px -2px rgb(7 53 77 / 0.16),
-      0 12px 32px -8px rgb(7 53 77 / 0.12);
+    box-shadow: var(--shadow-bar);
   }
 
   /* Keep focused elements and anchor targets clear of the bar (2.4.11).
@@ -105,7 +102,7 @@
 }
 
 /* Menu button (small screens, JavaScript only) --------------------------
-   Below 44em the links (and the "Pause animations" switch) don't fit on one row, so, as on the original site,
+   Below 45em the links (and the "Motion" switch) don't fit on one row, so, as on the original site,
    they move behind a "Menu" button. It's a disclosure button: aria-expanded
    reports its state, and without JavaScript it stays hidden and the links
    simply wrap below the logo. The html.js class is set by a one-line
@@ -143,7 +140,7 @@
   display: inline;
 }
 
-@media (max-width: 43.99em) {
+@media (max-width: 44.99em) {
   .js .nav-toggle {
     display: inline-flex;
     justify-content: center;
@@ -197,39 +194,19 @@
     padding-inline: var(--space-4);
   }
 
-  .js .site-nav__item--motion {
-    margin-block-start: var(--space-2);
+  .js .site-nav__item--motion,
+  .js .site-nav__item--theme {
+    margin-block-start: var(--space-1);
+  }
+
+  .js .theme-picker {
+    justify-content: center;
   }
 
   .js .motion-toggle {
-    display: flex;
     justify-content: center;
-    gap: var(--space-2);
     width: 100%;
-    height: auto;
-    min-height: var(--target-min);
     margin-inline-start: 0;
-    border-radius: var(--radius-sm);
-  }
-
-  .js .motion-toggle .motion-toggle__label,
-  .js .motion-toggle.is-tip-hidden .motion-toggle__label {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    clip-path: none;
-    background: none;
-    color: inherit;
-    box-shadow: none;
-    font-size: var(--text-label);
-    font-weight: var(--weight-bold);
-  }
-
-  .js .motion-toggle .motion-toggle__label::before {
-    content: none;
   }
 
   .js .site-nav__link--cta {
@@ -300,15 +277,13 @@
   font-weight: var(--weight-bold);
 }
 
-/* Pause animations button ------------------------------------------------
-   A round icon button after Contact (site.js). Pause icon while things
-   move; once pressed it shows a play icon and its name becomes "Play
-   animations", like a media player. The label is real text inside the
-   button, so it is the accessible name; on wider screens it's visually
-   hidden and appears as a tooltip on hover and keyboard focus (WCAG 1.4.13:
-   Escape hides it, and it stays while the pointer is over it). In the
-   phone menu the label shows beside the icon. It needs JavaScript and is
-   hidden for reduced motion, where nothing animates anyway. */
+/* Motion switch ----------------------------------------------------------
+   After Contact: a small pill switch and the word "MOTION" (styled after
+   microsoft.design). It's a real switch (role="switch", aria-checked):
+   on = animations play, off = every animation on the site stops and the
+   choice is remembered (site.js). State shows by knob position and fill,
+   not colour alone. It needs JavaScript and is hidden for reduced motion,
+   where nothing animates anyway. */
 .site-nav__item--motion {
   display: none;
 }
@@ -319,88 +294,137 @@
   }
 }
 
-.motion-toggle {
+/* Theme picker ------------------------------------------------------------
+   After the Motion switch, behind a thin slash (as on microsoft.design):
+   two icon buttons, moon (Dark mode) and sun (Light mode), in a labelled
+   group. aria-pressed marks the active theme, which also sits in a filled
+   square. Each button is a 44px target. It shows whenever JavaScript runs;
+   without it the site still follows the device's light or dark setting. */
+.site-nav__item--theme {
+  display: none;
+}
+
+.js .site-nav__item--theme {
+  display: list-item;
+}
+
+.theme-picker {
   position: relative;
-  display: inline-grid;
+  display: flex;
+  align-items: center;
+}
+
+/* The slash (wider screens): a thin drawn line, so there's nothing to
+   read out */
+@media (min-width: 45em) {
+  .js .site-nav__item--motion + .site-nav__item--theme .theme-picker {
+    padding-inline-start: var(--space-4);
+  }
+
+  .js .site-nav__item--motion + .site-nav__item--theme .theme-picker::before {
+    content: "";
+    position: absolute;
+    left: 0.375rem;
+    top: 50%;
+    width: 1.5px;
+    height: 1.375rem;
+    background: var(--color-link);
+    transform: translateY(-50%) rotate(20deg);
+  }
+}
+
+.theme-picker__btn {
+  display: grid;
   place-items: center;
   width: var(--target-min);
   height: var(--target-min);
   padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+.theme-picker__icon {
+  box-sizing: content-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.3125rem;
+  border-radius: var(--radius-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-picker__btn:hover .theme-picker__icon {
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+
+.theme-picker__btn[aria-pressed="true"] .theme-picker__icon {
+  background: var(--color-link);
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
+.motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  padding-inline: var(--space-3);
   margin-inline-start: var(--space-1);
   background: transparent;
-  border: 2px solid var(--color-border-strong);
-  border-radius: 50%;
+  border: 0;
+  border-radius: var(--radius-sm);
   font: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
+  line-height: 1;
   color: var(--color-link);
   cursor: pointer;
 }
 
 .motion-toggle:hover {
-  background: var(--color-surface);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
 }
 
-.motion-toggle__icon {
-  width: 1.125rem;
-  height: 1.125rem;
-  fill: currentColor;
+/* The pill: 2px outline in the text colour (well above 3:1, WCAG 1.4.11).
+   Off: hollow, knob on the left. On: filled, white knob on the right. */
+.motion-toggle__switch {
+  position: relative;
+  flex: none;
+  margin-inline-end: var(--space-2);
+  width: 1.75rem;
+  height: 0.9375rem;
+  border: 2px solid currentColor;
+  border-radius: var(--radius-pill);
+  transition: background-color var(--duration-fast) ease;
 }
 
-.motion-toggle__play,
-.motion-paused .motion-toggle__pause {
-  display: none;
-}
-
-.motion-paused .motion-toggle__play {
-  display: inline;
-}
-
-/* Tooltip label: hidden off-screen-style until hover or keyboard focus.
-   It sits just under the button and touches it, so the pointer can move
-   onto it without it vanishing. Right-aligned to stay inside the page. */
-.motion-toggle__label {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.motion-toggle:hover .motion-toggle__label,
-.motion-toggle:focus-visible .motion-toggle__label {
-  width: auto;
-  height: auto;
-  overflow: visible;
-  clip-path: none;
-  z-index: 2;
-  margin-top: var(--space-2);
-  padding: var(--space-1) var(--space-3);
-  background: var(--color-action);
-  color: var(--color-on-action);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  line-height: 1.4;
-  box-shadow: var(--shadow-md);
-}
-
-/* Bridge the small gap above the tooltip so it stays hoverable */
-.motion-toggle:hover .motion-toggle__label::before {
+.motion-toggle__switch::after {
   content: "";
   position: absolute;
-  inset: calc(-1 * var(--space-2) - 2px) 0 100%;
+  top: 50%;
+  left: 2px;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateY(-50%);
+  transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) ease;
 }
 
-/* Escape dismisses it until the pointer leaves or focus moves */
-.motion-toggle.is-tip-hidden .motion-toggle__label {
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  box-shadow: none;
+.motion-toggle[aria-checked="true"] .motion-toggle__switch {
+  background: currentColor;
+}
+
+.motion-toggle[aria-checked="true"] .motion-toggle__switch::after {
+  background: var(--color-bg);
+  transform: translate(0.8125rem, -50%);
 }
 
 /* Paused: nothing moves anywhere on the site. Set on <html> by the head
@@ -463,11 +487,11 @@ html.motion-paused::view-transition-group(*) {
 
 .btn--inverse {
   background: var(--color-inverse-text);
-  color: var(--black);
+  color: var(--color-on-inverse);
 }
 
 .btn--inverse:hover {
-  background: var(--sand-100);
+  background: var(--color-inverse-hover);
 }
 
 .btn--ghost-inverse {
@@ -478,7 +502,7 @@ html.motion-paused::view-transition-group(*) {
 
 .btn--ghost-inverse:hover {
   background: var(--color-inverse-text);
-  color: var(--black);
+  color: var(--color-on-inverse);
 }
 
 .btn--block {
@@ -589,7 +613,7 @@ html.motion-paused::view-transition-group(*) {
 }
 
 /* Pulse, as on the original site: two rings ripple out from the dot.
-   With JavaScript it loops, and the "Pause animations" switch in the header
+   With JavaScript it loops, and the "Motion" switch in the header
    stops it (WCAG 2.2.2 Pause, Stop, Hide). Without JavaScript there's no
    switch, so it plays twice (about 4.5 seconds) and stops. Off for reduced
    motion. */
@@ -658,10 +682,10 @@ html.motion-paused::view-transition-group(*) {
   inset: calc(var(--h) / -2 - 0.5px);
   pointer-events: none;
   background:
-    linear-gradient(var(--white), var(--white)) 1px 1px / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) calc(100% - 1px) 1px / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) 1px calc(100% - 1px) / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) calc(100% - 1px) calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) 1px 1px / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) calc(100% - 1px) 1px / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) 1px calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) calc(100% - 1px) calc(100% - 1px) / var(--i) var(--i),
     linear-gradient(var(--color-frame), var(--color-frame)) 0 0 / var(--h) var(--h),
     linear-gradient(var(--color-frame), var(--color-frame)) 100% 0 / var(--h) var(--h),
     linear-gradient(var(--color-frame), var(--color-frame)) 0 100% / var(--h) var(--h),
@@ -831,7 +855,7 @@ html.motion-paused::view-transition-group(*) {
 }
 
 /* Attention nudge: the arrow dips gently. With JavaScript it keeps going
-   and the "Pause animations" switch stops it (WCAG 2.2.2). Without
+   and the "Motion" switch stops it (WCAG 2.2.2). Without
    JavaScript it dips three times (under 5 seconds) and stops. */
 @media (prefers-reduced-motion: no-preference) {
   .scroll-link--nudge .scroll-link__icon {
@@ -1309,19 +1333,19 @@ html.motion-paused::view-transition-group(*) {
 
 /* Pastel variants: navy text stays above 10:1 on every colour */
 .pill--mint {
-  background: var(--mint-100);
+  background: var(--color-pill-mint);
 }
 
 .pill--peach {
-  background: var(--peach-100);
+  background: var(--color-pill-peach);
 }
 
 .pill--sky {
-  background: var(--sky-100);
+  background: var(--color-pill-sky);
 }
 
 .pill--lemon {
-  background: var(--lemon-100);
+  background: var(--color-pill-lemon);
 }
 
 .pill--sm {
@@ -1408,7 +1432,7 @@ html.motion-paused::view-transition-group(*) {
   width: 100%;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-  background: var(--white);
+  background: var(--color-figure-bg);
 }
 
 .figure figcaption {
@@ -1683,7 +1707,7 @@ html.motion-paused::view-transition-group(*) {
   width: 100%;
   min-height: var(--target-min);
   padding: var(--space-2) var(--space-3);
-  background: var(--white);
+  background: var(--color-input-bg);
   border: 2px solid var(--color-text-muted);
   border-radius: var(--radius-sm);
   color: var(--color-text);
@@ -1758,7 +1782,7 @@ html.motion-paused::view-transition-group(*) {
   padding: var(--space-5);
   border: 3px solid var(--color-error);
   border-radius: var(--radius-sm);
-  background: var(--white);
+  background: var(--color-surface-raised);
 }
 
 .error-summary[hidden] {
@@ -1897,7 +1921,7 @@ html.motion-paused::view-transition-group(*) {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--white);
+  background: var(--color-surface-raised);
   font-size: var(--text-sm);
 }
 
@@ -1931,8 +1955,8 @@ html.motion-paused::view-transition-group(*) {
   padding: var(--space-4);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  background: var(--navy-900);
-  color: var(--white);
+  background: var(--color-code-bg);
+  color: var(--color-code-text);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   line-height: 1.5;
@@ -2013,16 +2037,25 @@ code {
     border-color: CanvasText;
   }
 
-  .motion-toggle {
+  .motion-toggle__switch {
     border-color: ButtonText;
   }
 
-  .motion-toggle__icon {
-    fill: ButtonText;
+  .theme-picker__btn[aria-pressed="true"] .theme-picker__icon {
+    background: ButtonText;
+    color: ButtonFace;
   }
 
-  .motion-toggle__label {
-    border: 1px solid CanvasText;
+  .motion-toggle__switch::after {
+    background: ButtonText;
+  }
+
+  .motion-toggle[aria-checked="true"] .motion-toggle__switch {
+    background: ButtonText;
+  }
+
+  .motion-toggle[aria-checked="true"] .motion-toggle__switch::after {
+    background: Canvas;
   }
 
   .figma-frame,
