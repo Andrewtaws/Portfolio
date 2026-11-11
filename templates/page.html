@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("motion")==="paused")document.documentElement.classList.add("motion-paused")}catch(e){}</script>
+  <script>(function(d){d.classList.add("js");try{if(localStorage.getItem("motion")==="paused")d.classList.add("motion-paused");var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t)}catch(e){}})(document.documentElement)</script>
   <title>Page title – Andrew Taws</title>
   <meta name="description" content="Template: replace with a one-sentence page description.">
   <link rel="canonical" href="https://andrewtaws.co.uk/templates/page">
@@ -24,13 +24,14 @@
   <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <meta name="theme-color" content="#07354d">
+  <meta name="theme-color" content="#fffcfc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1c25" media="(prefers-color-scheme: dark)">
 
   <link rel="preload" href="../assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/tokens.css?v=72ac66ef">
-  <link rel="stylesheet" href="../assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="../assets/css/components.css?v=0c82f2ac">
-  <script src="../assets/js/site.js?v=b5002bf2" defer></script>
+  <link rel="stylesheet" href="../assets/css/tokens.css?v=7671c35b">
+  <link rel="stylesheet" href="../assets/css/base.css?v=1dd6b6e0">
+  <link rel="stylesheet" href="../assets/css/components.css?v=af0e4edb">
+  <script src="../assets/js/site.js?v=ac7a32ef" defer></script>
   <script src="../assets/js/scroll-reveal.js?v=4744df16" defer></script>
 </head>
 <body>
@@ -48,7 +49,8 @@
           <li><a class="site-nav__link" href="../index.html#work">Work</a></li>
           <li><a class="site-nav__link" href="../about.html">About</a></li>
           <li><a class="site-nav__link site-nav__link--cta" href="../contact.html">Contact</a></li>
-          <li class="site-nav__item--motion"><button class="motion-toggle" type="button" role="switch" aria-checked="true"><span class="motion-toggle__switch" aria-hidden="true"></span>Motion</button></li>
+          <li class="site-nav__item--motion"><button class="motion-toggle" type="button" role="switch" aria-checked="true"><span class="motion-toggle__switch" aria-hidden="true"></span>Motion<span class="motion-toggle__state" aria-hidden="true">&nbsp;on</span></button></li>
+          <li class="site-nav__item--theme"><div class="theme-picker" role="group" aria-label="Colour theme"><button class="theme-picker__btn" type="button" aria-pressed="false" data-theme-choice="dark"><svg class="theme-picker__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.2A7.5 7.5 0 0 1 9.8 4.5a7.5 7.5 0 1 0 9.7 9.7Z"/></svg><span class="visually-hidden">Dark mode</span></button><button class="theme-picker__btn" type="button" aria-pressed="false" data-theme-choice="light"><svg class="theme-picker__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.75"/><path d="M12 2.5v2.25M12 19.25v2.25M2.5 12h2.25M19.25 12h2.25M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><span class="visually-hidden">Light mode</span></button></div></li>
         </ul>
       </nav>
     </div>

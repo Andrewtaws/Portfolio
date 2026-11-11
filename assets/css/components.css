@@ -83,10 +83,7 @@
   .site-header.is-stuck .site-header__inner {
     padding-inline: clamp(var(--space-3), 2vw, var(--space-5));
     background: var(--color-surface-raised);
-    box-shadow:
-      0 1px 1px -1px rgb(0 0 0 / 0.18),
-      0 4px 12px -2px rgb(7 53 77 / 0.16),
-      0 12px 32px -8px rgb(7 53 77 / 0.12);
+    box-shadow: var(--shadow-bar);
   }
 
   /* Keep focused elements and anchor targets clear of the bar (2.4.11).
@@ -105,7 +102,7 @@
 }
 
 /* Menu button (small screens, JavaScript only) --------------------------
-   Below 44em the links (and the "Motion" switch) don't fit on one row, so, as on the original site,
+   Below 45em the links (and the "Motion" switch) don't fit on one row, so, as on the original site,
    they move behind a "Menu" button. It's a disclosure button: aria-expanded
    reports its state, and without JavaScript it stays hidden and the links
    simply wrap below the logo. The html.js class is set by a one-line
@@ -143,7 +140,7 @@
   display: inline;
 }
 
-@media (max-width: 43.99em) {
+@media (max-width: 44.99em) {
   .js .nav-toggle {
     display: inline-flex;
     justify-content: center;
@@ -197,8 +194,13 @@
     padding-inline: var(--space-4);
   }
 
-  .js .site-nav__item--motion {
-    margin-block-start: var(--space-2);
+  .js .site-nav__item--motion,
+  .js .site-nav__item--theme {
+    margin-block-start: var(--space-1);
+  }
+
+  .js .theme-picker {
+    justify-content: center;
   }
 
   .js .motion-toggle {
@@ -292,10 +294,84 @@
   }
 }
 
+/* Theme picker ------------------------------------------------------------
+   After the Motion switch, behind a thin slash (as on microsoft.design):
+   two icon buttons, moon (Dark mode) and sun (Light mode), in a labelled
+   group. aria-pressed marks the active theme, which also sits in a filled
+   square. Each button is a 44px target. It shows whenever JavaScript runs;
+   without it the site still follows the device's light or dark setting. */
+.site-nav__item--theme {
+  display: none;
+}
+
+.js .site-nav__item--theme {
+  display: list-item;
+}
+
+.theme-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* The slash (wider screens): a thin drawn line, so there's nothing to
+   read out */
+@media (min-width: 45em) {
+  .js .site-nav__item--motion + .site-nav__item--theme .theme-picker {
+    padding-inline-start: var(--space-4);
+  }
+
+  .js .site-nav__item--motion + .site-nav__item--theme .theme-picker::before {
+    content: "";
+    position: absolute;
+    left: 0.375rem;
+    top: 50%;
+    width: 1.5px;
+    height: 1.375rem;
+    background: var(--color-link);
+    transform: translateY(-50%) rotate(20deg);
+  }
+}
+
+.theme-picker__btn {
+  display: grid;
+  place-items: center;
+  width: var(--target-min);
+  height: var(--target-min);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+.theme-picker__icon {
+  box-sizing: content-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.3125rem;
+  border-radius: var(--radius-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-picker__btn:hover .theme-picker__icon {
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+
+.theme-picker__btn[aria-pressed="true"] .theme-picker__icon {
+  background: var(--color-link);
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
 .motion-toggle {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
   min-height: var(--target-min);
   padding-inline: var(--space-3);
   margin-inline-start: var(--space-1);
@@ -303,11 +379,9 @@
   border: 0;
   border-radius: var(--radius-sm);
   font: inherit;
-  font-size: var(--text-base);
-  font-weight: var(--weight-regular);
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
   line-height: 1;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--color-link);
   cursor: pointer;
 }
@@ -323,6 +397,7 @@
 .motion-toggle__switch {
   position: relative;
   flex: none;
+  margin-inline-end: var(--space-2);
   width: 1.75rem;
   height: 0.9375rem;
   border: 2px solid currentColor;
@@ -412,11 +487,11 @@ html.motion-paused::view-transition-group(*) {
 
 .btn--inverse {
   background: var(--color-inverse-text);
-  color: var(--black);
+  color: var(--color-on-inverse);
 }
 
 .btn--inverse:hover {
-  background: var(--sand-100);
+  background: var(--color-inverse-hover);
 }
 
 .btn--ghost-inverse {
@@ -427,7 +502,7 @@ html.motion-paused::view-transition-group(*) {
 
 .btn--ghost-inverse:hover {
   background: var(--color-inverse-text);
-  color: var(--black);
+  color: var(--color-on-inverse);
 }
 
 .btn--block {
@@ -607,10 +682,10 @@ html.motion-paused::view-transition-group(*) {
   inset: calc(var(--h) / -2 - 0.5px);
   pointer-events: none;
   background:
-    linear-gradient(var(--white), var(--white)) 1px 1px / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) calc(100% - 1px) 1px / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) 1px calc(100% - 1px) / var(--i) var(--i),
-    linear-gradient(var(--white), var(--white)) calc(100% - 1px) calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) 1px 1px / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) calc(100% - 1px) 1px / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) 1px calc(100% - 1px) / var(--i) var(--i),
+    linear-gradient(var(--color-frame-handle), var(--color-frame-handle)) calc(100% - 1px) calc(100% - 1px) / var(--i) var(--i),
     linear-gradient(var(--color-frame), var(--color-frame)) 0 0 / var(--h) var(--h),
     linear-gradient(var(--color-frame), var(--color-frame)) 100% 0 / var(--h) var(--h),
     linear-gradient(var(--color-frame), var(--color-frame)) 0 100% / var(--h) var(--h),
@@ -1258,19 +1333,19 @@ html.motion-paused::view-transition-group(*) {
 
 /* Pastel variants: navy text stays above 10:1 on every colour */
 .pill--mint {
-  background: var(--mint-100);
+  background: var(--color-pill-mint);
 }
 
 .pill--peach {
-  background: var(--peach-100);
+  background: var(--color-pill-peach);
 }
 
 .pill--sky {
-  background: var(--sky-100);
+  background: var(--color-pill-sky);
 }
 
 .pill--lemon {
-  background: var(--lemon-100);
+  background: var(--color-pill-lemon);
 }
 
 .pill--sm {
@@ -1357,7 +1432,7 @@ html.motion-paused::view-transition-group(*) {
   width: 100%;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-  background: var(--white);
+  background: var(--color-figure-bg);
 }
 
 .figure figcaption {
@@ -1632,7 +1707,7 @@ html.motion-paused::view-transition-group(*) {
   width: 100%;
   min-height: var(--target-min);
   padding: var(--space-2) var(--space-3);
-  background: var(--white);
+  background: var(--color-input-bg);
   border: 2px solid var(--color-text-muted);
   border-radius: var(--radius-sm);
   color: var(--color-text);
@@ -1707,7 +1782,7 @@ html.motion-paused::view-transition-group(*) {
   padding: var(--space-5);
   border: 3px solid var(--color-error);
   border-radius: var(--radius-sm);
-  background: var(--white);
+  background: var(--color-surface-raised);
 }
 
 .error-summary[hidden] {
@@ -1846,7 +1921,7 @@ html.motion-paused::view-transition-group(*) {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--white);
+  background: var(--color-surface-raised);
   font-size: var(--text-sm);
 }
 
@@ -1880,8 +1955,8 @@ html.motion-paused::view-transition-group(*) {
   padding: var(--space-4);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  background: var(--navy-900);
-  color: var(--white);
+  background: var(--color-code-bg);
+  color: var(--color-code-text);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   line-height: 1.5;
@@ -1964,6 +2039,11 @@ code {
 
   .motion-toggle__switch {
     border-color: ButtonText;
+  }
+
+  .theme-picker__btn[aria-pressed="true"] .theme-picker__icon {
+    background: ButtonText;
+    color: ButtonFace;
   }
 
   .motion-toggle__switch::after {

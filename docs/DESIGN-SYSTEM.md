@@ -45,6 +45,25 @@ Load the three stylesheets in that order on every page.
 | Pastel pills | `--mint-100`, `--peach-100`, `--sky-100`, `--lemon-100` | `#dcf2e7`, `#fde4d3`, `#dbeafa`, `#fbf0c2` | Navy text 10.6–11.3:1 |
 | Footer | `--color-inverse-bg` | `#000000` | |
 
+### Dark theme
+
+The site follows the device's light or dark setting. The moon and sun buttons in the header override it, and the choice is stored (`localStorage` key `theme`). The head script applies it as `data-theme` on `<html>` before anything is drawn. Only the semantic tokens change (in `tokens.css`). There is no pure black anywhere.
+
+| Role | Dark value | Contrast |
+|---|---|---|
+| Page canvas | `#0f1c25` | Text 14.8:1 |
+| Card surface / raised | `#172a36` / `#1d3341` | Text 12.6:1 / 11.2:1 |
+| Text / muted | `#e8eef2` / `#a7bac7` | Muted 6.6:1 or more on every surface |
+| Primary action | `#8ecbef` with `#0b1820` text | 10.2:1 |
+| Focus ring | `#ffb84d` | 8.6:1 or more |
+| Error | `#ff958b` | 6.2:1 or more |
+| Figma frame | `#b08af2` | 5.5:1 on cards |
+| Footer | `#0a1620` | Text 17:1 |
+| Pills (violet, mint, peach, sky, lemon) | `#3d2f5e`, `#1f4537`, `#4e3121`, `#1f3c57`, `#4a411a` | Text 8.7–10.2:1 |
+| Scroll highlight faded letters | 68% opacity | 6.6:1 or more |
+
+Screenshots keep a white backing. Components never use raw colours: use the semantic tokens so both themes work.
+
 ### Type
 
 | Style | Selector | Size | Weight |
@@ -75,7 +94,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 | Component | Class | Use |
 |---|---|---|
 | Skip link | `.skip-link` | First element in `<body>` |
-| Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 44em. Ends with the "Motion" switch (`.motion-toggle`, `role="switch"`, `aria-checked`): a pill switch and spaced capitals. Off stops every animation site-wide and is remembered (`html.motion-paused`). Hidden for reduced motion and without JavaScript. |
+| Site header and nav | `.site-header`, `.site-nav`, `.site-nav__link--cta`, `.nav-toggle` | Every page; mark the current page with `aria-current="page"`. It becomes a floating sticky bar on scroll (`.is-stuck`), with a Menu button below 44em. Ends with the "Motion" switch (`.motion-toggle`, `role="switch"`): pill switch plus "Motion on/off" at 14px. Off stops every animation site-wide and is remembered (`html.motion-paused`); hidden for reduced motion and without JavaScript. Then a slash and the theme picker (`.theme-picker`): moon "Dark mode" and sun "Light mode" toggle buttons (`aria-pressed`) in a "Colour theme" group. |
 | Buttons | `.btn` + `--primary`, `--secondary`, `--inverse`, `--ghost-inverse`, `--block` | `<a>` to navigate, `<button>` for actions |
 | Scroll reveal | `data-reveal`, `data-reveal="words"`, `data-reveal-stagger` | Below-the-fold content fades up on scroll; on-screen content shows at once. Off for reduced motion and without JavaScript |
 | Scroll highlight | `data-reveal="highlight"` | Letters of a large paragraph darken as it's scrolled through (scrubbed). Faded floor 68% opacity keeps 4.5:1. Plain text only; off for reduced motion |

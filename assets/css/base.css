@@ -192,8 +192,8 @@ a:hover {
 
 /* ---- Selection --------------------------------------------------------- */
 ::selection {
-  background-color: var(--navy-900);
-  color: var(--white);
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 /* ---- Utilities --------------------------------------------------------- */
