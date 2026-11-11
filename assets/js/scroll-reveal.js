@@ -22,8 +22,9 @@
      <p data-reveal="highlight">…</p>
 
    Accessibility
-   - Off when the visitor prefers reduced motion, and without JavaScript:
-     the content simply shows.
+   - Off when the visitor prefers reduced motion, when animations are
+     paused with the header switch, and without JavaScript: the content
+     simply shows. Pausing mid-page shows everything at once.
    - "words" only splits plain text. Screen readers get one hidden copy of
      the full text and the animated pieces are aria-hidden.
    - Anything that receives keyboard focus shows at once (see CSS).
@@ -35,6 +36,7 @@
   if (!targets.length) return;
   if (!("IntersectionObserver" in window)) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (document.documentElement.classList.contains("motion-paused")) return;
 
   // Split plain text into animated pieces: by word, or by letter (letters
   // stay grouped per word so lines still wrap between words)
@@ -131,7 +133,10 @@
 
   // Progress runs from the paragraph's top entering the bottom of the screen
   // to its middle reaching 40% of the way down
+  var paused = false;
+
   function paint() {
+    if (paused) return;
     var vh = window.innerHeight;
     highlights.forEach(function (item) {
       var r = item.el.getBoundingClientRect();
@@ -209,4 +214,21 @@
     observer.observe(el);
   });
 
+  // "Pause animations" switch (site.js): show everything at once and stop
+  // the scroll highlight; resuming brings the highlight back
+  document.addEventListener("motionchange", function (event) {
+    paused = event.detail.paused;
+    if (paused) {
+      Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function (el) {
+        el.classList.add("is-revealed");
+        observer.unobserve(el);
+      });
+      highlights.forEach(function (item) {
+        item.lit = -1;
+        item.letters.forEach(function (letter) { letter.style.opacity = ""; });
+      });
+    } else {
+      paint();
+    }
+  });
 })();

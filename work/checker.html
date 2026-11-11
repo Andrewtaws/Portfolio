@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("motion")==="paused")document.documentElement.classList.add("motion-paused")}catch(e){}</script>
   <title>Recite Me Accessibility Checker – UX Case Study | Andrew Taws</title>
   <meta name="description" content="How I designed the Recite Me Accessibility Checker, a tool that scans any website against WCAG and tells people exactly how to fix what it finds.">
   <link rel="canonical" href="https://andrewtaws.co.uk/work/checker">
@@ -28,9 +28,9 @@
   <link rel="preload" href="../assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/tokens.css?v=72ac66ef">
   <link rel="stylesheet" href="../assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="../assets/css/components.css?v=fefb9945">
-  <script src="../assets/js/site.js?v=2c1fa34d" defer></script>
-  <script src="../assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
+  <link rel="stylesheet" href="../assets/css/components.css?v=aa1ba638">
+  <script src="../assets/js/site.js?v=00731591" defer></script>
+  <script src="../assets/js/scroll-reveal.js?v=4744df16" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,6 +46,7 @@
         <ul class="site-nav__list" id="site-nav-list">
           <li><a class="site-nav__link" href="../index.html#work">Work</a></li>
           <li><a class="site-nav__link" href="../about.html">About</a></li>
+          <li class="site-nav__item--motion"><button class="motion-toggle" type="button" aria-pressed="false"><span class="motion-toggle__switch" aria-hidden="true"></span>Pause animations</button></li>
           <li><a class="site-nav__link site-nav__link--cta" href="../contact.html">Contact</a></li>
         </ul>
       </nav>
