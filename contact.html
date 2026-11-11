@@ -28,10 +28,10 @@
   <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css?v=72ac66ef">
   <link rel="stylesheet" href="assets/css/base.css?v=ac6c293d">
-  <link rel="stylesheet" href="assets/css/components.css?v=7fc2465c">
+  <link rel="stylesheet" href="assets/css/components.css?v=fefb9945">
   <script src="assets/js/site.js?v=2c1fa34d" defer></script>
   <script src="assets/js/scroll-reveal.js?v=4b6ce378" defer></script>
-  <script src="assets/js/contact-form.js?v=9fe1cf7d" defer></script>
+  <script src="assets/js/contact-form.js?v=1a6f0ba2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -85,7 +85,20 @@
               <ul class="error-summary__list"></ul>
             </div>
 
-            <form class="form" id="contact-form" action="mailto:andrewtaws@gmail.com" method="post" enctype="text/plain" data-email="andrewtaws@gmail.com" novalidate>
+            <div class="form-sent callout" id="sent" tabindex="-1">
+              <h3 class="form-sent__title">Thanks, your message has been sent</h3>
+              <p>I’ll get back to you at the email address you gave, usually within a couple of days.</p>
+            </div>
+
+            <form class="form" id="contact-form" action="https://formsubmit.co/andrewtaws@gmail.com" method="post" data-endpoint="https://formsubmit.co/ajax/andrewtaws@gmail.com" data-email="andrewtaws@gmail.com" novalidate>
+              <input type="hidden" name="_subject" value="New message from your portfolio">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://andrewtaws.co.uk/contact.html#sent">
+              <div class="form__trap" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off">
+              </div>
               <p class="field__hint">All fields are required.</p>
               <div class="field">
                 <label class="field__label" for="name">Name</label>
@@ -107,7 +120,7 @@
 
               <div class="stack">
                 <button class="btn btn--primary btn--block" type="submit">Send message</button>
-                <p class="field__hint" id="send-hint">Sending opens your email app with your message ready to go.</p>
+                <p class="field__hint" id="send-hint">Your message is emailed straight to me through the FormSubmit service.</p>
               </div>
             </form>
           </section>
