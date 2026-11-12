@@ -106,7 +106,7 @@ No text sits on top of images.
 
 ### Your input needed (search the HTML for `TODO (Andrew)`)
 
-- [ ] Replace the placeholder email `hello@andrewtaws.co.uk` (footer on every page, and the Contact page and its form's `action` and `data-email`)
+- [x] (Done: footer buttons now open the contact form, and the placeholder link was removed.) Replace the placeholder email `hello@andrewtaws.co.uk` (footer on every page, and the Contact page and its form's `action` and `data-email`)
 - [ ] Add outcomes (one to three real results) to each case study
 - [ ] Add Timeline and Team to the Checker, Design System and Client Portal case studies
 - [ ] Confirm the paragraphs marked "confirm" in the Design System and Client Portal case studies
