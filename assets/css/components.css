@@ -101,6 +101,22 @@
   }
 }
 
+/* Un-stick on short or very narrow viewports (WCAG 1.4.10, technique C34).
+   The sticky rule above only applies from 40em tall; this states the
+   opposite explicitly, so at 400% zoom or on a landscape phone the header
+   scrolls away with the page and never covers content. */
+@media (max-height: 39.99em), (max-width: 20em) {
+  .site-header,
+  .js .site-header,
+  .site-header.is-stuck {
+    position: static;
+  }
+
+  html {
+    scroll-padding-top: var(--space-6);
+  }
+}
+
 /* Menu button (small screens, JavaScript only) --------------------------
    Below 45em the links (and the "Motion" switch) don't fit on one row, so, as on the original site,
    they move behind a "Menu" button. It's a disclosure button: aria-expanded
