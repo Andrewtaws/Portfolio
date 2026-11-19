@@ -129,7 +129,7 @@ Fonts: Albert Sans (body and headings), Borel (greeting), Inter Black (footer). 
 - One `<h1>` per page, with no skipped heading levels. Use `.h2`/`.h3`/`.h4` classes to change the size without changing the level.
 - Every image has `width`, `height` and `alt`. Use `alt=""` when the image is decorative or already described by nearby text, such as card images.
 - Text-heavy images, such as personas and diagrams, get a full text version in a `.disclosure`.
-- Links that open a new tab say so: `<span class="visually-hidden"> (opens in a new tab)</span>`.
+- Links that open a new tab say so in their accessible name, starting with the visible text: `aria-label="LinkedIn (opens in a new tab)"`. (A hidden text span also works, but some automated contrast checkers wrongly measure it.)
 - Don't use colour alone to convey meaning. The amber accent and the green dot are decorative only.
 - Interactive elements outside running text must be at least 44px high. Components already handle this.
 - Test each new page: keyboard only, 400% zoom (320px wide), forced colours, and an axe scan.
