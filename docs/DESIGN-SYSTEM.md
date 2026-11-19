@@ -31,7 +31,7 @@ Load the three stylesheets in that order on every page.
 | Role | Token | Value | Notes |
 |---|---|---|---|
 | Text, headings, links | `--color-text` (`--navy-900`) | `#07354d` | 12.7:1 on the canvas |
-| Muted text | `--color-text-muted` (`--slate-600`) | `#4a6575` | 6.0:1 |
+| Muted text | `--color-text-muted` (`--slate-600`) | `#3b5363` | 7.9:1 on canvas, 7.2:1 on cards (AAA) |
 | Page canvas | `--color-bg` (`--snow-50`) | `#fffcfc` | |
 | Card surface | `--color-surface` (`--sand-100`) | `#f3f1ef` | |
 | Primary action | `--color-action` (`--navy-800`) | `#06334a` | White text 13.3:1 |
@@ -39,7 +39,7 @@ Load the three stylesheets in that order on every page.
 | Focus (light) | `--color-focus` (`--amber-700`) | `#b35c00` | 4.6:1 |
 | Focus (dark) | `--color-focus-inverse` (`--amber-300`) | `#ffb84d` | 12.2:1 on black |
 | Accent | `--color-accent` (`--amber-500`) | `#e8890c` | Decorative only, never text |
-| Error | `--color-error` (`--red-700`) | `#b42318` | 6.4:1 |
+| Error | `--color-error` (`--red-700`) | `#9b1c13` | 8.0:1 (AAA) |
 | Figma frame | `--color-frame` (`--violet-500`) | `#8f55e4` | 4:1 on cards. Decorative only |
 | Accent pill | `--color-accent-soft` (`--violet-100`) | `#ece2fb` | Navy text 10.4:1 |
 | Pastel pills | `--mint-100`, `--peach-100`, `--sky-100`, `--lemon-100` | `#dcf2e7`, `#fde4d3`, `#dbeafa`, `#fbf0c2` | Navy text 10.6–11.3:1 |
@@ -53,10 +53,10 @@ The site follows the device's light or dark setting. The moon and sun buttons in
 |---|---|---|
 | Page canvas | `#0f1c25` | Text 14.8:1 |
 | Card surface / raised | `#172a36` / `#1d3341` | Text 12.6:1 / 11.2:1 |
-| Text / muted | `#e8eef2` / `#a7bac7` | Muted 6.6:1 or more on every surface |
+| Text / muted | `#e8eef2` / `#b4c6d2` | Muted 7.5:1 or more on every surface (AAA) |
 | Primary action | `#8ecbef` with `#0b1820` text | 10.2:1 |
 | Focus ring | `#ffb84d` | 8.6:1 or more |
-| Error | `#ff958b` | 6.2:1 or more |
+| Error | `#ffb3ac` | 7.7:1 or more (AAA) |
 | Figma frame | `#b08af2` | 5.5:1 on cards |
 | Footer | `#0a1620` | Text 17:1 |
 | Pills (violet, mint, peach, sky, lemon) | `#3d2f5e`, `#1f4537`, `#4e3121`, `#1f3c57`, `#4a411a` | Text 8.7–10.2:1 |
