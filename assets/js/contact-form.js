@@ -130,7 +130,8 @@
     a.href = "https://www.linkedin.com/in/andrewtaws/";
     a.target = "_blank";
     a.rel = "noopener";
-    a.innerHTML = 'message me on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>';
+    a.textContent = "message me on LinkedIn";
+    a.setAttribute("aria-label", "message me on LinkedIn (opens in a new tab)");
     li.appendChild(a);
     li.appendChild(document.createTextNode(" instead. Your message is still in the form."));
     summaryList.appendChild(li);

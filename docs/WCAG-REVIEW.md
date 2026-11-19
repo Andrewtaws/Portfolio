@@ -60,7 +60,7 @@ The only "needs review" items were textareas and a scrolling table, where axe co
 
 | # | Issue | WCAG | Rebuild |
 |---|---|---|---|
-| 1 | LinkedIn link had no accessible name and was `aria-hidden` | 1.1.1, 2.4.4, 4.1.2 | ✅ Visible "LinkedIn" button with hidden "(opens in a new tab)" text |
+| 1 | LinkedIn link had no accessible name and was `aria-hidden` | 1.1.1, 2.4.4, 4.1.2 | ✅ Visible "LinkedIn" button named "LinkedIn (opens in a new tab)" via aria-label |
 | 2 | No main/header/footer landmarks, no skip link | 1.3.1, 2.4.1 | ✅ |
 | 3 | Two H1s, no H2/H3 | 1.3.1, 2.4.6 | ✅ |
 | 4 | An invisible Framer badge took focus | 2.4.7, 2.4.11 | ✅ Removed |
