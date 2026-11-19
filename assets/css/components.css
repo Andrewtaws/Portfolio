@@ -571,7 +571,9 @@ html.motion-paused::view-transition-group(*) {
   border: 1px solid transparent;
   border-radius: 2px;
   font-size: var(--text-label);
-  font-weight: var(--weight-bold);
+  /* Medium, not bold: a chip is a tag, and bold standalone text reads as
+     a heading that isn't marked up as one (WCAG 1.3.1, failure F2) */
+  font-weight: var(--weight-medium);
   line-height: var(--leading-normal);
   color: var(--color-heading);
 }
