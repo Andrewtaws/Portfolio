@@ -970,7 +970,7 @@ html.motion-paused::view-transition-group(*) {
   }
 
   /* Homepage: the "View work" link joins the end of the pill rows (next
-     to "SaaS UX" where it fits). The list box steps aside for layout only;
+     to the last pill where it fits). The list box steps aside for layout only;
      it is still announced as a list of five specialisms. */
   .hero__tags {
     display: flex;
@@ -983,7 +983,7 @@ html.motion-paused::view-transition-group(*) {
     display: contents;
   }
 
-  /* Line break before the last pill, so "SaaS UX" and "View work" always
+  /* Line break before the last pill, so the last pill and "View work" always
      share the final row whatever the phone width. The negative margin on
      that row cancels the extra row gap the break adds. Visual and reading
      order stay the same. */
