@@ -31,7 +31,7 @@ Load the three stylesheets in that order on every page.
 | Role | Token | Value | Notes |
 |---|---|---|---|
 | Text, headings, links | `--color-text` (`--navy-900`) | `#07354d` | 12.7:1 on the canvas |
-| Muted text | `--color-text-muted` (`--slate-600`) | `#3b5363` | 7.9:1 on canvas, 7.2:1 on cards (AAA) |
+| Muted text | `--color-text-muted` (`--slate-600`) | `#344a58` | 9.1:1 on canvas, 8.2:1 on cards (AAA) |
 | Page canvas | `--color-bg` (`--snow-50`) | `#fffcfc` | |
 | Card surface | `--color-surface` (`--sand-100`) | `#f3f1ef` | |
 | Primary action | `--color-action` (`--navy-800`) | `#06334a` | White text 13.3:1 |
