@@ -36,7 +36,7 @@
   --navy-900: #07354d;   /* Text and headings: 12.7:1 on canvas */
   --navy-800: #06334a;   /* Buttons */
   --navy-700: #0d4766;   /* Button hover */
-  --slate-600: #3b5363;  /* Muted text: 7.9:1 on canvas, 7.2:1 on cards (AAA) */
+  --slate-600: #344a58;  /* Muted text: 9.1:1 on canvas, 8.2:1 on cards (AAA with headroom) */
   --sand-100: #f3f1ef;   /* Card surface */
   --snow-50: #fffcfc;    /* Page canvas */
   --white: #ffffff;

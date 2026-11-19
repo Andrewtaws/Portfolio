@@ -91,7 +91,7 @@ The only "needs review" items were textareas and a scrolling table, where axe co
 |---|---|
 | Navy text `#07354d` on canvas `#fffcfc` | 12.7:1 |
 | Navy text on card `#f3f1ef` | 11.5:1 |
-| Muted text `#3b5363` on canvas / cards | 7.9:1 / 7.2:1 (AAA) |
+| Muted text `#344a58` on canvas / cards | 9.1:1 / 8.2:1 (AAA) |
 | White on button navy `#06334a` | 13.3:1 |
 | White on black footer | 21:1 |
 | Focus ring `#b35c00` on canvas / card | 4.6:1 / 4.2:1 |
